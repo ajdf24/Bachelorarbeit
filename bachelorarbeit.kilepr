@@ -1,4 +1,63 @@
 [General]
+def_graphic_ext=
+img_extIsRegExp=false
+img_extensions=.eps .jpg .jpeg .png .pdf .ps .fig .gif
 kileprversion=2
 kileversion=2.1.3
+lastDocument=Bachelorarbeit.tex
+masterDocument=
 name=Bachelorarbeit
+pkg_extIsRegExp=false
+pkg_extensions=.cls .sty .bbx .cbx .lbx
+src_extIsRegExp=false
+src_extensions=.tex .ltx .latex .dtx .ins
+
+[Tools]
+MakeIndex=
+QuickBuild=
+
+[document-settings,item:Abkuerzungen.tex]
+Bookmarks=
+Encoding=ISO-8859-1
+Highlighting=LaTeX
+Indentation Mode=normal
+Mode=LaTeX
+
+[document-settings,item:Bachelorarbeit.tex]
+Bookmarks=
+Encoding=ISO-8859-1
+Highlighting=LaTeX
+Indentation Mode=normal
+Mode=LaTeX
+
+[item:Abkuerzungen.tex]
+archive=true
+column=0
+encoding=ISO-8859-1
+highlight=LaTeX
+line=11
+mode=LaTeX
+open=false
+order=1
+
+[item:Bachelorarbeit.tex]
+archive=true
+column=42
+encoding=ISO-8859-1
+highlight=LaTeX
+line=8
+mode=LaTeX
+open=true
+order=0
+
+[view-settings,view=0,item:Abkuerzungen.tex]
+CursorColumn=0
+CursorLine=11
+JumpList=
+ViMarks=
+
+[view-settings,view=0,item:Bachelorarbeit.tex]
+CursorColumn=42
+CursorLine=8
+JumpList=
+ViMarks=.,165,0,[,165,0,],165,0
