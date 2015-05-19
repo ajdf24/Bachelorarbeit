@@ -4,7 +4,7 @@ img_extIsRegExp=false
 img_extensions=.eps .jpg .jpeg .png .pdf .ps .fig .gif
 kileprversion=2
 kileversion=2.1.3
-lastDocument=Bachelorarbeit.tex
+lastDocument=Abkuerzungen.tex
 masterDocument=
 name=Bachelorarbeit
 pkg_extIsRegExp=false
@@ -32,32 +32,32 @@ Mode=LaTeX
 
 [item:Abkuerzungen.tex]
 archive=true
-column=0
+column=18
 encoding=ISO-8859-1
 highlight=LaTeX
-line=11
+line=12
 mode=LaTeX
-open=false
+open=true
 order=1
 
 [item:Bachelorarbeit.tex]
 archive=true
-column=42
+column=0
 encoding=ISO-8859-1
 highlight=LaTeX
-line=8
+line=203
 mode=LaTeX
 open=true
 order=0
 
 [view-settings,view=0,item:Abkuerzungen.tex]
-CursorColumn=0
-CursorLine=11
+CursorColumn=18
+CursorLine=12
 JumpList=
-ViMarks=
+ViMarks=.,11,19,[,11,19,],11,47
 
 [view-settings,view=0,item:Bachelorarbeit.tex]
-CursorColumn=42
-CursorLine=8
+CursorColumn=0
+CursorLine=203
 JumpList=
-ViMarks=.,165,0,[,165,0,],165,0
+ViMarks=.,203,17,[,203,17,],203,17
