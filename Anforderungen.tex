@@ -1,0 +1,91 @@
+\section{Lastenheft}
+An das Projekt, welches im Rahmen dieser Arbeit bearbeitet werden soll, gibt es viele Anforderungen. Um alle Anforderungen m\"oglichst strukturiert und \"Ubersichtlich darzustellen, wurde die Form eines Lastenhefts gew\"ahlt.
+
+\subsection{Zielsetzung}
+Ziel ist es ein einheitliches \ac{ECM} System zu entwerfen, welches m\"oglichst alle Fachdokumente der \ac{LUBW} und der \ac{GAA} beinhaltet.
+Hierbei sollen alle bestehenden und zuk\"unfitge Systeme \"uber eine Schnittstelle mit dem \ac{DMS} kommunizieren.
+
+\subsection{Produkteinsatz}
+Beim zu entwickelnden System, handelt es sich um einen Prototyp f\"ur ein \ac{DMS}, welches ggf. von der \ac{LUBW} und der \ac{GAA} eingesetzt werden kann. Das zu entwickelnde Backend, soll alle Dokumente, welche schon heute auf den Websiten zu finden sind zusammenf\"uhren, und diese in einer gegeigneten Form ablegen.
+
+\subsubsection{Zusammenspiel mit anderen Systemen}
+Das Backend soll nicht die heutigen Insell\"o\ss{}ungen f\"ur Dokumentverwaltung der \ac{LUBW} und der \ac{GAA} vereinen. Es sollen sowohl die bestehenden als auch zuk\"unfitge Systeme unterst\"utzt werden. Die jeweils ben\"otigten Daten, sollen hierf\"ur \"uber eine oder ggf. mehrere Schnittstellen erreichbar sein.
+
+\subsection{Produktfunktionen}
+\begin{minipage}{3cm}
+/LF10/
+\end{minipage}
+\begin{minipage}{13cm}
+Schon bestehende Dokumente sollen aus den alten Systemen \"ubernommen werden k\"onnen, ohne das ihre Metadaten verloren gehen oder ge\"andert werden.\\
+\end{minipage}
+\begin{minipage}{3cm}
+/LF20/
+\end{minipage}
+\begin{minipage}{13cm}
+Die Metadaten der einzelnen Dokumente sollen fachlich und technisch gegliedert werden. Hierbei sollen ggf. Gruppierungen erstellt werden. Zum Beispiel sollen sich Longtitue und Latitude zu Koordinaten zusammengefasst werden.\\
+\end{minipage}
+\begin{minipage}{3cm}
+/LF30/
+\end{minipage}
+\begin{minipage}{13cm}
+Die Dokumente sollen ebenfalls nach den einzelnen Anwendungen und Fachbereichen gegliedert werden. Hier sollen die Anwendungen auch speziell ihre Dokumente abfragen k\"onnen.\\
+\end{minipage}
+\begin{minipage}{3cm}
+/LF40/
+\end{minipage}
+\begin{minipage}{13cm}
+Eine Suche \"uber die Dokumente und ihre Metadaten soll grunds\"atzlich m\"oglich sein. Hier muss der Nutzer aber auch in der Lage sein die Suche weiter einzuschr\"anken oder nur nach bestimmten Metadaten zu suchen.\\
+\end{minipage}
+\begin{minipage}{3cm}
+/LF50/
+\end{minipage}
+\begin{minipage}{13cm}
+Die alten Systeme sollen durch das neue Backend keinerlei Einschr\"ankungen im Funktionsumfang unterworfen sein. Dies muss ggf. durch verschiedene Arten von Schnittstellen realisert werden.\\
+\end{minipage}
+\begin{minipage}{3cm}
+/LF60/
+\end{minipage}
+\begin{minipage}{13cm}
+F\"ur den Frontend-Prototyp, soll eine Schnittstelle funktionsf\"ahig sein. Der Prototyp soll eines der bestehenden Systeme auf einfache Art nachbauen. \\
+\end{minipage}
+
+\subsection{Produktdaten}
+\begin{minipage}{3cm}
+/LD10/
+\end{minipage}
+\begin{minipage}{13cm}
+Die entsprechenden Metadaten zu Dokumenten sollen durch das Backend verwaltet werden. Hierbei sollen nicht nur die manuell hinzugef\"ugten Metadaten beachtet werden, sondern auch die Metadaten, welche das Dateiformat liefert.\\
+\end{minipage}
+\begin{minipage}{3cm}
+/LD20/
+\end{minipage}
+\begin{minipage}{13cm}
+Metadaten sollen nach M\"oglichkeit so zusammengefasst werden, das eine Oberklassenbildung und Vererbung m\"oglich ist. So soll zum Beispiel ein Standort alle Adressdaten zusammenfassen. Ein Standort wiederum kann in mehreren Dokumenten verwendet werden, wie zum Beispiel in Bildern oder in einem Forschungsbericht.\\
+\end{minipage}
+\begin{minipage}{3cm}
+/LD30/
+\end{minipage}
+\begin{minipage}{13cm}
+Metadaten sollen \"ahnlich wie objektorientierte Klassen in Programmiersprachen agieren. So wird ein Autor "`Max Mustermann"' nur einmal angelegt. Er kann jedoch in mehreren Dokumenten auftauchen. Sucht ein Nutzer nach "`Max Mustermann"', so werden ihm alle Eintr\"age zu diesem angezeigt.\\
+\end{minipage}
+
+
+\subsection{Produktleistungen}
+\begin{minipage}{3cm}
+/LL10/
+\end{minipage}
+\begin{minipage}{13cm}
+Das Backend soll f\"ur Dokumente, welche in verschiedenen Versionen vorliegen eine Art Versionsverwaltung bieten, so das auch \"altere Versionen zug\"anglich sind.\\
+\end{minipage}
+\begin{minipage}{3cm}
+/LL20/
+\end{minipage}
+\begin{minipage}{13cm}
+Die Dokumente sollen \"uber verschiedene Schnittstellen abgerufen werden k\"onnen.\\
+\end{minipage}
+\begin{minipage}{3cm}
+/LL30/
+\end{minipage}
+\begin{minipage}{13cm}
+Eine Suche \"uber Metadaten muss realisert werden. Hierbei soll dem Nutzer zum einen eine grobe aber auch eine verfeinerte eingeschr\"ankte Suche nach bestimmten Metadaten geboten werden.\\
+\end{minipage}
