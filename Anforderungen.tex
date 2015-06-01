@@ -1,17 +1,17 @@
-\section{Lastenheft}
+\section{Lastenheft} \label{Lastenheft}
 An das Projekt, welches im Rahmen dieser Arbeit bearbeitet werden soll, gibt es viele Anforderungen. Um alle Anforderungen m\"oglichst strukturiert und \"Ubersichtlich darzustellen, wurde die Form eines Lastenhefts gew\"ahlt.
 
-\subsection{Zielsetzung}
+\subsection{Zielsetzung} \label{Zielsetzung}
 Ziel ist es ein einheitliches \ac{ECM} System zu entwerfen, welches m\"oglichst alle Fachdokumente der \ac{LUBW} und der \ac{GAA} beinhaltet.
 Hierbei sollen alle bestehenden und zuk\"unfitge Systeme \"uber eine Schnittstelle mit dem \ac{DMS} kommunizieren.
 
-\subsection{Produkteinsatz}
+\subsection{Produkteinsatz} \label{Produkteinsatz}
 Beim zu entwickelnden System, handelt es sich um einen Prototyp f\"ur ein \ac{DMS}, welches ggf. von der \ac{LUBW} und der \ac{GAA} eingesetzt werden kann. Das zu entwickelnde Backend, soll alle Dokumente, welche schon heute auf den Websiten zu finden sind zusammenf\"uhren, und diese in einer gegeigneten Form ablegen.
 
-\subsubsection{Zusammenspiel mit anderen Systemen}
+\subsubsection{Zusammenspiel mit anderen Systemen} \label{Zusammenspiel mit anderen Systemen}
 Das Backend soll nicht die heutigen Insell\"osungen f\"ur Dokumentverwaltung der \ac{LUBW} und der \ac{GAA} vereinen. Es sollen sowohl die bestehenden als auch zuk\"unfitge Systeme unterst\"utzt werden. Die jeweils ben\"otigten Daten, sollen hierf\"ur \"uber eine oder ggf. mehrere Schnittstellen erreichbar sein.
 
-\subsection{Produktfunktionen}
+\subsection{Produktfunktionen} \label{Produktfunktionen}
 \begin{minipage}{3cm}
 /LF10/
 \end{minipage}
@@ -49,7 +49,7 @@ Die alten Systeme sollen durch das neue Backend keinerlei Einschr\"ankungen im F
 F\"ur den Frontend-Prototyp, soll die Kernfunktionalit\"at einer Schnittstelle funktionsf\"ahig sein, anhand dessen der Prototyp evaluiert werden kann.\\
 \end{minipage}
 
-\subsection{Produktdaten}
+\subsection{Produktdaten} \label{Produktdaten}
 \begin{minipage}{3cm}
 /LD10/
 \end{minipage}
@@ -60,7 +60,7 @@ Die entsprechenden Metadaten zu Dokumenten sollen durch das Backend verwaltet we
 /LD20/
 \end{minipage}
 \begin{minipage}{13cm}
-Metadaten sollen nach M\"oglichkeit so zusammengefasst werden, das eine Oberklassenbildung und Vererbung m\"oglich ist. So soll zum Beispiel ein Standort alle Adressdaten zusammenfassen. Ein Standort wiederum kann in mehreren Dokumenten verwendet werden, wie zum Beispiel in Bildern oder in einem Forschungsbericht.\\
+Metadaten sollen nach M\"oglichkeit so zusammengefasst werden, so das eine Oberklassenbildung und Vererbung m\"oglich ist. So soll zum Beispiel ein Standort alle Adressdaten zusammenfassen. Ein Standort wiederum kann in mehreren Dokumenten verwendet werden, wie zum Beispiel in Bildern oder in einem Forschungsbericht.\\
 \end{minipage}
 \begin{minipage}{3cm}
 /LD30/
@@ -68,9 +68,15 @@ Metadaten sollen nach M\"oglichkeit so zusammengefasst werden, das eine Oberklas
 \begin{minipage}{13cm}
 Metadaten sollen \"ahnlich wie objektorientierte Klassen in Programmiersprachen agieren. So wird ein Autor "`Max Mustermann"' nur einmal angelegt. Er kann jedoch in mehreren Dokumenten auftauchen. Sucht ein Nutzer nach "`Max Mustermann"', so werden ihm alle Eintr\"age zu diesem angezeigt.\\
 \end{minipage}
+\begin{minipage}{3cm}
+/LD40/
+\end{minipage}
+\begin{minipage}{13cm}
+F\"ur die Gliederung der Metdaten sollen auch schon bestehende Standards betrachtet und gegebenenfalls umgesetzt werden. \cite{Wiki_Dublin_Core} \cite{Wiki_ISO_19115} \cite{Wiki_Exif} \cite{Wiki_Inspire}\\
+\end{minipage}
 
 
-\subsection{Produktleistungen}
+\subsection{Produktleistungen} \label{Produktleistungen}
 \begin{minipage}{3cm}
 /LL10/
 \end{minipage}
@@ -81,7 +87,7 @@ Das Backend soll f\"ur Dokumente, welche in verschiedenen Versionen vorliegen ei
 /LL20/
 \end{minipage}
 \begin{minipage}{13cm}
-Die Dokumente sollen \"uber verschiedene Schnittstellen wie zum Beispiel eine \ac{REST}-Schnittstelle abgerufen werden k\"onnen.\\
+Die Dokumente sollen \"uber verschiedene Schnittstellen wie zum Beispiel eine \ac{REST}-Schnittstelle abgerufen werden k\"onnen. \cite{Wiki_REST}\\
 \end{minipage}
 \begin{minipage}{3cm}
 /LL30/
