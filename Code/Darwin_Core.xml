@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<dwr:SimpleDarwinRecordSet
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://rs.tdwg.org/dwc/xsd/simpledarwincore/  http://rs.tdwg.org/dwc/xsd/tdwg_dwc_simple.xsd"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:dwc="http://rs.tdwg.org/dwc/terms/"
+    xmlns:dwr="http://rs.tdwg.org/dwc/xsd/simpledarwincore/">
+    <dwr:SimpleDarwinRecord>
+        <dcterms:type>PhysicalObject</dcterms:type>
+        <dcterms:modified>2009-02-12T12:43:31</dcterms:modified>
+        <dcterms:rightsHolder>Museum of Vertebrate Zoology</dcterms:rightsHolder>
+        <dcterms:rights>Creative Commons License</dcterms:rights>
+        <dwc:institutionCode>MVZ</dwc:institutionCode>
+        <dwc:collectionCode>Mammals</dwc:collectionCode>
+        <dwc:occurrenceID>urn:catalog:MVZ:Mammals:14523</dwc:occurrenceID>
+        <dwc:basisOfRecord>PreservedSpecimen</dwc:basisOfRecord>
+        <dwc:country>Argentina</dwc:country>
+        <dwc:countryCode>AR</dwc:countryCode>
+        <dwc:stateProvince>Neuquen</dwc:stateProvince>
+        <dwc:locality>25 km al NNE de Bariloche por Ruta 40 (=237)</dwc:locality>
+    </dwr:SimpleDarwinRecord>
+</dwr:SimpleDarwinRecordSet>
