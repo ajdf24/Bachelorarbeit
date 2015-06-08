@@ -1,12 +1,13 @@
 \section{Analyse der Datenbest\"ande} \label{Analyse Datenbestaende}
 Nach dem nun die Portale \ac{DRS}, Naturschutz-Bildarchiv und \ac{FADO}, der \ac{LUBW}, im Kapitel \ref{Stand der Technik} genauer betrachtet und die Verwaltungsstrukturen aufgezeigt wurden, betrachtet dieses Kapitel nun die Metadaten der einzelnen Dokumente.
 
-Hierbei wird unterschieden, ob es sich um technische oder Fachliche Metadaten handelt. Daf\"ur wurden alle Metadaten aus den Systemen extrahiert und in den folgenden Abschnitten wird auf diese weiter eingegangen.
+Hierbei wird unterschieden, ob es sich um technische oder fachliche Metadaten handelt. Daf\"ur wurden alle Metadaten aus den Systemen extrahiert und in den folgenden Abschnitten wird auf diese weiter eingegangen.
+
 \subsection{Fachlich}
-Fachliche Metadaten sind Daten, welche den Inhalt einer Datei oder eines Dokuments genauer beschreiben und den Nutzer dabei Helfen relevante Dateien zu identifizieren. Solche Metadaten sind immer Fachspezifisch und unabh\"angig von den technischen eigenschaften einer Datei.
+Fachliche Metadaten sind Daten, welche den Inhalt einer Datei oder eines Dokuments genauer beschreiben und den Nutzer dabei helfen relevante Dateien zu identifizieren. Solche Metadaten sind immer Fachspezifisch und unabh\"angig von den technischen eigenschaften einer Datei.
 \cite{Fachliche_Metadaten_Wissensportal_BI} \cite{Fachliche_Metadaten_msg} \cite{DHW_Wiki_Metadaten}
 
-Die Dokumente der Fachsysteme der \ac{LUBW} enthalten alle fachliche Metadaten. Eine genaue Aufstellung aller fachlichen Metadaten der in dieser Arbeit untersuchten ist im Anhang \ref{Fachliche Metadaten der LUBW Fachsysteme}.
+Die Dokumente der Fachsysteme der \ac{LUBW} enthalten alle fachliche Metadaten. Eine genaue Aufstellung aller fachlichen Metadaten der in dieser Arbeit untersuchten Dokumente ist im Anhang \ref{Fachliche Metadaten der LUBW Fachsysteme} zu finden.
 
 \subsection{Fachliche Metadaten-Standards}
 F\"ur die Erstellung eines Datenkonzepts wie es im Kapitel \ref{Erstellung eines Datenkonzepts} geschieht, ist es aber nicht nur notwendig die vorhandenen Metadaten zu betrachten. Auch Standards f\"ur fachliche Metadaten sollen in diesen Umfeld untersucht werden.
@@ -16,33 +17,34 @@ Da fachliche Metadaten meist anwendungs- beziehungsweise dokumentbezogen sind, g
 \subsubsection{Darwin Core}
 Darwin Core beschreibt eine Zusammenfassung von Metadaten, welche f\"ur biologische Zwecke eingesetzt werden k\"onnen. So ist es zum Beispiel m\"ochlich Angaben zum Organismus oder zum Lebensraum zu machen. 
 
-Hierf\"ur verwendet Darwin Core bis zu 172 Tags, welche jedoch nicht zwingend verwendet werden m\"ussen. Zus\"atzlich enth\"alt der Standard auch die Tags von Dublin Core (siehe Abschnitt \ref{Dublin Core}) das Dokument grundlegend zu beschreiben.
+Hierf\"ur verwendet Darwin Core bis zu 172 Tags, welche jedoch nicht zwingend verwendet werden m\"ussen. Zus\"atzlich enth\"alt der Standard auch die Tags von Dublin Core (siehe Abschnitt \ref{Dublin Core}) um das Dokument grundlegend zu beschreiben.
 \cite{Darwin_Core} \cite{Wiki_Darwin_Core}
 
-Im Listing \ref{Darwin Core Beispiel in XML} \footnote{\url{http://rs.tdwg.org/dwc/terms/guides/xml/index.htm}} unten ist einmal eine Beispiel f\"ur den Darwin Core-Standard  mit XML dargestellt. Es ist zu sehen, das ein "`SimpleDarwinRecord"' verwendet wird, welcher nicht alle 172 beinhaltet. 
+Im Listing \ref{Darwin Core Beispiel in XML} \footnote{\url{http://rs.tdwg.org/dwc/terms/guides/xml/index.htm}} ist einmal eine Beispiel f\"ur den Darwin Core-Standard  mit XML dargestellt. Es ist zu sehen, das ein "`SimpleDarwinRecord"' verwendet wird, welcher nicht alle 172 beinhaltet. 
 
 Es ist auch zu erkennen, dass die Dublin Core Tags inbegriffen sind (beginnend mit "`dcterms"'). Die eigentliche Tags des Darwin-Standards beginnen mit "`dwc"'.
 \lstinputlisting[caption=Darwin Core Beispiel in XML, label=Darwin Core Beispiel in XML]{Code/Darwin_Core.xml}
 
 \subsubsection{INSPIRE} \label{INSPIRE}
-\ac{INSPIRE} ist ein Standard f\"ur Metadaten, welcher von EU nach der Richtlinie "`2007/2/EG"' vom 14. März 2007 erlassen wurde. \ac{INSPIRE} enth\"alt Metadaten, welche f\"ur Geo-Referenzen benutzt werden m\"ussen, denn nach der eben genannten EU-Richtlinie m\"ussen alle vom Land ver\"offentlichten digitalen Daten mit Geo-Referenzen versehen werden.
+\ac{INSPIRE} ist ein Standard f\"ur Metadaten, welcher von der \ac{EU} nach der Richtlinie "`2007/2/EG"' vom 14. März 2007 erlassen wurde. \ac{INSPIRE} enth\"alt Metadaten, welche f\"ur Geo-Referenzen benutzt werden m\"ussen, denn nach der eben genannten \ac{EU}-Richtlinie m\"ussen alle vom Land ver\"offentlichten digitalen Datein mit Geo-Referenzen versehen werden.
 
-\ac{INSPIRE} stellt 25 Meta-Tags zur Verf\"ugung, mit dessen Hilfe die EU-Richtlinie zur Bekanntmachung von Geo-Referenzen eingehalten wird.
+\ac{INSPIRE} stellt 25 Meta-Tags zur Verf\"ugung, mit dessen Hilfe die \ac{EU}-Richtlinie zur Bekanntmachung von Geo-Referenzen eingehalten wird.
 Au\ss{}erdem enth\"alt der \ac{INSPIRE}-Standard die notwendigen Tags der DIN EN ISO 19115 (siehe Abschnitt \ref{ISO 19115}), wodurch dieser gleichzeitig nach dieser Norm ISO-Konform wird. 
 \cite{INSPIRE_Richtlinie}
 
 Von den 25 Meta-Tags m\"ussen 12 Tags zwingend angegeben werden, um die Richtlinie zu erf\"ullen. Die Meta-Tags von \ac{INSPIRE} sind zum Teil untergliedert was bedeutet, dass eine vielzahl mehr an Information in diesen Standard enthalten sein k\"onnen.
 
-Aus \"Ubersichlichkeitsgr\"unden wird an dieser Stelle kein Beispiel Listing erfolgen, da das XML-Format von \ac{INSPIRE} sehr ausf\"uhrlich und gro\ss{} ist. Es wird jedoch an dieser Stelle auf den Editor f\"ur \ac{INSPIRE}-Metadaten der Europ\"aischen Kommission verwiesen, mit dessen Hilfe schnell und einfach XML-Dokumente mit \ac{INSPIRE}-Metadaten erzeugt werden k\"onnen. \footnote{\url{http://inspire-geoportal.ec.europa.eu/editor/}}
+Aus \"Ubersichlichkeitsgr\"unden wird an dieser Stelle kein Beispiel Listing erfolgen, da das XML-Format von \ac{INSPIRE} sehr ausf\"uhrlich und gro\ss{} ist. Es wird jedoch an dieser Stelle auf den Editor f\"ur \ac{INSPIRE}-Metadaten der Europ\"aischen Kommission verwiesen, mit dessen Hilfe schnell und einfach XML-Dokumente mit \ac{INSPIRE}-Metadaten erzeugt werden k\"onnen \footnote{\url{http://inspire-geoportal.ec.europa.eu/editor/}}.
 \cite{INSPIRE_Geoportal} \cite{Wiki_Inspire} 
 
 \subsubsection{DIN EN ISO 19115} \label{ISO 19115}
-Die DIN EN ISO 19115 ist eine Norm, welche 2005 spezifiziert wurde. Sie beschreibt Metadaten f\"ur die Bescheibung von Geo-Information. Mit \"uber 400 m\"oglichen Tags, ist sie eine der detailiertestens Beschreibungsstandards f\"ur Geo-Daten. 
+Die DIN EN ISO 19115 ist eine Norm, welche 2005 spezifiziert wurde. Sie enth\"alt Metadaten f\"ur die Bescheibung von Geo-Information. Mit \"uber 400 m\"oglichen Tags, ist sie eine der detailiertestens Beschreibungsstandards f\"ur Geo-Daten. 
 
 Von den \"uber 400 Tags sind f\"ur eine Verwendung der Norm nur ca. 22 Tags erforderlich. Alle anderen Tags sind optional.
 \cite{ISO_19115_Doku} \cite{Wiki_ISO_19115}
 
 Wird der \ac{INSPIRE}-Standard verwendet (siehe Abschnitt \ref{INSPIRE}), so ist automatisch auch die ISO 19155 erf\"ullt, da diese Bestandteil  von \ac{INSPIRE} ist.
+\cite{INSPIRE_Richtlinie}
 
 \subsection{Technisch}
 
