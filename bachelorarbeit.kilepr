@@ -87,7 +87,7 @@ archive=true
 column=0
 encoding=ISO-8859-1
 highlight=LaTeX
-line=31
+line=37
 mode=LaTeX
 open=true
 order=4
@@ -134,10 +134,10 @@ order=1
 
 [item:Quellen.bib]
 archive=true
-column=28
+column=35
 encoding=UTF-8
 highlight=BibTeX
-line=28
+line=22
 mode=BibTeX
 open=true
 order=6
@@ -160,9 +160,9 @@ ViMarks=.,19,23,[,19,23,],19,23
 
 [view-settings,view=0,item:Analyse.tex]
 CursorColumn=0
-CursorLine=31
+CursorLine=37
 JumpList=
-ViMarks=.,31,0,[,31,0,],31,0
+ViMarks=.,38,6,[,38,4,],38,6
 
 [view-settings,view=0,item:Anforderungen.tex]
 CursorColumn=21
@@ -189,8 +189,8 @@ JumpList=
 ViMarks=.,11,161,[,11,157,],11,161
 
 [view-settings,view=0,item:Quellen.bib]
-CursorColumn=28
-CursorLine=28
+CursorColumn=35
+CursorLine=22
 JumpList=
 ViMarks=.,0,0,[,0,0,],-1,-1
 
