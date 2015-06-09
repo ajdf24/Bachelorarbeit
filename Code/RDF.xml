@@ -1,0 +1,8 @@
+<rdf:RDF>
+	<rdf:Description
+	rdf:about="www.beispiel.com">
+	<exterms:creation-date 
+		rdf:datetype"www.w3c.org/2001/XMLSchema#date">
+	2015-06-15<exterms:creation-date>
+	</rdf:Description>
+</rdf:RDF>

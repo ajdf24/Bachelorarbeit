@@ -1,2 +1,217 @@
 \section{Anhang} \label{Anhang}
-\subsection{Fachliche Metadaten der LUBW Fachsysteme} \label{Fachliche Metadaten der LUBW Fachsysteme}
+\subsection{Metadaten der LUBW Fachsysteme} \label{Metadaten der LUBW Fachsysteme}
+In den folgenden Abschnitten sind die Metadaten und Relationen der Untersuchten Dokumente in \ac{FADO} abgebildet.
+\subsubsection{Metadaten des Fachsystems FADO / Urteile}
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Metadaten:} & \textbf{Werte:} \\ \hline
+Fachsystem & Vorgabe \\ \hline
+ID & Generiert \\ \hline
+Titel & Freitext \\ \hline
+Tenor & Freitext \\ \hline
+Kommentar & Freitext \\ \hline
+Orientierungssatz & Freitext \\ \hline
+Norm & Freitext \\ \hline
+Leitsatz & Freitext \\ \hline
+Gericht & Freitext \\ \hline
+Entscheidungsform & Freitext \\ \hline
+Entscheidungsdatum & Datum \\ \hline
+Aktenzeichen & Freitext \\ \hline
+Vorgericht & Freitext \\ \hline
+Nachgericht & Freitext \\ \hline
+Sachverhalt & Freitext \\ \hline
+Gründe & Freitext \\ \hline
+Unsichtbar & Bool \\ \hline
+ausblenden & Bool \\ \hline
+\end{tabular}
+\label{Metadaten der Urteile in FADO}
+\caption{Metadaten der Urteile in FADO}
+\end{center}
+\end{table}
+
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Relationen:} & \textbf{Werte:} \\ \hline
+Thema & Vorgabe \\ \hline
+gehört zu Fachobjekt & Vorgabe \\ \hline
+hat Schlagwort & Vorgabe \\ \hline
+ist vom Typ & Vorgabe \\ \hline
+enthalten in Fachsystem & Vorgabe \\ \hline
+wird referenziert von & Vorgabe \\ \hline
+\end{tabular}
+\label{Relationen der Urteile in FADO}
+\caption{Relationen der Urteile in FADO}
+\end{center}
+\end{table}
+
+\newpage
+\subsubsection{Metadaten des Fachsystems FADO / Forschungsvorhaben}
+
+\begin{table}[!ht]
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Metadaten:} & \textbf{Werte:} \\ \hline
+Fachsystem & Vorgabe \\ \hline
+ID & Generiert \\ \hline
+Title & Freitext \\ \hline
+Kurzbeschreibung & Freitext \\ \hline
+Kommentar & Freitext \\ \hline
+Förderbereich & Freitext \\ \hline
+Beginn & Datum \\ \hline
+Ende & Datum \\ \hline
+Projektnummer & Freitext \\ \hline
+Förderkennzeichen & Freitext \\ \hline
+Unsichtbar & Bool \\ \hline
+ausblenden & Bool \\ \hline
+\end{tabular}
+\label{Metadaten der Forschungsvorhaben in FADO}
+\caption{Metadaten der Forschungsvorhaben in FADO}
+\end{center}
+\end{table}
+
+\begin{table}[!ht]
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Relationen:} & \textbf{Werte:} \\ \hline
+Thema & Vorgabe \\ \hline
+gehört zu Fachobjekt & Vorgabe \\ \hline
+hat Abschlussbericht & Vorgabe \\ \hline
+hat Forschungsberichtsblatt & Vorgabe \\ \hline
+hat Projektskizze & Vorgabe \\ \hline
+hat Schlagwort & Vorgabe \\ \hline
+hat Zwischenbericht & Vorgabe \\ \hline
+wird geleitet von & Vorgabe \\ \hline
+wird referenziert von & Vorgabe \\ \hline
+\end{tabular}
+\label{Relationen der Forschungsvorhaben in FADO}
+\caption{Relationen der Forschungsvorhaben in FADO}
+\end{center}
+\end{table}
+
+\newpage
+\subsubsection{Metadaten des Fachsystems FADO / Berichte}
+
+\begin{table}[!ht]
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Metadaten:} & \textbf{Werte:} \\ \hline
+Fachsystem & Vorgabe \\ \hline
+ID & Generiert \\ \hline
+Titel & Freitext \\ \hline
+Kurzbeschreibung & Freitext \\ \hline
+Kommentar & Freitext \\ \hline
+Kurztitel & Freitext \\ \hline
+Untertitel & Freitext \\ \hline
+Fachthema & Freitext \\ \hline
+Herausgeber & Freitext \\ \hline
+Redaktion & Freitext \\ \hline
+Version & Freitext \\ \hline
+Stand & Datum \\ \hline
+Seitenzahl & Freitext \\ \hline
+Seite (von-bis) & Freitext \\ \hline
+Reihe & Freitext \\ \hline
+Bandnummer & Freitext \\ \hline
+ISSN & Freitext \\ \hline
+ISBN & Freitext \\ \hline
+Preis & Freitext \\ \hline
+Medium & Freitext \\ \hline
+Shoprelevant & Bool \\ \hline
+Shoplink & URL \\ \hline
+HTML-Datei & Data \\ \hline
+PDF-Datei & Data \\ \hline
+Weitere Datei & Data \\ \hline
+Format dieser Datei & Freitext \\ \hline
+Unsichtbar & Bool \\ \hline
+ausblenden & Bool \\ \hline
+\end{tabular}
+\label{Metadaten der Berichte in FADO}
+\caption{Metadaten der Berichte in FADO}
+\end{center}
+\end{table}
+
+\begin{table}[!ht]
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Relationen:} & \textbf{Werte:} \\ \hline
+betrift Thema & Vorgabe \\ \hline
+gehört zu Fachobjekt & Vorgabe \\ \hline
+hat Autor & Vorgabe \\ \hline
+hat Schlagwort & Vorgabe \\ \hline
+ist vom Typ & Vorgabe \\ \hline
+enthalten in Fachsystem & Vorgabe \\ \hline
+ist Abschlussbericht von & Vorgabe \\ \hline
+ist Forschungsberichtsblatt von & Vorgabe \\ \hline
+ist Projektskizze von & Vorgabe \\ \hline
+ist Zwischenbericht von & Vorgabe \\ \hline
+wird referenziert von & Vorgabe \\ \hline
+\end{tabular}
+\label{Relationen der Berichte in FADO}
+\caption{Relationen der Berichte in FADO}
+\end{center}
+\end{table}
+
+\newpage
+\subsubsection{Metadaten des DRS}
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Metadaten:} & \textbf{Werte:} \\ \hline
+Gültigkeit & Vorgabe \\ \hline
+Titel & Freitext \\ \hline
+Aktenzeichen & Freitext \\ \hline
+Kurz-Titel & Vorgabe \\ \hline
+Dokumentart & Vorgabe \\ \hline
+Herausgeber & Vorgabe \\ \hline
+Erscheinungsort & Vorgabe \\ \hline
+Handbuch & Vorgabe \\ \hline
+Kapitel & Vorgabe \\ \hline
+Fundstelle & Vorgabe \\ \hline
+Fassung & Vorgabe \\ \hline
+Änderung & Vorgabe \\ \hline
+Größe & Zahl \\ \hline
+Formate & Vorgabe \\ \hline
+\end{tabular}
+\label{Metadaten des DRS}
+\caption{Metadaten des DRS}
+\end{center}
+\end{table}
+
+Zu beachten ist hier, dass die Metadaten-Tags Fassung und \"Anderung zusammengesetzte Daten enthalten, wie es in der Abbildung \ref{Suchmaske DRS} zu sehen ist.
+
+\newpage
+\subsubsection{Metadaten des Bildarchivs}
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Metadaten:} & \textbf{Werte:} \\ \hline
+Objektart & Freitext \\ \hline
+Objektname & Freitext \\ \hline
+ID & Generiert \\ \hline
+URL & URL \\ \hline
+Dateityp & Vorgabe \\ \hline
+Name & Freitext \\ \hline
+Kurzname & Freitext \\ \hline
+Erstellt am & Datum \\ \hline
+Autor & Freitext \\ \hline
+Besitzer & Besitzer \\ \hline
+Bemerkung & Freitext \\ \hline
+\end{tabular}
+\label{Metadaten des Bildarchivs}
+\caption{Metadaten des}
+\end{center}
+\end{table}
+
+
+\subsection{Technische Metadaten der LUBW Fachsysteme} \label{Technische Metadaten der LUBW Fachsysteme}

@@ -74,30 +74,30 @@ Mode=LaTeX
 
 [item:Abkuerzungen.tex]
 archive=true
-column=75
+column=37
 encoding=ISO-8859-1
 highlight=LaTeX
-line=14
+line=21
 mode=LaTeX
 open=true
 order=5
 
 [item:Analyse.tex]
 archive=true
-column=0
+column=71
 encoding=ISO-8859-1
 highlight=LaTeX
-line=37
+line=34
 mode=LaTeX
 open=true
 order=4
 
 [item:Anforderungen.tex]
 archive=true
-column=21
+column=6
 encoding=ISO-8859-1
 highlight=LaTeX
-line=44
+line=88
 mode=LaTeX
 open=true
 order=2
@@ -144,31 +144,31 @@ order=6
 
 [item:Stand_der_Technik.tex]
 archive=true
-column=594
+column=19
 encoding=UTF-8
 highlight=LaTeX
-line=19
+line=29
 mode=LaTeX
 open=true
 order=3
 
 [view-settings,view=0,item:Abkuerzungen.tex]
-CursorColumn=75
-CursorLine=14
+CursorColumn=37
+CursorLine=21
 JumpList=
-ViMarks=.,19,23,[,19,23,],19,23
+ViMarks=.,21,36,[,21,18,],21,36
 
 [view-settings,view=0,item:Analyse.tex]
-CursorColumn=0
-CursorLine=37
+CursorColumn=71
+CursorLine=34
 JumpList=
-ViMarks=.,38,6,[,38,4,],38,6
+ViMarks=.,46,6,[,46,6,],46,23
 
 [view-settings,view=0,item:Anforderungen.tex]
-CursorColumn=21
-CursorLine=44
+CursorColumn=6
+CursorLine=88
 JumpList=
-ViMarks=.,74,190,[,74,190,],74,201
+ViMarks=.,91,238,[,91,238,],91,238
 
 [view-settings,view=0,item:Anhang.tex]
 CursorColumn=102
@@ -195,7 +195,7 @@ JumpList=
 ViMarks=.,0,0,[,0,0,],-1,-1
 
 [view-settings,view=0,item:Stand_der_Technik.tex]
-CursorColumn=594
-CursorLine=19
+CursorColumn=19
+CursorLine=29
 JumpList=
-ViMarks=
+ViMarks=.,41,277,[,41,270,],41,277

@@ -4,12 +4,12 @@ Nach dem nun die Portale \ac{DRS}, Naturschutz-Bildarchiv und \ac{FADO}, der \ac
 Hierbei wird unterschieden, ob es sich um technische oder fachliche Metadaten handelt. Daf\"ur wurden alle Metadaten aus den Systemen extrahiert und in den folgenden Abschnitten wird auf diese weiter eingegangen.
 
 \subsection{Fachlich}
-Fachliche Metadaten sind Daten, welche den Inhalt einer Datei oder eines Dokuments genauer beschreiben und den Nutzer dabei helfen relevante Dateien zu identifizieren. Solche Metadaten sind immer Fachspezifisch und unabh\"angig von den technischen eigenschaften einer Datei.
-\cite{Fachliche_Metadaten_Wissensportal_BI} \cite{Fachliche_Metadaten_msg} \cite{DHW_Wiki_Metadaten}
+Fachliche Metadaten sind Daten, welche den Inhalt einer Datei oder eines Dokuments genauer beschreiben und dem Anwender dabei helfen relevante Dateien zu identifizieren. Solche Metadaten sind immer Fachspezifisch und unabh\"angig von den technischen eigenschaften einer Datei.
+\cite{Fachliche_Metadaten_Wissensportal_BI} \cite{Fachliche_Metadaten_msg} \cite{DHW_Wiki_Metadaten} \cite{Multimedia_retrieval}
 
-Die Dokumente der Fachsysteme der \ac{LUBW} enthalten alle fachliche Metadaten. Eine genaue Aufstellung aller fachlichen Metadaten der in dieser Arbeit untersuchten Dokumente ist im Anhang \ref{Fachliche Metadaten der LUBW Fachsysteme} zu finden.
+Die Dokumente der Fachsysteme der \ac{LUBW} enthalten alle fachliche Metadaten. Eine genaue Aufstellung aller fachlichen Metadaten der in dieser Arbeit untersuchten Dokumente ist im Anhang \ref{Metadaten der LUBW Fachsysteme} zu finden.
 
-\subsection{Fachliche Metadaten-Standards}
+\subsection{Fachliche Metadaten-Standards} \label{Fachliche Metadaten-Standards}
 F\"ur die Erstellung eines Datenkonzepts wie es im Kapitel \ref{Erstellung eines Datenkonzepts} geschieht, ist es aber nicht nur notwendig die vorhandenen Metadaten zu betrachten. Auch Standards f\"ur fachliche Metadaten sollen in diesen Umfeld untersucht werden.
 
 Da fachliche Metadaten meist anwendungs- beziehungsweise dokumentbezogen sind, gibt es in diesem Umfeld nicht sehr viele Standards, welche sich im Umfeld der \ac{LUBW} einsetzen lassen.
@@ -47,7 +47,62 @@ Wird der \ac{INSPIRE}-Standard verwendet (siehe Abschnitt \ref{INSPIRE}), so ist
 \cite{INSPIRE_Richtlinie}
 
 \subsection{Technisch}
+Technische Metadaten sind Daten, die den internen Dateiaufbau und dessen Inhalt beschreiben. Sie betreffen den Anwender nur sekund\"ar und sind eher wichtig f\"ur die richtige Speicherung und f\"ur Administratoren. Technische Metadaten sind unabh\"angig von den fachlichen Inhalt eines Dokuments und beschreiben zum Beispiel dessen Datenformat, das Erstellungsdatum oder die Nutzerrechte genauer.
+\cite{Fachliche_Metadaten_Wissensportal_BI} \cite{Fachliche_Metadaten_msg} \cite{DHW_Wiki_Metadaten} \cite{Multimedia_retrieval}
+
+In den Systemen der \ac{LUBW} werden keine technischen Metadaten angezeigt, weshalb diese an der Stelle nicht betrachtet werden.
+Technische Metadaten sind vor allem bei physikalischen Daten wichtig. Da die Systeme nur intern mit diesen Daten arbeiten werden sie dem Nutzer nicht angezeigt. In einem \ac{ECM}-System spielen sie jedoch eine wichtige Rolle und werden im sp\"ateren Verlauf der Arbeit genauer betrachtet. 
+
+Ref?????
 
 \subsection{Technische Metadaten-Standards}
+Wie schon bei den fachlichen Metadaten (siehe Abschnitt \ref{Fachliche Metadaten-Standards}) gibt es auch f\"ur technische Metadaten Standards, welche versuchen die Beschreibung von Dokumenten zu vereinheitlichen. In den folgenden Abschnitten, werden nun einige Standards f\"ur technische Metadaten vorgestellt und genauer beschrieben.
 
 \subsubsection{Dublin Core} \label{Dublin Core}
+Dublin Core ist ein Standard, welcher ein Dokument grundlegend beschreibt. Von der \ac{DCMI}, welche den Standard beschlossen hat werden 15 Kernfelder zur Verwendung, die so genannten "`core elements"', empfohlen. Es gibt jedoch weitere Felder, welche zus\"atzliche Informationen enthalten k\"onnen.
+\cite{Wiki_Dublin_Core} \cite{Dublin_Core} \cite{Multimedia_retrieval}
+
+Der Standard sollte heute Bestandteil jeder Website sein, da viele Suchmaschinen wie zum Beispiel Google nach Dublin Core Metadaten suchen und Ergebnisse zum Beispiel an Hand dieser Filtern. Ist also eine \ac{SEO} angedacht beziehungsweise wie in \ac{FADO} umgesetzt sollten diese Metadaten vorhanden sein.
+\cite{Dublin_Core_und_SEO}
+
+Ein Beispiel f\"ur Dublin Core ist im Listing \ref{Dublin Core Beispiel in HTML}\footnote{\url{http://de.wikipedia.org/wiki/Dublin_Core}} finden. Hier wird der Standard im HTML Format verwendet. Es wird zum einen auf das offizelle Schema verlinkt, zum anderen werden die einzelnen Metadaten dargestellt, welche in den "`Meta"'-Tags zu finden sind, und mit dem Namen DC.*** beginnen um zu verdeutlichen das es sich hier um Dublin Core handelt.
+
+\lstinputlisting[caption=Dublin Core Beispiel in HTML, label=Dublin Core Beispiel in HTML]{Code/Dublin_Core.html}
+
+\subsubsection{Exif} \label{Exif}
+Das Exif Metadatenformat ist ein Standard f\"ur die Beschreibung von Bildern. In der heutigen Zeit verf\"ugen nahezu alle digitalen Kamerad dieses Format und speichern bei der Aufnahme eines Bildes verschiedene Parameter im \ac{Exif} ab. 
+\cite{Wiki_Exif}
+
+Mit \"uber 50 Tags kann ein Bild mit Hilfe von \ac{Exif} sehr detailiert beschrieben werden. Es gibt unter anderem Tags f\"ur die Belichtungszeit, die Blende und den Farbraum. Aber auch Koordinaten an dem das Bild aufgenommen wurde k\"onnen vorhanden sein.
+\cite{Wiki_Exif} \cite{Exif_Spezifikation}
+
+Eine genaue Auflistung aller Tags und deren Inhalt ist in der Spezifikation "`Exchangeable Image File Format for digital still cameras"'\footnote{\url{http://www.jeita.or.jp/japanese/standard/book/CP-3451C_E/\#page=1}} zum Format zu finden.
+
+\subsubsection{RDF} \label{Rdf}
+Das \ac{RDF} ist im eigentlichen Sinn keine Beschreibung von standardisierten Metadaten. Viel mehr ist es ein \"ubergeorneter Standard der beschreibt wie Metadaten beschrieben werden k\"onnen.
+\cite{Wiki_RDF}
+
+Hierf\"ur wird eine Satzstruktur verwendet, welche jeweils aus Subjekt, Pr\"adikat und Objekt besteht. Am folgenden Beispiel wird das \ac{RDF}-System klar. In Abbildung \ref{RDF Struktur} wird verdeutlichen, was genau mit einer Satzstruktur gemeint ist. \cite{Multimedia_retrieval}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=8cm]{Bilder/RDF.png}
+\caption{Struktur von \ac{RDF}}
+\label{RDF Struktur}
+\centering
+\end{figure}
+
+Mit Hilfe von \ac{RDF} kann also ausgesagt werden, dass eine Website "`www.beispiel.com"' ein Erstellungsdatum am 15.06.2015 hat.
+Somit ergibt sich die Aufteilung:
+\begin{itemize}
+ \item Subjekt: www.beispiel.com
+ \item Pr\"adikat: hat Erstellungsdatum
+ \item Objekt: 15.06.2015
+\end{itemize}
+
+In XML w\"urde dieses Beispiel wie im Listing \ref{RDF in XML} aussehen.
+\cite{Multimedia_retrieval}
+
+\lstinputlisting[caption=RDF Beispiel in XML, label=RDF in XML]{Code/RDF.xml}
+
+\subsubsection{ANSI/NISO Z39.87-2006 (R2011)} \label{R2011}
