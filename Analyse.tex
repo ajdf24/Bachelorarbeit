@@ -1,18 +1,16 @@
-\section{Analyse der Datenbest\"ande} \label{Analyse Datenbestaende}
-Nach dem nun die Portale \ac{DRS}, Naturschutz-Bildarchiv und \ac{FADO}, der \ac{LUBW}, im Kapitel \ref{Stand der Technik} genauer betrachtet und die Verwaltungsstrukturen aufgezeigt wurden, betrachtet dieses Kapitel nun die Metadaten der einzelnen Dokumente.
-
-Hierbei wird unterschieden, ob es sich um technische oder fachliche Metadaten handelt. Daf\"ur wurden alle Metadaten aus den Systemen extrahiert und in den folgenden Abschnitten wird auf diese weiter eingegangen.
+\section{Analyse von Metadatenstandards} \label{Analyse Datenbestaende}
+Nach dem nun die Portale \ac{DRS}, Naturschutz-Bildarchiv und \ac{FADO}, der \ac{LUBW} und das Literaturarchiv der \ac{ICT-ENSURE} im Kapitel \ref{Stand der Technik} genauer betrachtet und die Verwaltungsstrukturen aufgezeigt wurden, betrachtet dieses Kapitel nun Standards f\"ur Metadaten. Hierbei wird unterschieden ob es sich um fachliche oder technische Metadaten handelt.
 
 \subsection{Fachlich}
-Fachliche Metadaten sind Daten, welche den Inhalt einer Datei oder eines Dokuments genauer beschreiben und dem Anwender dabei helfen relevante Dateien zu identifizieren. Solche Metadaten sind immer Fachspezifisch und unabh\"angig von den technischen eigenschaften einer Datei.
+Fachliche Metadaten sind Daten, welche den Inhalt einer Datei oder eines Dokuments genauer beschreiben und dem Anwender dabei helfen f\"ur ihn relevante Dateien zu identifizieren. Solche Metadaten sind immer Fachspezifisch und unabh\"angig von den technischen eigenschaften einer Datei.
 \cite{Fachliche_Metadaten_Wissensportal_BI} \cite{Fachliche_Metadaten_msg} \cite{DHW_Wiki_Metadaten} \cite{Multimedia_retrieval}
 
-Die Dokumente der Fachsysteme der \ac{LUBW} enthalten alle fachliche Metadaten. Eine genaue Aufstellung aller fachlichen Metadaten der in dieser Arbeit untersuchten Dokumente ist im Anhang \ref{Metadaten der LUBW Fachsysteme} zu finden.
+Die Dokumente der Fachsysteme der \ac{LUBW}, sowie der \ac{ICT-ENSURE} enthalten alle fachliche Metadaten. Eine genaue Aufstellung aller fachlichen Metadaten der in dieser Arbeit untersuchten Dokumente ist im Anhang \ref{Metadaten der LUBW Fachsysteme} zu finden.
 
 \subsection{Fachliche Metadaten-Standards} \label{Fachliche Metadaten-Standards}
 F\"ur die Erstellung eines Datenkonzepts wie es im Kapitel \ref{Erstellung eines Datenkonzepts} geschieht, ist es aber nicht nur notwendig die vorhandenen Metadaten zu betrachten. Auch Standards f\"ur fachliche Metadaten sollen in diesen Umfeld untersucht werden.
 
-Da fachliche Metadaten meist anwendungs- beziehungsweise dokumentbezogen sind, gibt es in diesem Umfeld nicht sehr viele Standards, welche sich im Umfeld der \ac{LUBW} einsetzen lassen.
+Da fachliche Metadaten meist anwendungs- beziehungsweise dokumentbezogen sind, gibt es in diesem Umfeld nicht sehr viele Standards, welche sich im Umfeld der \ac{LUBW} beziehungsweise der \ac{ICT-ENSURE} einsetzen lassen.
 
 \subsubsection{Darwin Core}
 Darwin Core beschreibt eine Zusammenfassung von Metadaten, welche f\"ur biologische Zwecke eingesetzt werden k\"onnen. So ist es zum Beispiel m\"ochlich Angaben zum Organismus oder zum Lebensraum zu machen. 
@@ -46,11 +44,24 @@ Von den \"uber 400 Tags sind f\"ur eine Verwendung der Norm nur ca. 22 Tags erfo
 Wird der \ac{INSPIRE}-Standard verwendet (siehe Abschnitt \ref{INSPIRE}), so ist automatisch auch die ISO 19155 erf\"ullt, da diese Bestandteil  von \ac{INSPIRE} ist.
 \cite{INSPIRE_Richtlinie}
 
+\subsubsection{ONIX}
+Der \ac{ONIX}-Standard ist international bekannt und f\"ur den elektronischen austausch von Buchinformationen geschaffen wurden.
+
+\ac{ONIX} kann gem\"a\ss{} der Lizenz frei verwendet werden und ist zur Beschreibung von traditionellen B\"uchern und E-Books vorgesehen.
+Der Standard enth\"alt sehr viele Tags, mit dessen Hilfe ein Buch beschrieben werden kann. So k\"onnen zum Beispiel angaben zum Verleger und zur ISBN gemacht werden. \cite{ONIX} \cite{Wiki_ONIX}
+
+Nachteilig ist, dass das Format sehr viel auf Abk\"urzungen setzt, was eine Menschenlesbarkeit  erschwert oder gar verhindert.
+
+Ein kleines Beispiel zum \ac{ONIX}-Format ist im Listing \ref{ONIX Beispiel in XML} zu finden. Hier wird kurz beschrieben das es sich um einen Download handelt, welcher im Epub-Format vorhanden und lesbar ist. Ohne die Erkl\"arungen am Ende der Zeile w\"aren die Informationen nicht ohne weitere Hilfe lesbar. 
+
+\lstinputlisting[caption=ONIX Beispiel in XML, label=ONIX Beispiel in XML]{Code/ONIX.xml} \cite{ONIX_Example}
+
+
 \subsection{Technisch}
 Technische Metadaten sind Daten, die den internen Dateiaufbau und dessen Inhalt beschreiben. Sie betreffen den Anwender nur sekund\"ar und sind eher wichtig f\"ur die richtige Speicherung und f\"ur Administratoren. Technische Metadaten sind unabh\"angig von den fachlichen Inhalt eines Dokuments und beschreiben zum Beispiel dessen Datenformat, das Erstellungsdatum oder die Nutzerrechte genauer.
 \cite{Fachliche_Metadaten_Wissensportal_BI} \cite{Fachliche_Metadaten_msg} \cite{DHW_Wiki_Metadaten} \cite{Multimedia_retrieval}
 
-In den Systemen der \ac{LUBW} werden keine technischen Metadaten angezeigt, weshalb diese an der Stelle nicht betrachtet werden.
+In den Systemen der \ac{LUBW} und der \ac{ICT-ENSURE} werden keine technischen Metadaten angezeigt, weshalb diese an der Stelle nicht betrachtet werden.
 Technische Metadaten sind vor allem bei physikalischen Daten wichtig. Da die Systeme nur intern mit diesen Daten arbeiten werden sie dem Nutzer nicht angezeigt. In einem \ac{ECM}-System spielen sie jedoch eine wichtige Rolle und werden im sp\"ateren Verlauf der Arbeit genauer betrachtet. 
 
 Ref?????
@@ -106,3 +117,6 @@ In XML w\"urde dieses Beispiel wie im Listing \ref{RDF in XML} aussehen.
 \lstinputlisting[caption=RDF Beispiel in XML, label=RDF in XML]{Code/RDF.xml}
 
 \subsubsection{ANSI/NISO Z39.87-2006 (R2011)} \label{R2011}
+Das ANSI/NISO Z39.87-2006 ist ein amerikanisches nationales Format, welches Bilddateien beschreibt. Es ist \"ahnlich aufgebaut wie \ac{Exif} und enth\"alt grundlegend die selben m\"oglichkeiten wie das im Abschnitt \ref{Exif} vorgestellte \ac{Exif}. \cite{NISO_Standard}
+
+Da sich die Arbeit jedoch mit europ\"aischen Projekte und Organisationen besch\"aftigt, wird auf dieses Format hier nicht weiter eingegangen.
