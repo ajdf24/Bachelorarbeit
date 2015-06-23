@@ -81,30 +81,30 @@ Mode=LaTeX
 
 [item:Abkuerzungen.tex]
 archive=true
-column=47
+column=31
 encoding=ISO-8859-1
 highlight=LaTeX
-line=27
+line=21
 mode=LaTeX
 open=true
 order=6
 
 [item:Analyse.tex]
 archive=true
-column=15
+column=33
 encoding=ISO-8859-1
 highlight=LaTeX
-line=93
+line=82
 mode=LaTeX
 open=true
 order=4
 
 [item:Anforderungen.tex]
 archive=true
-column=173
+column=99
 encoding=ISO-8859-1
 highlight=LaTeX
-line=87
+line=99
 mode=LaTeX
 open=true
 order=2
@@ -131,20 +131,20 @@ order=0
 
 [item:Datenkonzept.tex]
 archive=true
-column=16
+column=186
 encoding=ISO-8859-1
 highlight=LaTeX
-line=3
+line=11
 mode=LaTeX
 open=true
 order=5
 
 [item:Einleitung.tex]
 archive=true
-column=69
+column=168
 encoding=UTF-8
 highlight=LaTeX
-line=13
+line=11
 mode=LaTeX
 open=true
 order=1
@@ -161,31 +161,31 @@ order=7
 
 [item:Stand_der_Technik.tex]
 archive=true
-column=171
+column=0
 encoding=UTF-8
 highlight=LaTeX
-line=56
+line=32
 mode=LaTeX
 open=true
 order=3
 
 [view-settings,view=0,item:Abkuerzungen.tex]
-CursorColumn=47
-CursorLine=27
+CursorColumn=31
+CursorLine=21
 JumpList=
 ViMarks=.,27,20,[,27,20,],27,46
 
 [view-settings,view=0,item:Analyse.tex]
-CursorColumn=15
-CursorLine=93
+CursorColumn=33
+CursorLine=82
 JumpList=
-ViMarks=.,119,178,[,119,178,],119,178
+ViMarks=.,121,53,[,121,53,],121,53
 
 [view-settings,view=0,item:Anforderungen.tex]
-CursorColumn=173
-CursorLine=87
+CursorColumn=99
+CursorLine=99
 JumpList=
-ViMarks=.,87,172,[,87,169,],87,172
+ViMarks=.,99,98,[,99,96,],99,98
 
 [view-settings,view=0,item:Anhang.tex]
 CursorColumn=11
@@ -200,16 +200,16 @@ JumpList=
 ViMarks=.,192,20,[,192,9,],192,20
 
 [view-settings,view=0,item:Datenkonzept.tex]
-CursorColumn=16
-CursorLine=3
+CursorColumn=186
+CursorLine=11
 JumpList=
-ViMarks=.,1,283,[,1,283,],1,283
+ViMarks=.,11,0,[,11,0,],11,0
 
 [view-settings,view=0,item:Einleitung.tex]
-CursorColumn=69
-CursorLine=13
+CursorColumn=168
+CursorLine=11
 JumpList=
-ViMarks=.,13,68,[,13,63,],13,68
+ViMarks=.,11,168,[,11,168,],11,168
 
 [view-settings,view=0,item:Quellen.bib]
 CursorColumn=66
@@ -218,7 +218,7 @@ JumpList=
 ViMarks=.,0,0,[,0,0,],-1,-1
 
 [view-settings,view=0,item:Stand_der_Technik.tex]
-CursorColumn=171
-CursorLine=56
+CursorColumn=0
+CursorLine=32
 JumpList=
-ViMarks=.,56,170,[,56,170,],56,170
+ViMarks=.,58,19,[,58,19,],58,19
