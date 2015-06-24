@@ -166,7 +166,7 @@ Die Datensammlung \texttt{Gegografischer Standort} beinhaltet Attribute f\"ur di
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=16cm]{Bilder/Datenmodell/Package-Abstrakte-Metadaten-Teil1.jpg}
-\caption{Package Abstrakte Standard Metadaten Teil 1}
+\caption{Package Abstrakte Standard Metadaten Teil 1 \ac{INSPIRE}}
 \label{Package Abstrakte Standard Metadaten Teil 1}
 \centering
 \end{figure}
@@ -188,7 +188,7 @@ Mit der Datensammlung \texttt{Vernetzung} kommen die vier Attribute \texttt{Quel
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=11cm]{Bilder/Datenmodell/Package-Abstrakte-Metadaten-Teil2.jpg}
-\caption{Package Abstrakte Standard Metadaten Teil 2}
+\caption{Package Abstrakte Standard Metadaten Teil 2 "`Dublin Core"'}
 \label{Package Abstrakte Standard Metadaten Teil 2}
 \centering
 \end{figure}
@@ -209,7 +209,7 @@ Mit der Datensammlung \texttt{Herkunft des Vokabulars} wird angegeben aus welche
 
 \texttt{Zeitliche Ausdehnung} ist eine Sammlung, welche ein \texttt{Anfangsdatum} und ein \texttt{Enddatum} als Verweis auf die Sammlung \texttt{Datum} enth\"alt.
 
-\texttt{R\"\"aumliche Aufl\"osung} enth\"alt drei Attribute, und zwar \texttt{\"Aquivalenter Ma\ss{}stab}, \texttt{Aufl\"osungsabstand} und \texttt{L\"angeneinheit}. Sie werden ben\"otigt um eine genaue geografische Aufl\"osung des Standortes zu gew\"ahrleisten.
+\texttt{R\"aumliche Aufl\"osung} enth\"alt drei Attribute, und zwar \texttt{\"Aquivalenter Ma\ss{}stab}, \texttt{Aufl\"osungsabstand} und \texttt{L\"angeneinheit}. Sie werden ben\"otigt um eine genaue geografische Aufl\"osung des Standortes zu gew\"ahrleisten.
 
 
 \begin{figure}[!ht]
@@ -221,10 +221,227 @@ Mit der Datensammlung \texttt{Herkunft des Vokabulars} wird angegeben aus welche
 \end{figure}
 
 \subsubsection{Urheber Metadaten} \label{Urheber Metadaten}
-\subsection{Metadatenmapping im neuen Modell}\label{Metadatenmapping}
-Da sich durch das zusammengefassen und dem aufstellen eines \"ubergreifenden Modells der Metadaten einige Bezeichnungen der Attribute ge\"andert haben, wird in diesem Abschnitt nun das Mapping zwischen dem alten und neuen Modell beschrieben. Hierf\"ur werden die Metadaten der einzelnen Systeme aufgeschl\"usselt.
+Im Package \texttt{Urheber Metadaten} sind Datensammlungen zusammengefasst, welche sich mit der Urheberschaft von Dateien befassen.
 
-\subsubsection{FADO}
-\subsubsection{DRS}
-\subsubsection{Bildarchiv}
-\subsubsection{ICT-ENSURE}
+\texttt{Verlag} enth\"alt die Attribute \texttt{Name} und \texttt{Ort}. Zus\"atzlich einen Verweis auf die Datensammlung \texttt{Land} aus dem Package \texttt{Abstrakte Metadaten} welches im Abschnitt \ref{Abstrakte Metadaten} beschrieben ist. Au\ss{}erdem ist ein Verweis auf eine \texttt{Lizenz} zu finden, welche sich im selben Package befindet.
+
+Die Datensammlung \texttt{Lizenz} hat das Attribut \texttt{Lizenzart}, in welchem der Lizenzname festgehalten wird. Au\ss{}erdem ist ein Verweis auf eine \texttt{Person} vorhanden, welche den Lizenzinhaber ausweist. (siehe Abschnitt \ref{Abstrakte Metadaten})
+
+Der \texttt{Autor} enth\"alt das Attribut Institution und die Verweise auf \texttt{Person} und \texttt{Land}, welche zum Package \texttt{Abstrakte Metadaten} geh\"oren und im Abschnitt \ref{Abstrakte Metadaten} beschrieben sind.
+
+Das Attribut \texttt{Institution} k\"onnte weiter aufgeschl\"usselt werde, dies ist jedoch nicht sinnvoll da die Informationen von den Systemen nicht verarbeitet werden.
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=6cm]{Bilder/Datenmodell/Package-Urheber-Metadaten.jpg}
+\caption{Package Urheber Metadaten}
+\label{Package Urheber Metadaten}
+\centering
+\end{figure}
+
+\subsection{Metadatenmapping im neuen Modell}\label{Metadatenmapping}
+Da sich durch das Zusammenfassen und das Aufstellen eines \"ubergreifenden Modells der Metadaten einige Bezeichnungen von Attribute ge\"andert haben, wird in diesem Abschnitt nun das Mapping zwischen dem alten und neuen Modell beschrieben. Hierf\"ur werden die Metadaten der einzelnen Systeme aufgeschl\"usselt.
+
+\subsubsection{Metadatenmapping FADO}\label{Fado Mapping}
+Im folgenden Abschnitt sind die Metadaten des \ac{FADO}-Systems in Tabellenform aufgelistet. Die Auflistung der Metadaten und ihrer Wertebereiche ist im Anhang \ref{Metadaten der LUBW Fachsysteme} zu finden.
+
+In der dargestellten Tabellen \ref{Fado Mapping Urteile}, \ref{Fado Mapping Forschungsvorhaben} und \ref{Fado Mapping Berichte} sind die alten Namen neben den neuen Namen zu finden. Die zus\"atzliche dritte Spalte listet auf in welcher Datensammlung die Attribute zu finden sind.
+
+\begin{table}[!ht]
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+Alt: & Neu: & Klasse: \\ \hline
+Fachsystem & Fachsystem & FADO-Metadaten \\ \hline
+ID & ID & ID \\ \hline
+Titel & Titel & Beschreibung des Inhalts \\ \hline
+Tenor & Tenor & Urteils Metadaten \\ \hline
+Kommentar & Beschreibung & Beschreibung des Inhalts \\ \hline
+Orientierungssatz & Orientierungssatz & Urteils Metadaten \\ \hline
+Norm & Norm & Urteil \\ \hline
+Leitsatz & Leitsatz & Urteils Metadaten \\ \hline
+Gericht & Gericht & Urteil \\ \hline
+Entscheidungsform & Entscheidungsform & Urteil \\ \hline
+Entscheidungsdatum & Entscheidungsdatum & Urteils Metadaten \\ \hline
+Aktenzeichen & Aktenzeichen & Urteils Metadaten \\ \hline
+Vorgericht & Vorgericht & Urteils Metadaten \\ \hline
+Nachgericht & Nachgericht & Urteils Metadaten \\ \hline
+Sachverhalt & Sachverhalt & Urteils Metadaten \\ \hline
+Gründe & Gründe & Urteils Metadaten \\ \hline
+Unsichtbar & Unsichtbar & FADO-Metadaten \\ \hline
+Ausblenden & Ausblenden & FADO-Metadaten \\ \hline
+\end{tabular}
+\caption{Mapping der FADO Attribute für Urteile}
+\label{Fado Mapping Urteile}
+\end{center}
+\end{table}
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+Alt: & Neu: & Klasse: \\ \hline
+Fachsystem & Fachsystem & FADO-Metadaten \\ \hline
+ID & ID & ID \\ \hline
+Title & Titel & Beschreibung des Inhalts \\ \hline
+Kurzbeschreibung & Kurzbeschreibung & Dokumenten Information \\ \hline
+Kommentar & Kommentar & Dokumenten Information \\ \hline
+Förderbereich & Förderbereich & Forschungsvorhaben \\ \hline
+Beginn & Beginn & Forschungsvorhaben \\ \hline
+Ende & Ende & Forschungsvorhaben \\ \hline
+Projektnummer & Projektnummer & Forschungsvorhaben \\ \hline
+Förderkennzeichen & Förderkennzeichen & Forschungsvorhaben \\ \hline
+Unsichtbar & Unsichtbar & FADO-Metadaten \\ \hline
+Ausblenden & Ausblenden & FADO-Metadaten \\ \hline
+\end{tabular}
+\caption{Mapping der FADO Attribute für Forschungsvorhaben}
+\label{Fado Mapping Forschungsvorhaben}
+\end{center}
+\end{table}
+
+\FloatBarrier
+Die Attribute \texttt{HTML-Datei}, \texttt{PDF-Datei}, \texttt{Weitere Datei} und \texttt{Format dieser Datei} sind am interssantesten, da sie komplett durch die Datensammlung \texttt{Datei} ersetzt werden, wie in der Tabelle \ref{Fado Mapping Berichte} zu sehen ist.
+
+Da w\"ahrend der Bearbeitung der Metadaten eine neue Version des \ac{FADO}-Systems verabschiedet wurde ergaben sich einige \"Anderungen in den Metadaten. Hierdurch entfallen die Attribut \texttt{Seiten (von-bis)}, \texttt{Shoprelevant}, \texttt{Shoplink} und \texttt{Preis} ersatzlos.
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+Alt: & Neu: & Klasse: \\ \hline
+Fachsystem & Fachsystem & FADO-Metadaten \\ \hline
+ID & ID & ID \\ \hline
+Titel & Titel & Beschreibung des Inhalts \\ \hline
+Kurzbeschreibung & Kurzbeschreibung & Dokumenten Information \\ \hline
+Kommentar & Kommentar & Dokumenten Information \\ \hline
+Kurztitel & Kurztitel & Dokumenten Information \\ \hline
+Untertitel & Untertitel & Dokumenten Information \\ \hline
+Fachthema & Thema & Beschreibung des Inhalts \\ \hline
+Herausgeber & Herausgeber & Personen und Rechte \\ \hline
+Redaktion & Redaktion & Bibliographische Angaben \\ \hline
+Version & Version & Dokumenten Information \\ \hline
+Stand & Stand & Dokumenten Information \\ \hline
+Seitenzahl & Seitenzahl & Literatur Metadaten \\ \hline
+Seite (von-bis) & ENTFÄLLT & ENTFÄLLT \\ \hline
+Reihe & Reihe & Literatur Metadaten \\ \hline
+Bandnummer & Bandnummer & Literatur Metadaten \\ \hline
+ISSN & PublikationsID & Literatur Metadaten \\ \hline
+ISBN & PublikationsID & Literatur Metadaten \\ \hline
+Preis & ENTFÄLLT & ENTFÄLLT \\ \hline
+Medium & Format & Technische Daten \\ \hline
+Shoprelevant & ENTFÄLLT & ENTFÄLLT \\ \hline
+Shoplink & ENTFÄLLT & ENTFÄLLT \\ \hline
+HTML-Datei & Datei & Bibliographische Angaben \\ \hline
+PDF-Datei & Datei & Bibliographische Angaben \\ \hline
+Weitere Datei & Datei & Bibliographische Angaben \\ \hline
+Format dieser Datei & Format & Technische Daten \\ \hline
+Unsichtbar & Unsichtbar & FADO-Metadaten \\ \hline
+Ausblenden & Ausblenden & FADO-Metadaten \\ \hline
+\end{tabular}
+\end{center}
+\caption{Mapping der FADO Attribute für Berichte}
+\label{Fado Mapping Berichte}
+\end{table}
+
+\FloatBarrier
+\subsubsection{Metadatenmapping DRS}\label{DRS Mapping}
+Wie eben schon im Abschnitt \ref{Fado Mapping} erkl\"art, wurden die Namen der Attribute auch f\"ur das \ac{DRS} ge\"andert. Die alte Bezeichnung ist in der linken Spalte, der neue Name im Modell in der mittleren Spalte und die zugeh\"orige Datensammlung in der rechten Spalte, in der Tabelle \ref{DRS Mapping Tabelle}, zu finden. 
+
+Die Auflistung der Metadaten und ihrer Wertebereiche ist im Anhang \ref{Anhang Metadaten des DRS} zu finden.
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+Alt: & Neu: & Klasse: \\ \hline
+Gültigkeit & Gültigkeit / Gültigkeitszusatz & DRS-Metadaten \\ \hline
+Titel & Titel & Beschreibung des Inhalts \\ \hline
+Aktenzeichen & Aktenzeichen & DRS-Metadaten \\ \hline
+Kurz-Titel & Kurztitel & Dokumenten Information \\ \hline
+Dokumentart & Dokumentart & Ablage \\ \hline
+Herausgeber & Herausgeber & Personen und Rechte \\ \hline
+Erscheinungsort & Herkunft & Personen und Rechte \\ \hline
+Handbuch & Handbuch & Ablage \\ \hline
+Kapitel & Kapitel & Ablage \\ \hline
+Fundstelle & Fundstelle & Ablage \\ \hline
+Fassung & Fassung & Datum Rechtsvorschriften \\ \hline
+Änderung & Änderung & Datum Rechtsvorschriften \\ \hline
+Größe & Größe & Datei \\ \hline
+Formate & Format & Technische Daten \\ \hline
+\end{tabular}
+\end{center}
+\caption{Mapping der DRS Attribute }
+\label{DRS Mapping Tabelle}
+\end{table}
+
+
+\subsubsection{Metadatenmapping Bildarchiv}\label{Bildarchiv Mapping}
+Auch die Metadaten des Bildarchivs mussten zum Teil umbenannt werden um ein einheitliches Modell zu erstellen. Wie in dem Abschnitten \ref{Fado Mapping} und \ref{DRS Mapping} ist die Tabelle \ref{Bildarchiv Mapping Tabelle} nach dem gleichen Muster aufgebaut. Links die alten Namen, in der Mitte die neuen Namen und Rechts die zugeh\"orige Datensammlung.
+
+Im alten Attribut \texttt{Bemerkung} steht der Name des biologischen Objekts in deutsch und lateinisch, dies wird im neuen System durch die Datensammlung \texttt{Darwin Daten} getrennt verwaltet und gespeichert, was ein Abrufen der einzelnen Attribute deutlich vereinfacht.
+
+Die Auflistung der Metadaten und ihrer Wertebereiche ist im Anhang \ref{Anhang Metadaten des Bildarchivs} zu finden.
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+Alt: & Neu: & Klasse: \\ \hline
+Objektart & Thema & Beschreibung des Inhalts \\ \hline
+Objektname & Lateinischer Name & Darwin Daten \\ \hline
+ID & ID & ID \\ \hline
+URL & URL & Datei \\ \hline
+Dateityp & Format & Technische Daten \\ \hline
+Name & Name & Bildarchiv-Metadaten \\ \hline
+Kurzname & Kurzname & Bildarchiv-Metadaten \\ \hline
+Erstellt am & Datum & Lebenszyklus \\ \hline
+Autor & Urheber & Personen und Rechte \\ \hline
+Besitzer & Rechteverwerter & Personen und Rechte \\ \hline
+Bemerkung & Darwin Daten & Darwin Daten \\ \hline
+\end{tabular}
+\end{center}
+\caption{Mapping der Bildarchiv Attribute}
+\label{Bildarchiv Mapping Tabelle}
+\end{table}
+
+
+\subsubsection{Metadatenmapping ICT-ENSURE}
+Die Tabelle \ref{ICT-ENSURE Mapping Tabelle} folgt dem Schema aus den Abschnitten \ref{FADO Metadaten}, \ref{DRS Mapping} und \ref{Bildarchiv Mapping}.
+
+Dadurch das die Metadaten der \ac{ICT-ENSURE} urspr\"unglich in einer relationalen Datenbank abgelegt wurden, entfallen hier nun einige Attribute, \"uber die f\"urher die Relationen abgebildet wurden.
+
+Die Auflistung der Metadaten und ihrer Wertebereiche ist im Anhang \ref{Metadaten der ICT-ENSURE} zu finden.
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+Alt: & Neu: & Klasse: \\ \hline
+Editor & Konferenzauthor & Konferenz \\ \hline
+Publisher & Herausgeber & Personen und Rechte \\ \hline
+Year of Publishing & Datum & Lebenszyklus \\ \hline
+ISBN & PublikationsID & Literatur Metadaten \\ \hline
+Conferenc & Konferenztitel & Konferenz \\ \hline
+Editor & Urheber & Personen und Rechte \\ \hline
+Publisher & ENTFÄLLT & ENTFÄLLT \\ \hline
+Year of Pblishing & ENTFÄLLT & ENTFÄLLT \\ \hline
+ISBN & ENTFÄLLT & ENTFÄLLT \\ \hline
+Conferenc & Thema & Beschreibung des Inhalts \\ \hline
+Editor & Urheber & Personen und Rechte \\ \hline
+Name & Titel & Beschreibung des Inhalts \\ \hline
+Konferenz & ENTFÄLLT & ENTFÄLLT \\ \hline
+Kapitel & ENTFÄLLT & ENTFÄLLT \\ \hline
+Author & ENTFÄLLT & ENTFÄLLT \\ \hline
+Dateityp & Format & Technische Daten \\ \hline
+Titel & ENTFÄLLT & ENTFÄLLT \\ \hline
+Sprache & Ressourchensprache & Sprache \\ \hline
+Beginn Seite & Beginn Seite & Literatur Metadaten \\ \hline
+End Seite & End Seite & Literatur Metadaten \\ \hline
+Schlüsselwörter & Schüsselwort / Free Keyword & Inspire \\ \hline
+Abstract & Abstract & Literatur Metadaten \\ \hline
+Volltext & Volltext & Artikel-Metadaten \\ \hline
+\end{tabular}
+\end{center}
+\caption{Mapping der \ac{ICT-ENSURE} Attribute }
+\label{ICT-ENSURE Mapping Tabelle}
+\end{table}

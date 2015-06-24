@@ -91,10 +91,10 @@ order=6
 
 [item:Analyse.tex]
 archive=true
-column=33
+column=45
 encoding=ISO-8859-1
 highlight=LaTeX
-line=82
+line=14
 mode=LaTeX
 open=true
 order=4
@@ -111,30 +111,30 @@ order=2
 
 [item:Anhang.tex]
 archive=true
-column=11
+column=12
 encoding=ISO-8859-1
 highlight=LaTeX
-line=186
+line=225
 mode=LaTeX
 open=true
 order=8
 
 [item:Bachelorarbeit.tex]
 archive=true
-column=21
+column=0
 encoding=ISO-8859-1
 highlight=LaTeX
-line=192
+line=136
 mode=LaTeX
 open=true
 order=0
 
 [item:Datenkonzept.tex]
 archive=true
-column=186
+column=0
 encoding=ISO-8859-1
 highlight=LaTeX
-line=11
+line=211
 mode=LaTeX
 open=true
 order=5
@@ -176,10 +176,10 @@ JumpList=
 ViMarks=.,27,20,[,27,20,],27,46
 
 [view-settings,view=0,item:Analyse.tex]
-CursorColumn=33
-CursorLine=82
+CursorColumn=45
+CursorLine=14
 JumpList=
-ViMarks=.,121,53,[,121,53,],121,53
+ViMarks=.,14,44,[,14,34,],14,44
 
 [view-settings,view=0,item:Anforderungen.tex]
 CursorColumn=99
@@ -188,22 +188,22 @@ JumpList=
 ViMarks=.,99,98,[,99,96,],99,98
 
 [view-settings,view=0,item:Anhang.tex]
-CursorColumn=11
-CursorLine=186
+CursorColumn=12
+CursorLine=225
 JumpList=
 ViMarks=.,221,95,[,221,93,],221,95
 
 [view-settings,view=0,item:Bachelorarbeit.tex]
-CursorColumn=21
-CursorLine=192
+CursorColumn=0
+CursorLine=136
 JumpList=
 ViMarks=.,192,20,[,192,9,],192,20
 
 [view-settings,view=0,item:Datenkonzept.tex]
-CursorColumn=186
-CursorLine=11
+CursorColumn=0
+CursorLine=211
 JumpList=
-ViMarks=.,11,0,[,11,0,],11,0
+ViMarks=.,211,261,[,211,253,],211,261
 
 [view-settings,view=0,item:Einleitung.tex]
 CursorColumn=168
