@@ -1,24 +1,24 @@
 \section{Erstellung eines Datenkonzepts} \label{Erstellung eines Datenkonzepts}
-Im nun folgenden Kapitel werden die zuvor in den Kapiteln \ref{Analyse Datenbestaende} und \ref{Stand der Technik} beschriebenen Metadaten der einzelnen Systeme zu einen umfassenden Datenkonzepts zusammengefasst. Dieses Konzept bildest die Grundlage zur Speicherung in einem \ac{DMS}.
+Im nun folgenden Kapitel werden die zuvor in den Kapiteln \ref{Stand der Technik} und \ref{Analyse Datenbestaende} beschriebenen Metadaten der einzelnen Systeme zu einen umfassenden Datenkonzepts zusammengefasst. Dieses Konzept bildet die Grundlage zur Speicherung in einem \ac{DMS}.
 
-F\"ur die grafische Darstellung des Metadatenmodells wurde eine UML-Darstellung gew\"ahlt, wobei Klasse eine Datensammlung dartstellt. 
+F\"ur die grafische Darstellung des Metadatenmodells wurde eine Darstellung nach UML gew\"ahlt, wobei Klasse eine Datensammlung dartstellt. 
 
 Es wird explizit darauf hingewiesen, dass die Darstellung kein Klassendiagramm nach UML im eigentlichen Sinn ist und somit von der von der vorgeschriebenen Darstellungsform abgewichen wurde.
 
 Attribute, welche sich direkt in der Sammlung befinden sind ohne besondere Kennzeichnung einfach dargestellt. Andere Attribute, welche wiederum auf eine Datensammlung verweisen, sind mit dem jeweiligen Verweistyp gekennzeichnet. Zus\"atzlich wird mit Hilfe der Hintergrundfarbe sichtbar gemacht, in welchem Package sich die Datensammlung befindet. 
 
-Verweise sind zus\"atzlich \"uber Pfeile gekennzeichnet, an welchen die Kardinalit\"at zu finden ist.
+Verweise sind zus\"atzlich \"uber Pfeile gekennzeichnet, an welchen die Kardinalit\"at des Verweises zu finden ist.
 
 Um in der Arbeit eine \"Ubersicht zu geben, werden die Packages einzeln beschriebenen. Eine gesamte \"Ubersicht des Diagramms ist auf dem der Arbeit beiliegenden Datentr\"ager zu finden.
 
 \subsection{FADO Metadaten}\label{FADO Metadaten}
 In Abbildung \ref{Fado Modell} ist der erste Ausschnitt des Datenmodells zu sehen, welcher das Package \texttt{FADO Metadaten} zeigt.
 
-Die Metadaten sind in vier Datensammlungen zusammengefasst, die wichtigte ist \texttt{FADO Metadaten}. In dieser Dammlung sind Dokument\"ubergreifende Metadaten gesammelt, welche von allen FADO-Dokumenten verwendet werden. Zum Teil k\"onnen hier alte Attribute wie Unsichtbar oder Ausblenden wiedergefunden werden. Zum Teil haben die Namen der Attribute sich aber such ge\"andert, warum eine Tabelle mit dem Mapping zwischen alten und neuen Namen im Abschnitt \ref{Metadatenmapping} zu finden ist.
+Die Metadaten sind in vier Datensammlungen zusammengefasst, wobei die wichtigste \texttt{FADO Metadaten} ist. In dieser Sammlung sind Dokument\"ubergreifende Metadaten zu finden, welche von allen FADO-Dokumenten verwendet werden. Zum Teil k\"onnen hier alte Attribute wie Unsichtbar oder Ausblenden wiedergefunden werden. Aber manche Namen der Attribute haben sich auch ge\"andert, warum eine Tabelle mit dem Mapping zwischen alten und neuen Namen im Abschnitt \ref{Metadatenmapping} zu finden ist.
 
 Die drei Datensammlungen \texttt{FADO Urteil}, \texttt{Forschungsvorhaben} und \texttt{Bibliographische Angaben} sind die jeweiligen Hauptdatensammlungen der betrachteten Dokumente \texttt{Urteile}, \texttt{Forschungsvorhaben} und \texttt{Berichte}.
 
-Attribute, welche farblich hinterlegt sind, stellen wie schon erw\"ahnt verweise zu anderen Datensammlungen dar. Im vollst\"andigen Diagramm, werden diese Verweise zus\"atzlich durch Pfeile realisiert, welche die entsprechenden Kardinalit\"aten anzeigen.
+Attribute, welche farblich hinterlegt sind, stellen wie schon erw\"ahnt Verweise zu anderen Datensammlungen dar. Im vollst\"andigen Diagramm, werden diese Verweise zus\"atzlich durch Pfeile realisiert, welche die entsprechenden Kardinalit\"aten anzeigen.
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=16cm]{Bilder/Datenmodell/FADO-Metadaten.jpg}
@@ -42,7 +42,7 @@ Das Mapping zu den Metadaten ist im Abschnitt \ref{Metadatenmapping} zu finden.
 
 \FloatBarrier
 \subsection{ICT-ENSURE Metadaten}\label{ICT-ENSURE Metadaten}
-Abbildung \ref{ICT-ENSURE Modell} zeigt die Hauptdatensammlungen der Metadaten f\"ur \ac{ICT-ENSURE} Metadaten. Eine Besonderheit ist hier, dass die Datensammlung in geteilt ist und zwar in \texttt{Artikel Metadaten}, welche die Metadaten zu einem Artikel enth\"alt und in \texttt{Konferenz}, in der die Metadaten zu einer Konferenz zu finden sind.
+Abbildung \ref{ICT-ENSURE Modell} zeigt die Hauptdatensammlungen der Metadaten f\"ur \ac{ICT-ENSURE}. Eine Besonderheit ist hier, dass die Datensammlung geteilt ist und zwar in \texttt{Artikel Metadaten}, welche die Metadaten zu einem Artikel enth\"alt und in \texttt{Konferenz}, welche die Metadaten zu einer Konferenz enth\"alt.
 
 Alle farbig hinterlegten Verweise sind in den nachfolgenden Abschnitten genauer erkl\"art und das Mapping zwischen alten und neuen Namen ist im Abschnitt \ref{Metadatenmapping} zu finden.
 \begin{figure}[!ht]
@@ -55,26 +55,26 @@ Alle farbig hinterlegten Verweise sind in den nachfolgenden Abschnitten genauer 
 
 \FloatBarrier
 \subsection{Untergeordnete Datensammlungen}
-In den nun folgenden Abschnitten, werden die eben in den Abbildungen \ref{Fado Modell} bis \ref{ICT-ENSURE Modell} farbig hinterlegten Datensammlungen mit ihren Attributen genauer beschrieben. 
+In den nun folgenden Abschnitten, werden die eben in den Abbildungen \ref{Fado Modell} bis \ref{ICT-ENSURE Modell} farbig hinterlegten Datensammlungen mit ihren Attributen genauer beschrieben, wenn die Bezeichnung nicht schon eindeutig sein sollte. 
 
 \subsubsection{Gerichtbarkeit}
-Im Package Gerichtbarkeit, welches in Abbildung \ref{Package Gerichtbarkeit} zu sehen ist, sind alle Datensammlung zusammengefassen, welche f\"ur Gerichtliche Urteile, Beschl\"usse oder Richtlinien wichtig sind zusammengefasst.
+Im Package Gerichtbarkeit, welches in Abbildung \ref{Package Gerichtbarkeit} zu sehen ist, sind alle Datensammlung zusammengefassen, welche f\"ur gerichtliche Urteile, Beschl\"usse oder Richtlinien wichtig sind zusammengefasst.
 
 Die Datensammlungen \texttt{Gericht} und \texttt{Urteil} werden wie in Abbildung \ref{Fado Modell} zu sehen in der Datensammlung \texttt{FADO Urteil} verwendet.
 
-Die Datensammlung \texttt{Gericht}, stellt wie der Name schon sagt ein Gericht dar. Hierbei enth\"alt sie die Attribute \texttt{Standort} und \texttt{Art}. Im Attribut \texttt{Standort}, wird der Standort des Gerichts und im Attribut \texttt{Art} die Art, wie zum Beispiel "`Oberlandesgericht"' festgelegt. So ergibt sich f\"ur ein Gericht der Datensatz aus Standort und Art mit dessen Hilfe ein Datum nach der Art "`Oberlandesgericht Karlsruhe"' gebildet werden kann.
+Die Datensammlung \texttt{Gericht}, stellt wie der Name schon sagt ein Gericht dar. Hierbei enth\"alt sie die Attribute \texttt{Standort} und \texttt{Art}. Im Attribut \texttt{Standort}, wird der Standort des Gerichts und im Attribut \texttt{Art} die Art des Gerichts, wie zum Beispiel "`Oberlandesgericht"' festgelegt. So ergibt sich f\"ur ein Gericht der Datensatz aus Standort und Art mit dessen Hilfe ein Datum nach der Art "`Oberlandesgericht Karlsruhe"' gebildet werden kann.
 
 Der Datensatz Urteil enth\"alt die schon analysierten Attribute, welche das \ac{FADO}-System verwendet. Die Attribute \texttt{Vorgericht} und \texttt{Nachgericht} verweisen wiederum auf ein Gericht, wie es eben beschrieben wurde. Das Erscheinungsdatum enth\"alt eine Datensammlung des Typs \texttt{Datum}, welche im Abschnitt \ref{Grundlegenden Daten} genauer beschrieben ist.
 
-\texttt{Fundstelle}, \texttt{Datum Rechtsvorschriften} und \texttt{Ablage} sind Datensammlungen welche in der Sammlung \texttt{DRS Metadaten} vorkommen. Sie enthalten weitere Attribute zur Gerichtbarkeit, welche im \ac{DRS} verwendet werden. (siehe Abschnitt \ref{DRS Bildarchiv Metadaten})
+\texttt{Fundstelle}, \texttt{Datum Rechtsvorschriften} und \texttt{Ablage} sind Datensammlungen welche in der Sammlung \texttt{DRS Metadaten} vorkommen. Sie enthalten weitere Attribute zur Gerichtbarkeit, welche im \ac{DRS} ben\"otigt und verwendet werden. (siehe Abschnitt \ref{DRS Bildarchiv Metadaten})
 
-Eine Fundstelle hat die Attribute \texttt{Name}, \texttt{Jahr} und \texttt{Seite}, welche eine Fundstelle wie sie im \ac{DRS} wiedergegeben wird beschreiben. 
+Eine Fundstelle hat die Attribute \texttt{Name}, \texttt{Jahr} und \texttt{Seite}, welche eine Fundstelle wie sie im \ac{DRS} wiedergegeben wird genauer beschreiben. 
 
 Alle Attribute der Datensammlung \texttt{Datum Rechtsvorschriften} verweisen auf ein Datum, welches im Abschnitt \ref{Grundlegenden Daten} genauer beschrieben ist.
 
 Die Datensammlung \texttt{Ablage} enth\"alt weitere Attribute, welche das \ac{DRS} zur Beschreibung seiner Dokumente verwendet.
 
-Das Mapping zu gegeben \"Anderungen in den Namen ist im Abschnitt \ref{Metadatenmapping} zu finden.
+Das Mapping zu gegeben \"Anderungen in den Namen, der Attribute, ist im Abschnitt \ref{Metadatenmapping} zu finden.
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=10cm]{Bilder/Datenmodell/Package-Gerichtbarkeit.jpg}
@@ -84,7 +84,7 @@ Das Mapping zu gegeben \"Anderungen in den Namen ist im Abschnitt \ref{Metadaten
 \end{figure}
 
 \subsubsection{Bibliographie Metadaten}
-Das Package \texttt{Bibliographie Metadaten}, in Abbildung \ref{Package Bibliographie} zu sehen, enth\"alt zwei Datensammlungen, welche sich mit der Beschreibung von Literatur befassen. 
+Das Package \texttt{Bibliographie Metadaten}, welches in Abbildung \ref{Package Bibliographie} zu sehen ist, enth\"alt zwei Datensammlungen, welche sich mit der Beschreibung von Literatur befassen. 
 
 Die Datensammlung \texttt{Literatur Metadaten} ist die eigentlich wichtige Sammlung und wird von den Datensammlungen \texttt{Bibliographische Angaben} (Abbildung \ref{Fado Modell}) und \texttt{Artikel Metadaten} (Abbildung \ref{ICT-ENSURE Modell}) verwendet.
 
@@ -112,11 +112,12 @@ Der Verweis \texttt{URL} beschreibt wie der Name schon sagt eine URL, unter der 
 
 Im Abschnitt \ref{Darwin Core} wurde der "`Darwin Core"'-Standard genauer untersucht. Es zeigte sich nun jedoch, dass der Einsatz von "`Darwin Core"' zu umfangreich w\"are, da nur ein Bruchteil der zur Verf\"ugung stehenden Attribute \"uberhaupt von der \ac{LUBW} im Bildarchiv verwendet werden.
 
-Aus diesem Grund wurde in R\"ucksprache mit der Arbeitsgruppe entschieden eine eigene Datensammlung zu erstellen, welche die ben\"otigten Attribute beinhaltet. Daraus entstand die Datensammlung \texttt{Darwin Daten}, welche zwei Attribute enth\"alt. Zum eine den Lateinischen Namen und zum anderen den Deutschen Namen. Weitere Biodaten werden nicht ben\"otigt, da sie keine Verwendung finden.
+Aus diesem Grund wurde in R\"ucksprache mit der Arbeitsgruppe entschieden eine eigene Datensammlung zu erstellen, welche die wenigen ben\"otigten Attribute beinhaltet. Daraus entstand bei der Erarbeitung des Datenmodells die Datensammlung \texttt{Darwin Daten}, welche zwei Attribute enth\"alt. Zum eine den Lateinischen Namen und zum anderen den Deutschen Namen. Weitere Biodaten werden nicht verwendet, da sie keine Verwendung in den Systemen finden.
 
-Die letzten beiden Datensammlungen im Package sind \texttt{Person}, welche einen Namen und Vornamen ent\"alt und \texttt{Land}, weche den Landesnamen und die ISO-Abk\"urzung nach ISO 3166-1 enth\"alt.
+Die letzten beiden Datensammlungen im Package sind \texttt{Person}, welche einen Namen und Vornamen enth\"alt und \texttt{Land}, weche den Landesnamen und die ISO-Abk\"urzung nach ISO 3166-1 beinhaltet.
 
 Beide Datensammlungen k\"onnten durchaus weitere Attribute enthalten, dies ist jedoch nicht Notwendig, da in den Systemen keine weiteren Daten zur Verf\"ugung gestellt werden.
+
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=15cm]{Bilder/Datenmodell/Package-Abstrakte-Metadaten.jpg}
