@@ -1,4 +1,4 @@
-\section{Technologievergleich}
+\section{Technologievergleich}\label{Technologievergleich}
 F\"ur das Projekt soll ein \ac{DMS} verwendet werden, mit welchem sich die vorhandenen Dokumente der \ac{LUBW}, der \ac{GAA} und der \ac{ICT-ENSURE} einfach und bequem in einem System verwalten lassen. Hierbei soll kein \ac{ECM}-Tool vom Grund auf neu entwickelt werden. 
 
 Es soll wie in der Aufgabenstellung im Lastenheft im Kapitel \ref{Lastenheft} festgehalten ein passendes Tool gesucht werden, welches die gegebenen Anforderungen bestm\"oglich erf\"ullt. Die Betrachtung erfolgt hierbei unter der Beachtung g\"angiger Standards.
@@ -20,7 +20,7 @@ Im folgenden werden nun verschiedene namenhafte \ac{ECM}-Tools vorgestellt und a
 % Damit ein Tool f\"ur dieses Projekt ausgew\"ahlt werden kann, muss es die im folgenden beschriebenen Eigenschaften beinhalten.
 
 % Das Lastenheft im Kapitel \ref{Lastenheft} besagt, dass im Verlauf der Arbeit ein \ac{ECM}-Tool verwendet werden soll,
-\subsection{Agorum Core}
+\subsection{Agorum Core} \label{Agorum Core}
 Bei "`Agorum Core"' handelt es sich um eine Open Source Software, welche von der Baden W\"urttembergischen Firma "`agorum Software"' stammt. "`Agorum Core"' wird in mehrerem Varianten angeboten. Zum einem gibt es eine freie Version, welche ohne Lizenzkosten genutzt werden kann, zum anderem gibt es mehrere kostenpflichtige Versionen die in ihrem Versionsumfang variieren. \cite{agorum_home} 
 
 Agorum bietet viele Funktionen an, welche jedoch in der freien Version nicht vorhanden sind. Um die zus\"atzlichen Funktionen zu nutzen, muss entweder die ents\"prechende Version, welche die Funktion enth\"alt gekauft werden oder es muss die entsprechende Funktion hinzugebucht werden.
@@ -44,7 +44,7 @@ Das automatische erkennen von Standard-Metadaten in Dateien funktioniert, jedoch
 
 "`agorum core"' verf\"ugt \"uber verschiedene Schnittstellen, welche von Frontends angesprochen werden k\"onnen. 
 
-\subsection{Alfresco}
+\subsection{Alfresco} \label{Alfresco}
 Alfresco ist eines der heute am weitesten verbreitete \ac{ECM}-Tool, welches Open Source ist und frei heruntergeladen werden kann.
 Flexibilit\"at, Akzeptanz und Skalierbarkeit sind jedoch nur einige der St\"arken, die Alfresco zum Open-Source-Marktf\"uhrer der \ac{ECM}-Branche gemacht haben. \cite{Alfresco_und_Liferay} \cite{Wiki_Alfresco} \cite{Alfresco_Implementation}
 
@@ -79,24 +79,62 @@ Auch eine Versionierung von Dokumenten ist m\"oglich, wobei eine neue Version di
 
 Da Alfresco Open Source ist, ist es nicht nur kostenlos, sondern kann auch mit eigenen Tools erweitert werden. Dies kann zum einen \"uber direkte Programmierung im Quellcode geschehen oder zum anderen \"uber Aspekte, da Alfresco Aspektorientiert programmiert ist. \cite{Alfresco_und_Liferay}
 
-\subsection{Open Xchange}
+\subsection{Open Xchange} \label{Open Xchange}
+Open Xchange, ist ein Groupware-Server, welcher von der Open-Xchange AG, in N\"urnberg, entwickelt wird und als Open Source unter der \ac{GPL} verf\"ugbar ist. \cite{Xchange_Seite} \cite{Xchange_Golem}
 
+Urspr\"unglich wurde Open Xchange als E-Mail und Groupware-L\"osung entwickelt und stellte somit eine alternative zu "`Microsoft Exchange"' dar. \cite{Wiki_Xchange}
+
+In Abbildung \ref{Xchange Dateianzeige} ist die Dateianzeige einer Datei in Open Xchange dargestellt. Das Bild wurde mit Hilfe der freien Vorschauversion welche Open Xchange bietet erstellt\footnote{\url{http://beta.core.ox.io/welcome/\#pooled\_gold\_source\_en\_eb14204d2e764492ad76045ff7fd4646,trymeWelcome}}. Diese Vorschau ist gut zum testen der Funktionalit\"at des Servers, befindet sich aber zur Zeit noch in der Beta-Phase. Vorteil durch diese Vorschau, ist auf jeden fall, das kein Nutzer sich mehr m\"uhsam einen Server zum testen der Funktionalit\"at aufsetzen muss.
+
+Zu beobachten ist, das die Oberfl\"ache von Open Xchange \"ahnlich wie die von Alfresco aussieht, was in Abbildung \ref{Alfresco Dashboard} gut zu erkennen ist.
+
+Im oberen Teil der Abbildung \ref{Xchange Dateianzeige} ist die Navigationsleiste zu sehen, welche es erm\"oglicht \"uber die gesamte Funktionalit\"at schnell und einfach zu erreichen. Der linke Abschnitt zeigt einen Navigator der alle Ordner, welche sich gerade im System vorhanden sind darstellt. Mittig ist die Liste der Dateien zu sehen, welche sich im links gew\"ahlten Ordner befinden. W\"ahlt der Nutzer nun eine Datei aus, so erscheint der rechte Bildabschnitt mit einer Dateivorschau und Informationen zur Datei.
+
+Open Xchange ist leider nicht in der Lage, die schon vorhandenen Metadaten der Datei anzuzeigen, geschweigedenn eigene Attribute hinzuzuf\"ugen.
+
+\"Uber viele Schnittstellen ist es m\"oglich Daten von Open Xchange auszulesen, so zum Beispiel auch \"uber eine HTTP-\ac{API}. \cite{Oxpedia_HTTP_API}
+
+Leider ist der Schwerpunkt von Open Xchange, eher die Kommunikation \"uber E-Mail und die Verwendung als Groupware. Als \ac{ECM}-Tool wie es f\"ur die Arbeit ben\"otigt wird, ist es jedoch ungeeignet, da es werden Metadaten einlesen noch verarbeiten kann.
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=16cm]{Bilder/xchange_Oberflaeche.jpg}
+\caption{Datei-Anzeige von Open Xchange}
+\label{Xchange Dateianzeige}
+\centering
+\end{figure}
+
+\FloatBarrier
 \subsection{Auswertung der M\"oglichkeiten}\label{Auswertung ECM}
-\textcolor{green}{\checkmark} \textcolor{red}{X} \textcolor{orange}{\checkmark X}
+Nach dem in den Abschnitten \ref{Agorum Core}, \ref{Alfresco} und \ref{Open Xchange} die drei wichtigsten Vertreter der \ac{ECM}/\ac{DMS}-Tools
+betrachtet wurden, muss nun eine Entscheidung getroffen werden, welches System sich am besten f\"ur das Projekt eignet.
+
+Hierf\"ur wurden die im Abschnitt \ref{Technologievergleich} aufgef\"uhrten Anforderungen noch einmal in Tabellenform dargestellt. (siehe Tabelle \ref{Systemvergleich}) Die einzelnen Systeme wurde in der Tabelle nebeneinander gestellt, wobei ein \textcolor{green}{\checkmark} f\"ur volle Umsetzung im System, ein \textcolor{orange}{\checkmark X} f\"ur eine Umsetzung im System gegen Geb\"uhren und ein \textcolor{red}{X} f\"ur keine Umsetztung im System steht.
+
+In der Tabelle \ref{Systemvergleich} f\"allt auf, das agorum core zwar f\"ur das Projekt geeignet w\"are, jedoch durch die hohen Lizenzkosten nicht verwendet werden kann, wie es im Abschnitt \ref{Agorum Core} schon dargelegt wurde. Die f\"ur die Arbeit ben\"otigten Komponenten sind kostenpflichtig und nur in Verbindung mit einer lizensierten "`Pro"'-Version nutzbar.
+
+Open Xchange ist eine interessante alternative f\"ur das von Microsoft stammende Exchange, und ist kostenfrei da es sich um Open Source Software handelt. Jedoch bietet Open Xchange nicht die Unterst\"utzung, welche f\"ur diese Arbeit ben\"otigt wird.
+
+Das Verwalten, Versionieren und das Anzeigen von Dokumenten funktioniert sehr gut, jedoch wird von Seiten Open Xchanges aus keine Unterst\"utzung von Metadaten geboten. Eine eigene Implementierung dieser Funktionalit\"at w\"are zwar denkbar, da der Quellcode unter der \ac{GPL} steht, jedoch im Rahmen des zeitlichen Umfangs der Arbeit nicht umsetzbar.
+
+Die vielversprechenste alternative ist Alfresco, welches alle Anforderungen erf\"ullt. Zum einen ist es Open Source und somit frei verf\"ugbar, zum anderen bietet es sehr viele Schnittstellen an, um mit anderen Programmen zu kommunizieren. Standardm\"a\ss{}ig liest Alfresco alle Metadaten einer Datei beim hinzuf\"ugen in das System aus, und stellt diese auch dar. Zus\"atzlich lassen sich weitere eigene Metadaten zu den Dateien hinzuf\"ugen. 
+
+Das verwalten von eingenen Metadaten geschieht hier auf der Basis von XML-Dokumenten, welche Alfresco hinzugef\"ugt werden m\"ussen.
+Hierzu jedoch mehr im Kapitel \ref{Implementierung Backend}
 
 \begin{table}[htbp]
 \begin{center}
 \begin{tabular}{|c|c|c|c|}
 \hline
 Anforderung: & agorum core & Alfresco & Open Xchange\\ \hline
- Metadatenstandards Implementiert & \textcolor{green}{\checkmark} 	& \textcolor{green}{\checkmark}		& \\ \hline
- Mehrere Systeme in einem & \textcolor{green}{\checkmark} 		& \textcolor{green}{\checkmark}		& \\ \hline
- Gliederung von Metadaten & \textcolor{orange}{\checkmark X} 		& \textcolor{green}{\checkmark}		& \\ \hline
- Vierschiedene Schnittstellen & \textcolor{green}{\checkmark} 		& \textcolor{green}{\checkmark}		& \\ \hline
- Versionierbarkeit von Dokumenten & \textcolor{orange}{\checkmark X} 	& \textcolor{green}{\checkmark}		& \\ \hline
- Kostenfreie Nutzung & \textcolor{orange}{\checkmark X} 		& \textcolor{green}{\checkmark}		& \\ \hline
+ Metadatenstandards Implementiert & \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} & \textcolor{red}{X} \\ \hline
+ Mehrere Systeme in einem & \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} \\ \hline
+ Gliederung von Metadaten & \textcolor{orange}{\checkmark X} & \textcolor{green}{\checkmark} & \textcolor{red}{X} \\ \hline
+ Vierschiedene Schnittstellen & \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} \\ \hline
+ Versionierbarkeit von Dokumenten & \textcolor{orange}{\checkmark X} & \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} \\ \hline
+ Kostenfreie Nutzung & \textcolor{orange}{\checkmark X} & \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} \\ \hline
 \end{tabular}
 \end{center}
-\caption{Mapping der Bildarchiv Attribute}
+\caption{Tabellarischer Vergleich der Betrachteten \ac{ECM}-Systeme}
 \label{Systemvergleich}
 \end{table}
