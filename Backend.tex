@@ -1,0 +1,16 @@
+\section{Implementierung des Backends auf Basis von Alfresco} \label{Implementierung Backend}
+F\"ur das Backend eignet sich der Analyse aus Kapitel \ref{Technologievergleich} folgend am besten Alfresco. In den nun folgenden Abschnitten geht es um die Implementierung des Metadatenmodells aus Kapitel \ref{Erstellung eines Datenkonzepts} in Alfresco. Hierf\"ur wird zum einen die Installation und die Arbeitsweise erl\"autert und zum anderen wird im Hauptteil auf die Implementierung des Datenmodells in Alfresco eingegangen.
+
+\subsection{Installation}
+Die Installation von Alfresco ist denkbar einfach und unter Windows, sowie unter Linux m\"oglich. F\"ur den Download der Community Edition muss man sich mit einer g\"ultigen E-Mail-Adresse bei Alfresco anmelden, um den Download beginnen zu k\"onnen\footnote{https://www.alfresco.com/de/products/community/download}. 
+
+Die Anmeldung hat den Vorteil, das man zu Webinars und anderen neuen Dingen rund um Alfresco immer auf dem laufenden ist.
+Die kostenpflichtige Variante von Alfresco bietet zus\"atzlichen technische Unterst\"utzung und einige Enterprise Features, welche jedoch f\"ur die Arbeit nicht ben\"otigt werden. \cite{Wiki_Alfresco}
+
+Nach dem Download f\"uhrt unter Linux ein Skript die Installation durch. Hierbei wird der Nutzer ausf\"uhrlich \"uber alle getanen Schritte informiert. Der Nutzer muss w\"ahrend der Installation ein Passwort f\"ur das Administrator-Konto "`admin"' angeben.\cite{Alfresco_und_Liferay}
+
+Ist die Installation abgeschlossen und der Server gestartet, kann Alfresco im Browser unter \url{http://127.0.0.1:8080/share/page/} aufgerufen werden. Hier gelangt man zur Anmeldung, wo das bei der Installation angegebene Passwort abgefragt wird.
+
+War die Anmeldung erfolgreich, gelangt der Nutzer auf das "`Administrator Dashboard"', welches in Abbildung \ref{Alfresco Dashboard} im Abschnitten \ref{Alfresco} zu sehen ist.
+
+\subsection{Backend}
