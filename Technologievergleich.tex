@@ -105,6 +105,23 @@ Leider ist der Schwerpunkt von Open Xchange, eher die Kommunikation \"uber E-Mai
 \end{figure}
 
 \FloatBarrier
+\subsection{Liferay als ECM-Tool}
+F\"ur die Entwicklung des Frontends soll Liferay verwendet werden, welches ein Tool f\"ur die Erstellung von Webportalen ist.
+Liferay wird im Kapitel \ref{Implementierung Frontend} genauer beschriebenen.
+Da Liferay auch eine verwalten f\"ur Dokumente besitzt, wird hier nat\"urlich auch gepr\"uft, ob eine Umsetztung des Projekts nur mit Liferay m\"oglich ist.
+
+Liferay ist eigentlich also Portalserver ausgelegt, bietet jedoch die M\"oglichkeit Dokumente die auf einer Webseite ben\"otigt werden zu Speichern und zu Verwalten. Hierbei werden beim Hochladen von Dateien die Standardisierten Metadaten ausgelesen und angezeigt, bei einem jpeg-Bild w\"aren das zum Beispiel die vorhandenen \ac{Exif}-Daten.
+
+F\"ur die gespeicherten Dateien bietet Liferay eine Versionierung innerhalb des Systems, \"altere Versionen einer Datei k\"onnen jedoch nicht von au\ss{}en aufgerufen werden. Liferay verwendet auch keine IDs um ein Dokument eindeutig zu identifizieren, verlangt aber eindeutige Namen bei der Speicherung von Dateien, wodurch IDs entfallen.
+
+Es k\"onnen im System zus\"atzliche eigene Metadatens\"atze erstellt werden, dies geschieht entweder per \ac{UI} oder per XML-Definition.
+Leider erm\"oglicht es  Liferay nicht einen Metadatensatz innerhalb eines Metadatensatzes zu verwenden, wodurch die Strukurierung des Modells verloren gehen w\"urde.
+
+Vorteilig an Liferay ist, dass spezielle Dokumenten-Typen erstellt werden k\"onnen, die alle Metadaten-Schl\"ussel enthalten. So kann zum Beispiel ein Datentyp \ac{FADO}-Urteil speziell f\"ur Urteile aus \ac{FADO} erstellt werden. Leider ist es nicht m\"oglich einen Metadatensatz zwei mal in einen Dokument zu verwenden, wie es bei der Datensammlung \texttt{Urteil} n\"otig w\"are, da sie die Attribute \texttt{Vorgericht} und \texttt{Nachgericht} enth\"alt, welche beide auf ein \texttt{Gericht} verweisen.
+
+Liferay bietet verschiedene Schnittstellen, um nach aus\ss{}en hin zu kommunizieren, so zum Beispiel WebDAV.
+
+
 \subsection{Auswertung der M\"oglichkeiten}\label{Auswertung ECM}
 Nach dem in den Abschnitten \ref{Agorum Core}, \ref{Alfresco} und \ref{Open Xchange} die drei wichtigsten Vertreter der \ac{ECM}/\ac{DMS}-Tools
 betrachtet wurden, muss nun eine Entscheidung getroffen werden, welches System sich am besten f\"ur das Projekt eignet.
@@ -113,7 +130,7 @@ Hierf\"ur wurden die im Abschnitt \ref{Technologievergleich} aufgef\"uhrten Anfo
 
 In der Tabelle \ref{Systemvergleich} f\"allt auf, das agorum core zwar f\"ur das Projekt geeignet w\"are, jedoch durch die hohen Lizenzkosten nicht verwendet werden kann, wie es im Abschnitt \ref{Agorum Core} schon dargelegt wurde. Die f\"ur die Arbeit ben\"otigten Komponenten sind kostenpflichtig und nur in Verbindung mit einer lizensierten "`Pro"'-Version nutzbar.
 
-Open Xchange ist eine interessante alternative f\"ur das von Microsoft stammende Exchange, und ist kostenfrei da es sich um Open Source Software handelt. Jedoch bietet Open Xchange nicht die Unterst\"utzung, welche f\"ur diese Arbeit ben\"otigt wird.
+Open Xchange ist eine interessante alternative f\"ur das von Microsoft stammende Exchange, und ist kostenfrei da es sich um Open Source Software handelt. Jedoch bietet Open Xchange nicht die Unterst\"utzung, welche f\"ur diese Arbeit ben\"otigt wird. Vor allem in den beiden Punkten, wo es um die Gliederung von Metadaten und die Implementierung von Metadatenstandards geht, kann Open Xchange nicht mithalten. Da diese Punkte eine sehr hohe Priorisierung haben, kann Open Xchange nicht verwendet werden.
 
 Das Verwalten, Versionieren und das Anzeigen von Dokumenten funktioniert sehr gut, jedoch wird von Seiten Open Xchanges aus keine Unterst\"utzung von Metadaten geboten. Eine eigene Implementierung dieser Funktionalit\"at w\"are zwar denkbar, da der Quellcode unter der \ac{GPL} steht, jedoch im Rahmen des zeitlichen Umfangs der Arbeit nicht umsetzbar.
 
@@ -124,15 +141,15 @@ Hierzu jedoch mehr im Kapitel \ref{Implementierung Backend}
 
 \begin{table}[htbp]
 \begin{center}
-\begin{tabular}{|c|c|c|c|}
+\begin{tabular}{|c|c|c|c|c|c|}
 \hline
-Anforderung: & agorum core & Alfresco & Open Xchange\\ \hline
- Metadatenstandards Implementiert & \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} & \textcolor{red}{X} \\ \hline
- Mehrere Systeme in einem & \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} \\ \hline
- Gliederung von Metadaten & \textcolor{orange}{\checkmark X} & \textcolor{green}{\checkmark} & \textcolor{red}{X} \\ \hline
- Vierschiedene Schnittstellen & \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} \\ \hline
- Versionierbarkeit von Dokumenten & \textcolor{orange}{\checkmark X} & \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} \\ \hline
- Kostenfreie Nutzung & \textcolor{orange}{\checkmark X} & \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} \\ \hline
+Anforderung: & Priorisierung & agorum & Alfresco & Open Xchange & Liferay\\ \hline
+ Metadatenstd. Implementiert & sehr Hoch & \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} & \textcolor{red}{X} & \textcolor{green}{\checkmark}\\ \hline
+ Mehrere Systeme in einem & gering & \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} \\ \hline
+ Gliederung von Metadaten & sehr Hoch & \textcolor{orange}{\checkmark X} & \textcolor{green}{\checkmark} & \textcolor{red}{X} & \textcolor{red}{X} \\ \hline
+ Verschiedene Schnittstellen & hoch &\textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} \\ \hline
+ Versionierung von Dateien & hoch & \textcolor{orange}{\checkmark X} & \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} & \textcolor{red}{X} \\ \hline
+ Kostenfreie Nutzung & hoch & \textcolor{orange}{\checkmark X} & \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} \\ \hline
 \end{tabular}
 \end{center}
 \caption{Tabellarischer Vergleich der Betrachteten \ac{ECM}-Systeme}
