@@ -39,14 +39,15 @@ Ein Aspekt kann frei definiert werden und besitzt die M\"oglichkeit sich unabh\"
 \subsection{Ver\"andertes Datenmodell f\"ur Alfresco}\label{Ver\"andertes Datenmodell f\"ur Alfresco}
 Wie im Abschnitt \ref{Metadatenmodell von Alfresco} schon ausf\"uhrlich beschrieben, ist es nicht m\"oglich die zuvor im Kapitel \ref{Erstellung eines Datenkonzepts} Metadatenstruktur Eins zu Eins umzusetzen. Daher wird nun beschrieben, wie das Datenmodell f\"ur Alfresco angepasst wurde.
 
-Da Alfresco den "`Dublin Core"'-Standard schon implementiert hat entf\"allt dieser in der Implementierung. Auch die Datensammlung \texttt{Datei} entf\"allt da diese Daten automatisch bei jeder hochgeladenen Datei erstellt werden. 
+Da Alfresco den "`Dublin Core"'-Standard schon implementiert hat entf\"allt dieser in der Implementierung. Auch die Datensammlung \texttt{Datei} entf\"allt, da die entsprechenden Daten automatisch bei jeder hochgeladenen Datei von Alfresco ausgelesen und erstellt werden. 
 
-Die im Abschnitt \ref{FADO Metadaten} gezeigten Datensammlungen werden nun zu Datentypen, welche das jeweilige Dokument beschreiben. Alle farbig hinterlegten Attribute stellen Aspekte dar, die von anderen Klassen aus Alfresco \"ubernommen wurden.
+Die im Abschnitt \ref{FADO Metadaten} gezeigten Datensammlungen werden nun zu Datentypen oder Aspekten, welche das jeweilige Dokument beschreiben. Alle farbig hinterlegten Attribute stellen Aspekte dar, die von anderen Klassen aus Alfresco \"ubernommen wurden.
+Packages stellen in diesem Diagramm Klassen dar. Die UML-Klassen stellen Aspekte oder Typen dar. Worum es sich genau handelt steht jeweils auch an den Datensammlungen. 
 
 Alle in den folgenden Abschnitten nicht aufgef\"uhrten Datensammlungen sind in den Aspekt direkt untergebracht, da Alfresco wie schon erw\"ahnt eine Klassen, oder Typen als Attribute zul\"asst.
 
 \subsubsection{Die Datentypen}\label{Die Datentypen}
-Die in den Abschnitten \ref{FADO Metadaten} bis \ref{ICT-ENSURE Metadaten} gezeigten Grunddatentypen bleiben im angepassten Modell weitestgehend identisch. Da unter Alfresco eine Datei nur von einem Datentyp sein kann, wurde die Datensammlung \texttt{FADO Metadaten} den anderen \ac{FADO}-Sammlungen \"ubergeordnet, wie in Abbildung \ref{Fado Datentypen f\"ur Alfresco} zu sehen ist.
+Die in den Abschnitten \ref{FADO Metadaten} bis \ref{ICT-ENSURE Metadaten} gezeigten Grunddatentypen bleiben im angepassten Modell weitestgehend identisch. Da unter Alfresco eine Datei nur von einem Datentyp sein kann, wurde die Datensammlung \texttt{FADO Metadaten} den anderen \ac{FADO}-Sammlungen \"ubergeordnet, wie in Abbildung \ref{Fado Datentypen f\"ur Alfresco} zu sehen ist. Der Typ \texttt{Fado Metadaten} findet sich nun in der Klasse \texttt{Fado}, welche wiederum die Oberklasse f\"ur die Typen \texttt{FADO Urteil}, \texttt{Forschungsvorhaben} und \texttt{Bibliografische Angaben} bildet.
 
 \begin{figure}[!ht]
 \centering
@@ -105,7 +106,7 @@ Die Abbildung \ref{Klasse Standard Aspekte} zeigt noch einmal den Aspekt \texttt
 \centering
 \end{figure}
 
-\subsubsection{Die Klasse Bibliografische Aspekte}
+\subsubsection{Die Klasse Bibliografische Aspekte} \label{Die Klasse Bibliografische Aspekte}
 In Abbildung \ref{Klasse Bibligrafische Aspekte} ist die Klasse Bibliografische Aspekte zu sehen, welche die beiden Aspekte \texttt{Dokumenten Information} und \texttt{Literatur Metadaten} enth\"alt.
 
 Beim Aspekt \texttt{Dokumenten Information} ergaben sich keine \"Anderungen, au\ss{}er das das Attribut "`Stand"' nun eigenst\"andig ist und nicht mehr auf ein Datum verweist. Der Aspekt \texttt{Literatur Metadaten} enth\"alt nun die Attribute der Datensammlungen \texttt{Kapitel} und \texttt{Publikations ID}
@@ -122,5 +123,15 @@ Beim Aspekt \texttt{Dokumenten Information} ergaben sich keine \"Anderungen, au\
 \subsection{Implementierung einer Datensammlung}
 Eine Datensammlung in Alfresco wird im Verzeichnis \texttt{ALFRESCO\_HOME/tomcat/shared/classes
 /alfresco/extensions} abgelegt.
-Als Beispiel wird die Datensammlung \texttt{Kontakt f\"ur Metadaten} aus dem Package \texttt{Abstrakte Standard Metadaten} angelegt, welche im Abschnitt \ref{Abstrakte Standard Metadaten} genauer beschrieben wird.
+Wie ein Datenmodell in Alfresco Implementiert wird, wird anhand der Datensammlung \texttt{Bildarchiv Metadaten} gezeigt.
+
+Mit dem Tag "`model"' wird ein Datenmodell in Alfresco beschrieben, alle weiteren Einstellungen werden innerhalb dieses Tags vollzogen. Der Name des Modells, wird durch das Prefix und den Namespace-URI gebildet. Eine weitere beschreibung hierzu folgt.
+
+Die Tags "`description"', "`author"' und "`version"' geben grundlegende Informationen \"uber das entsprechende Modell und wer daf\"ur verantwortlich ist.
+
+Innerhalb des Tags "`imports"' werden Datenmodelle importiert, welche in dem Modell entsprechend verwendet werden. Grunds\"atzlich werden die Modelle \texttt{http://www.alfresco.org/model/ dictionary/1.0} und \texttt{http://www.alfresco.org/model/content/1.0} immer importiert, da Sie den Grundstock eines jeden Modells bilden.
+
+Zus\"atzlich werden die beiden Modelle \texttt{Bibliografische-Aspekte} und \texttt{Standard-Metadaten} importiert (siehe Abschnitt \ref{Die Klasse Bibliografische Aspekte} und \ref{Die Klasse Standard Aspekte}), da ihre Aspekte innerhalb des Modells verwendet werden. Hierzu sp\"ater mehr.
+
+Er Tag "`namespaces"' definiert den Namensraum, in welchem das Datenmodell verwendet wird. Mit "`namespace"' wird der spezifische Namensraum zum einen durch eine URI und ein Prefix festgelegt. Das Prefix ist eine Abk\"urzung, um nicht immer die kommplette URI angeben zu m\"ussen. Die URI wiederum gibt an, wo das Datenmodell abgelegt wird.
 
