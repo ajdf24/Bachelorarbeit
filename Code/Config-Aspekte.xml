@@ -1,0 +1,22 @@
+<!-- Document Library config section -->
+   <config evaluator="string-compare" condition="DocumentLibrary" replace="true">
+
+     <!-- Weitere Einstellungen -->
+
+      <aspects>
+         <!-- Aspects that a user can see -->
+         <visible>
+
+            <!-- Weitere Aspekte -->
+
+            <aspect name="lupo-SA:Inspire" />
+            <aspect name="lupo-GB:Gericht" />
+            <aspect name="lupo-GB:Urteil" />
+            <aspect name="lupo-GB:Gesetz" />
+            <aspect name="lupo-BA:Literatur-Metadaten" />
+            <aspect name="lupo-BA:Dokumenten-Information" />
+         </visible>
+
+         <!-- Weitere Einstellungen -->
+
+   </config>

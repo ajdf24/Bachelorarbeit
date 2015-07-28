@@ -1,0 +1,15 @@
+<config evaluator="string-compare" condition="DocumentLibrary">
+       <types>
+            <type name="cm:content">
+                <subtype name="lupo-FADO:Fado-Metadaten" />
+                <subtype name="lupo-DRS:DRS-Metadaten" />
+                <subtype name="lupo-BM:Bildarchiv-Metadaten" />
+                <subtype name="lupo-ICT:Artikel-Metadaten" />
+            </type>
+            <type name="lupo-FADO:Fado-Metadaten">
+                <subtype name="lupo-FM:Forschungsvorhaben" />
+                <subtype name="lupo-FM:FADO-Urteil" />
+                <subtype name="lupo-FM:Bibliografische-Angaben" />
+            </type>
+        </types>
+</config>

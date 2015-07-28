@@ -1,0 +1,58 @@
+<config evaluator="node-type" condition="lupo-FADO:Fado-Metadaten">
+        <forms>
+            <form>
+                <field-visibility>
+                    <show id="cm:name" />
+                    <show id="cm:title" force="true" />
+                    <show id="cm:description" force="true" />
+
+                    <!-- lupo-FADO properties -->
+                    <show id="lupo-FADO:Fachsystem" />
+                    <show id="lupo-FADO:Unsichtbar" />
+                    <show id="lupo-FADO:Ausblenden" />
+
+                    <!-- cm:dublincore aspect -->
+                    <show id="cm:publisher"/>
+                    <show id="cm:contributor"/>
+                    <show id="cm:type"/>
+                    <show id="cm:identifier"/>
+                    <show id="cm:dcsource"/>
+                    <show id="cm:coverage"/>
+                    <show id="cm:rights"/>
+                    <show id="cm:subject"/>
+
+                    <!-- Weitere Attribute stehen hier -->
+
+
+                </field-visibility>
+                <appearance>
+                    <set id="cm:content" appearance="bordered-panel" label="Content" />
+                    <set id="lupo-FADO" appearance="bordered-panel" label="Fado Metadaten" />
+                    <set id="cm:dublincore" appearance="bordered-panel" label="Dublin Core" />
+                    <!-- Weitere Beschreibungen stehen hier -->
+
+                    <field id="cm:name" set="cm:content" />
+                    <field id="cm:title" set="cm:content" />
+                    <field id="cm:description" set="cm:content" />
+
+                    <!-- lupo-FADO properties -->
+                    <field id="lupo-FADO:Fachsystem" set="lupo-FADO" description-id="FachsystemDESC" />
+                    <field id="lupo-FADO:Unsichtbar" set="lupo-FADO" description-id="UnsichtbarDESC" />
+                    <field id="lupo-FADO:Ausblenden" set="lupo-FADO" description-id="AusblendenDESC" />
+
+                    <!-- cm:dublincore aspect -->
+                    <field id="cm:publisher" set="cm:dublincore" />
+                    <field id="cm:contributor" set="cm:dublincore"   />
+                    <field id="cm:type" set="cm:dublincore"   />
+                    <field id="cm:identifier" set="cm:dublincore"   />
+                    <field id="cm:dcsource" set="cm:dublincore"   />
+                    <field id="cm:coverage" set="cm:dublincore"   />
+                    <field id="cm:rights" set="cm:dublincore"   />
+                    <field id="cm:subject" set="cm:dublincore"   />
+
+                    <!-- Weitere Beschreibungen stehen hier -->
+
+                </appearance>
+            </form>
+        </forms>
+    </config>

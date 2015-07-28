@@ -1,0 +1,23 @@
+<bean id="webframework.configsource" class="org.springframework.extensions.config.source.UrlConfigSource">
+      <constructor-arg>
+         <list>
+
+            <!-- Hier sind weitere Einstellungen vorhanden -->
+
+            <!-- Share custom config -->
+            <value>classpath:alfresco/web-extension/share-config-custom.xml</value>
+            <value>jar:*!/META-INF/share-config-custom.xml</value>
+            <value>classpath:alfresco/web-extension/share-config-custom-dev.xml</value>
+            <value>jar:*!/META-INF/share-config-custom-dev.xml</value>
+
+            <!-- Share custom config files, which contains the model -->
+            <value>classpath:alfresco/web-extension/share-config-model-Fado-Metadaten.xml</value>
+            <value>classpath:alfresco/web-extension/share-config-model-Forschungsvorhaben.xml</value>
+            <value>classpath:alfresco/web-extension/share-config-model-Urteil.xml</value>
+            <value>classpath:alfresco/web-extension/share-config-model-Bibliografische-Angaben.xml</value>
+            <value>classpath:alfresco/web-extension/share-config-model-DRS.xml</value>
+            <value>classpath:alfresco/web-extension/share-config-model-Bildarchiv.xml</value>
+            <value>classpath:alfresco/web-extension/share-config-model-ICT.xml</value>
+         </list>
+      </constructor-arg>
+   </bean>

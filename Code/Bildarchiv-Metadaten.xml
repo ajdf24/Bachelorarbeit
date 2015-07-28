@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<model name="lupo-BM:Bildarchiv-Metadaten" xmlns="http://www.alfresco.org/model/dictionary/1.0">
+
+   <description>Class for a picture of the archiv</description>
+   <author>Sebastian Rieger</author>
+   <version>1.0</version>
+
+   <imports>
+      <import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d"/>
+      <import uri="http://www.alfresco.org/model/content/1.0" prefix="cm"/>
+       <import uri="Bibliografische-Aspekte" prefix="lupo-BA"/>
+       <import uri="Standard-Metadaten" prefix="lupo-SA"/>
+   </imports>
+
+   <namespaces>
+      <namespace uri="Bildarchiv-Metadaten" prefix="lupo-BM"/>
+   </namespaces>
+   <constraints>
+   </constraints>
+   <types>
+       <type name="lupo-BM:Bildarchiv-Metadaten">
+           <title>Bildarchiv-Metadaten</title>
+           <parent>cm:content</parent>
+           <properties>
+               <property name="lupo-BM:Kurzname">
+                   <title>Kurzname</title>
+                   <type>d:text</type>
+                   <constraints>
+                   </constraints>
+               </property>
+               <property name="lupo-BM:Lateinischer Name">
+                   <title>Lateinischer Name</title>
+                   <type>d:text</type>
+                   <constraints>
+                   </constraints>
+               </property>
+               <property name="lupo-BM:Deutscher Name">
+                   <title>Deutscher Name</title>
+                   <type>d:text</type>
+                   <constraints>
+                   </constraints>
+               </property>
+           </properties>
+           <mandatory-aspects>
+                <aspect>lupo-SA:Inspire</aspect>
+                <aspect>lupo-BA:Dokumenten-Information</aspect>
+           </mandatory-aspects>
+       </type>
+   </types>
+   <aspects>
+   </aspects>
+</model>
