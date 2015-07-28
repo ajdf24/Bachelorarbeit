@@ -9,12 +9,12 @@ Das \ac{ECM}-Tool, welches f\"ur das Projekt verwendet werden soll, muss die im 
  \item Grundlegende Metadatenstandards wie zum Beispiel "`Dublin Core"' und "`EXIF"' m\"ussen unterst\"utzt werden. (siehe Kapitel \ref{Analyse Datenbestaende})
  \item Das System muss alle Fachsysteme der \ac{LUBW} vereinen, welche im Kapitel \ref{Stand der Technik} beschriebenen sind.
  \item Metadaten sollten vom System systematisch gegliedert werden k\"onnen, wie es im Kapitel \ref{Erstellung eines Datenkonzepts} erarbeitet wurde
- \item Das verwendete \ac{ECM}-Tool sollte m\"oglichst viele Schnittstellen bieten, \"uber welche die Daten abgerufen werden
- \item Dateien m\"ussen Versioniert werden k\"onnen um auch \"altere Versionen einsehen zu k\"onnen
+ \item Das verwendete \ac{ECM}-Tool sollte m\"oglichst viele Schnittstellen bieten, \"uber welche die Daten abgerufen werden k\"onnen
+ \item Dateien m\"ussen Versioniert werden k\"onnen, um auch \"altere Versionen einsehen zu k\"onnen
  \item Da das Projekt als Prototyp behandelt wird, sollen f\"ur die Umsetzung keine Kosten entstehen
 \end{itemize}
 
-Im folgenden werden nun verschiedene namenhafte \ac{ECM}-Tools vorgestellt und auf die eben genannten Eigenschaften gepr\"uft. Am Ende werden die M\"oglichkeiten verglichen und die beste ausgew\"ahlt.
+Im folgenden werden nun verschiedene namenhafte \ac{ECM}-Tools vorgestellt und auf die eben genannten Eigenschaften gepr\"uft. Am Ende werden die verschiedenen M\"oglichkeiten verglichen und die beste ausgew\"ahlt.
 
 
 % Damit ein Tool f\"ur dieses Projekt ausgew\"ahlt werden kann, muss es die im folgenden beschriebenen Eigenschaften beinhalten.
@@ -23,7 +23,7 @@ Im folgenden werden nun verschiedene namenhafte \ac{ECM}-Tools vorgestellt und a
 \subsection{Agorum Core} \label{Agorum Core}
 Bei "`Agorum Core"' handelt es sich um eine Open Source Software, welche von der Baden W\"urttembergischen Firma "`agorum Software"' stammt. "`Agorum Core"' wird in mehrerem Varianten angeboten. Zum einem gibt es eine freie Version, welche ohne Lizenzkosten genutzt werden kann, zum anderem gibt es mehrere kostenpflichtige Versionen die in ihrem Versionsumfang variieren. \cite{agorum_home} 
 
-Agorum bietet viele Funktionen an, welche jedoch in der freien Version nicht vorhanden sind. Um die zus\"atzlichen Funktionen zu nutzen, muss entweder die ents\"prechende Version, welche die Funktion enth\"alt gekauft werden oder es muss die entsprechende Funktion hinzugebucht werden.
+Agorum bietet viele Funktionen an, welche jedoch in der freien Version nicht vorhanden sind. Um die zus\"atzlichen Funktionen zu nutzen, muss entweder die entsprechende Version, welche die Funktion enth\"alt gekauft werden oder es muss die entsprechende Funktion hinzugebucht werden.
 Somit entstehen auf jedenfall Kosten, wenn die freie Version von "`Agorum Core"' nicht die gew\"unschten Funktionen bietet. Weiterhin f\"allt negativ auf, das ein hinzubuchen von Funktionen unter der freien Version nicht m\"oglich ist. \cite{agorum_preise} \cite{Eval_DMS_Bachelor}
 
 In Abbildung \ref{metadatendesigner agorum}\footnote{\url{http://www.agorum.com/uploads/pics/agorum-core-metadatendesigner_01.png}} ist das Web-Interface von "`agorum core"' zu sehen, wobei hier im speziellen der "`Metadaten Designer"' zu sehen ist. Dieses Tool, ist jedoch ein Zusatzfeature, welches entsprechend hinzugebucht werden muss, was nur innerhalb einer "`Pro"'-Version von "`agorum core"' m\"oglich ist. \cite{agorum_metadesigner_bild}
@@ -40,23 +40,23 @@ Der "`Metadaten Designer"' kann verwendet werden, um nutzerspezifische Metadaten
 
 Das Einlesen und Bereitstellen von Dokumenten in "`agorum core"' funktioniert schon mit der freien Version. Jedoch kann hier nur eine Standard Suche und Ablage verwendet werden. \cite{agorum_preise}
 
-Das automatische erkennen von Standard-Metadaten in Dateien funktioniert, jedoch auch nur mit der entsprechenden "`Pro"'-Version oder einer Zubuchung genau wie die Versionierung von Dateien.
+Das automatische erkennen von Standard-Metadaten in Dateien funktioniert, jedoch auch nur mit der entsprechenden "`Pro"'-Version oder einer Zubuchung des Features genau wie die Versionierung von Dateien.
 
 "`agorum core"' verf\"ugt \"uber verschiedene Schnittstellen, welche von Frontends angesprochen werden k\"onnen. 
 
 \subsection{Alfresco} \label{Alfresco}
-Alfresco ist eines der heute am weitesten verbreitete \ac{ECM}-Tool, welches Open Source ist und frei heruntergeladen werden kann.
+Alfresco ist eines der heute am weitesten verbreiteten \ac{ECM}-Tools, welches Open Source ist und frei heruntergeladen werden kann.
 Flexibilit\"at, Akzeptanz und Skalierbarkeit sind jedoch nur einige der St\"arken, die Alfresco zum Open-Source-Marktf\"uhrer der \ac{ECM}-Branche gemacht haben. \cite{Alfresco_und_Liferay} \cite{Wiki_Alfresco} \cite{Alfresco_Implementation}
 
-Alfresco stammt ebenfalls von einer deutschen Firma, der "`Alfresco Software AG"', und ist somit wie schon agorum auch in deutsch Verf\"ugbar. Namenhafte Unternehmen wie "`Airbus"' oder "`Michelin"' die Software, nach angaben der Herstellers. \cite{Alfresco_Website}
+Alfresco stammt ebenfalls von einer deutschen Firma, der "`Alfresco Software AG"', und ist somit wie schon agorum auch in deutsch Verf\"ugbar. Namenhafte Unternehmen wie "`Airbus"' oder "`Michelin"' nutzen die Software, nach angaben der Herstellers. \cite{Alfresco_Website}
 
 In Abbildung \ref{Alfresco Dashboard} ist das Administrator-Dashboard von Alfresco zu sehen, welches im Webbrowser dargestellt wird.
 Im oberen Bildteil ist die Navigationsleiste und das Dash mit m\"oglichen ersten Schritten.
 
-Links ist zum einen das Dash "`Meine Sites"' zu sehen, in welchem alle Seiten zu sehen sind, denen der Nutzer angeh\"ort. Au\ss{}erdem ist darunter ein Dash, welches Aufgaben anzeigt, die vom Benutzer abgearbeitet werden sollen. In Alfresco ist es \"ublich mit Dokumenten und Dateien auch aufgaben zu verkn\"upfen und Workflows zu gestalten. Dies geht f\"ur jede Datei einzeln oder aber auch f\"ur einen Stack von Dateien.
+Links ist zum einen das Dash "`Meine Sites"' zu sehen, in welchem alle Seiten zu sehen sind, denen der Nutzer angeh\"ort. Au\ss{}erdem ist darunter ein Dash, welches Aufgaben anzeigt, die vom Benutzer abgearbeitet werden sollen. In Alfresco ist es \"ublich mit Dokumenten und Dateien auch Aufgaben zu verkn\"upfen und Workflows zu gestalten. Dies geht f\"ur jede Datei einzeln oder aber auch f\"ur einen Stack von Dateien.
 
 Im Dash, neben "`Meine Sites"' sind die Aktivit\"aten zu sehen, welche zuletzt passiert sind. Hier kann der Nutzer einstellen, in welchen Zeitraum, f\"ur welche Aktivit\"at oder f\"ur welche Elemente er Aktivit\"aten anzeigen lassen m\"ochte.
-Darunter ist ein Dash zu sehen, an welchem ein Nutzer sehen kann welche Dokumente er zul\"atzt hochgeladen oder ge\"andert hat.
+Darunter ist ein Dash zu sehen, an welchem ein Nutzer sehen kann welche Dokumente er zuletzt hochgeladen oder ge\"andert hat.
 
 \begin{figure}[!ht]
 \centering
@@ -77,18 +77,18 @@ Alfresco bietet die M\"oglichkeit durch viele verschiedene Schnittstellen eine b
 
 Auch eine Versionierung von Dokumenten ist m\"oglich, wobei eine neue Version die alte nicht einfach ersetzt. Alte Versionen k\"onnen auch weiterhin eingesehen werden.
 
-Da Alfresco Open Source ist, ist es nicht nur kostenlos, sondern kann auch mit eigenen Tools erweitert werden. Dies kann zum einen \"uber direkte Programmierung im Quellcode geschehen oder zum anderen \"uber Aspekte, da Alfresco Aspektorientiert programmiert ist. \cite{Alfresco_und_Liferay}
+Da Alfresco Open Source ist, ist es nicht nur kostenlos (Community Edition), sondern kann auch mit eigenen Tools erweitert werden. Dies kann zum einen \"uber direkte Programmierung im Quellcode geschehen oder zum anderen \"uber Aspekte, da Alfresco aspektorientiert programmiert ist. \cite{Alfresco_und_Liferay}
 
 \subsection{Open Xchange} \label{Open Xchange}
 Open Xchange, ist ein Groupware-Server, welcher von der Open-Xchange AG, in N\"urnberg, entwickelt wird und als Open Source unter der \ac{GPL} verf\"ugbar ist. \cite{Xchange_Seite} \cite{Xchange_Golem}
 
 Urspr\"unglich wurde Open Xchange als E-Mail und Groupware-L\"osung entwickelt und stellte somit eine alternative zu "`Microsoft Exchange"' dar. \cite{Wiki_Xchange}
 
-In Abbildung \ref{Xchange Dateianzeige} ist die Dateianzeige einer Datei in Open Xchange dargestellt. Das Bild wurde mit Hilfe der freien Vorschauversion welche Open Xchange bietet erstellt\footnote{\url{http://beta.core.ox.io/welcome/\#pooled\_gold\_source\_en\_eb14204d2e764492ad76045ff7fd4646,trymeWelcome}}. Diese Vorschau ist gut zum testen der Funktionalit\"at des Servers, befindet sich aber zur Zeit noch in der Beta-Phase. Vorteil durch diese Vorschau, ist auf jeden fall, das kein Nutzer sich mehr m\"uhsam einen Server zum testen der Funktionalit\"at aufsetzen muss.
+In Abbildung \ref{Xchange Dateianzeige} ist die Dateianzeige einer Datei in Open Xchange dargestellt. Das Bild wurde mit Hilfe der freien Vorschauversion, welche Open Xchange bietet, erstellt\footnote{\url{http://beta.core.ox.io/welcome/\#pooled\_gold\_source\_en\_eb14204d2e764492ad76045ff7fd4646,trymeWelcome}}. Diese Vorschau ist gut zum testen der Funktionalit\"at des Servers, befindet sich aber zur Zeit noch in der Beta-Phase. Vorteil durch diese Vorschau, ist auf jeden fall, dass kein Nutzer sich mehr m\"uhsam einen Server zum testen der Funktionalit\"at aufsetzen muss.
 
-Zu beobachten ist, das die Oberfl\"ache von Open Xchange \"ahnlich wie die von Alfresco aussieht, was in Abbildung \ref{Alfresco Dashboard} gut zu erkennen ist.
+Zu beobachten ist, dass die Oberfl\"ache von Open Xchange \"ahnlich wie die von Alfresco aussieht, was in Abbildung \ref{Alfresco Dashboard} gut zu erkennen ist.
 
-Im oberen Teil der Abbildung \ref{Xchange Dateianzeige} ist die Navigationsleiste zu sehen, welche es erm\"oglicht \"uber die gesamte Funktionalit\"at schnell und einfach zu erreichen. Der linke Abschnitt zeigt einen Navigator der alle Ordner, welche sich gerade im System vorhanden sind darstellt. Mittig ist die Liste der Dateien zu sehen, welche sich im links gew\"ahlten Ordner befinden. W\"ahlt der Nutzer nun eine Datei aus, so erscheint der rechte Bildabschnitt mit einer Dateivorschau und Informationen zur Datei.
+Im oberen Teil der Abbildung \ref{Xchange Dateianzeige} ist die Navigationsleiste zu sehen, welche es erm\"oglicht die gesamte Funktionalit\"at schnell und einfach zu erreichen. Der linke Abschnitt zeigt einen Navigator der alle Ordner, welche sich gerade im System befinden darstellt. Mittig ist die Liste der Dateien zu sehen, welche sich im links gew\"ahlten Ordner befinden. W\"ahlt der Nutzer nun eine Datei aus, so erscheint der rechte Bildabschnitt mit einer Dateivorschau und Informationen zur Datei.
 
 Open Xchange ist leider nicht in der Lage, die schon vorhandenen Metadaten der Datei anzuzeigen, geschweigedenn eigene Attribute hinzuzuf\"ugen.
 
@@ -105,12 +105,12 @@ Leider ist der Schwerpunkt von Open Xchange, eher die Kommunikation \"uber E-Mai
 \end{figure}
 
 \FloatBarrier
-\subsection{Liferay als ECM-Tool}
+\subsection{Liferay als ECM-Tool} \label{Liferay}
 F\"ur die Entwicklung des Frontends soll Liferay verwendet werden, welches ein Tool f\"ur die Erstellung von Webportalen ist.
 Liferay wird im Kapitel \ref{Implementierung Frontend} genauer beschriebenen.
-Da Liferay auch eine verwalten f\"ur Dokumente besitzt, wird hier nat\"urlich auch gepr\"uft, ob eine Umsetztung des Projekts nur mit Liferay m\"oglich ist.
+Da Liferay auch eine Verwaltung f\"ur Dokumente besitzt, wird hier nat\"urlich auch gepr\"uft, ob eine Umsetztung des Projekts nur mit Liferay m\"oglich ist.
 
-Liferay ist eigentlich also Portalserver ausgelegt, bietet jedoch die M\"oglichkeit Dokumente die auf einer Webseite ben\"otigt werden zu Speichern und zu Verwalten. Hierbei werden beim Hochladen von Dateien die Standardisierten Metadaten ausgelesen und angezeigt, bei einem jpeg-Bild w\"aren das zum Beispiel die vorhandenen \ac{Exif}-Daten.
+Liferay ist eigentlich als Portalserver ausgelegt, bietet jedoch die M\"oglichkeit Dokumente die auf einer Webseite ben\"otigt werden zu Speichern und zu Verwalten. Hierbei werden beim Hochladen von Dateien die standardisierten Metadaten ausgelesen und angezeigt, bei einem jpeg-Bild w\"aren das zum Beispiel die vorhandenen \ac{Exif}-Daten.
 
 F\"ur die gespeicherten Dateien bietet Liferay eine Versionierung innerhalb des Systems, \"altere Versionen einer Datei k\"onnen jedoch nicht von au\ss{}en aufgerufen werden. Liferay verwendet auch keine IDs um ein Dokument eindeutig zu identifizieren, verlangt aber eindeutige Namen bei der Speicherung von Dateien, wodurch IDs entfallen.
 
@@ -119,11 +119,11 @@ Leider erm\"oglicht es  Liferay nicht einen Metadatensatz innerhalb eines Metada
 
 Vorteilig an Liferay ist, dass spezielle Dokumenten-Typen erstellt werden k\"onnen, die alle Metadaten-Schl\"ussel enthalten. So kann zum Beispiel ein Datentyp \ac{FADO}-Urteil speziell f\"ur Urteile aus \ac{FADO} erstellt werden. Leider ist es nicht m\"oglich einen Metadatensatz zwei mal in einen Dokument zu verwenden, wie es bei der Datensammlung \texttt{Urteil} n\"otig w\"are, da sie die Attribute \texttt{Vorgericht} und \texttt{Nachgericht} enth\"alt, welche beide auf ein \texttt{Gericht} verweisen.
 
-Liferay bietet verschiedene Schnittstellen, um nach aus\ss{}en hin zu kommunizieren, so zum Beispiel WebDAV.
+Liferay bietet verschiedene Schnittstellen, um nach au\ss{}en hin zu kommunizieren, so zum Beispiel WebDAV.
 
 \subsection{Auswertung der M\"oglichkeiten}\label{Auswertung ECM}
 Nach dem in den Abschnitten \ref{Agorum Core}, \ref{Alfresco} und \ref{Open Xchange} die drei wichtigsten Vertreter der \ac{ECM}/\ac{DMS}-Tools
-betrachtet wurden, muss nun eine Entscheidung getroffen werden, welches System sich am besten f\"ur das Projekt eignet.
+betrachtet wurden, muss nun eine Entscheidung getroffen werden, welches System sich am besten f\"ur das Projekt eignet. Zus\"atzlich wurde im Abschnitt \ref{Liferay} gepr\"uft, ob Liferay als ECM-Tool geeignet ist.
 
 Hierf\"ur wurden die im Abschnitt \ref{Technologievergleich} aufgef\"uhrten Anforderungen noch einmal in Tabellenform dargestellt. (siehe Tabelle \ref{Systemvergleich}) Die einzelnen Systeme wurde in der Tabelle nebeneinander gestellt, wobei ein \textcolor{green}{\checkmark} f\"ur volle Umsetzung im System, ein \textcolor{orange}{\checkmark X} f\"ur eine Umsetzung im System gegen Geb\"uhren und ein \textcolor{red}{X} f\"ur keine Umsetztung im System steht.
 
@@ -136,7 +136,7 @@ Das Verwalten, Versionieren und das Anzeigen von Dokumenten funktioniert sehr gu
 Die vielversprechenste alternative ist Alfresco, welches alle Anforderungen erf\"ullt. Zum einen ist es Open Source und somit frei verf\"ugbar, zum anderen bietet es sehr viele Schnittstellen an, um mit anderen Programmen zu kommunizieren. Standardm\"a\ss{}ig liest Alfresco alle Metadaten einer Datei beim hinzuf\"ugen in das System aus, und stellt diese auch dar. Zus\"atzlich lassen sich weitere eigene Metadaten zu den Dateien hinzuf\"ugen. 
 
 Das verwalten von eingenen Metadaten geschieht hier auf der Basis von XML-Dokumenten, welche Alfresco hinzugef\"ugt werden m\"ussen.
-Hierzu jedoch mehr im Kapitel \ref{Implementierung Backend}
+Hierzu jedoch mehr im Kapitel \ref{Implementierung Backend}.
 
 \begin{table}[htbp]
 \begin{center}
