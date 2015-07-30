@@ -1,1 +1,70 @@
 \section{Implementierung des Frontends auf Basis von Liferay} \label{Implementierung Frontend}
+Liferay ist ein hochperformanter Portalserver, welcher wie auch schon Alfresco Open Source ist. Der Nutzer, hat bei Liferay die Auswahl zwischen einer kostenlosen Community Edition und einer kostenpflichtigen Enterprise Edition. Vorteil der kostenpflichtigen Enterprise Edition ist, das hier ein Support zur Verf\"ugung steht. Au\ss{}erdem werden die kostenpflichtigen Versionen vor einer Ver\"offentlichung genauer getestet, als die Community Edition.
+\cite{Alfresco_und_Liferay} \cite{Wiki_Liferay}
+
+Liferay, nutzt f\"ur die Darstellung von Kontent sogenannte "`Portlets"'. Diese Portlets sind Anwendungen, welche Nutzern im Web zur Verf\"ungung gestellt werden.
+
+\subsection{Alfresco als IFrame im Liferay}
+In Liferay ist es m\"oglich einen Webcontent, wie Alfresco einer ist, als IFrame darzusellen. Der Vorteil einer solchen Umsetzung ist, dass sie schnell und einfach \"uber ein Web-Content-Portlet umgesetzt werden kann. Ein gro\ss{}er Nachteil eines solchen IFrames ist, dass er nicht ge\"andert werden kann. So ist zum Beispiel das Layout vollkommen fest vorgegeben. Auch ist es nicht sinnvoll die komplette Alfrescooberfl\"ache innerhalb von Liferay darzustellen.
+
+\subsection{Liferay-Repository als Frontend f\"ur Alfresco Dateien}
+In der Arbeit soll untersucht werden, ob sich Liferay als Frontend f\"ur Alfresco eignet und wie ein solches ungesetzt werden kann. Da sich ein IFrame hierf\"ur absolut nicht eignet, wurde nach weiteren L\"osungen gesucht.
+
+Liferay bietet die M\"oglichkeit, alle Dateien innerhalb der Anwendung zu verwalten und diese bei bedarf sortiert oder gefiltert auszugeben oder anzuzeigen. Zus\"atzlich, k\"onnen auch Dateien aus anderen Systemen als Repository zu Liferay hinzugef\"ugt werden. 
+
+Das hinzuf\"ugen einen Repositorys ist im grunde ganz einfach, w\"are da nicht die Benutzerverwaltung.
+
+\subsubsection{Benutzerverwaltung f\"ur eine Repositoryzugriff konfigurieren}
+Da das im Abschnitt \ref{Alfresco als Repository im Liferay} verwendete CMIS-Repository funktioniert nur, wenn zuvor eine Authentifizierung des Nutzers stattgefunden hat. Normalerweise wird so eine Benutzerverwaltung von einem LDAP-Server oder \"uber SSO vorgenommen. 
+
+Es reicht f\"ur die prototypische Implementierung in dieser Arbeit vollkommen aus, den gleichen Benutzer in beiden Systemen zu erstellen. Hierbei m\"ussen die die Passw\"orter und die Benutzernamen in beiden Systemen \"ubereinstimmen.
+
+Ist der selbe Nutzer in beiden Systemen erstellt, muss in die Liferay-Datei \texttt{portal-setup-wizard.properties} welche im Order \texttt{LIFERAY\_HOME} noch die im Listing \ref{Datei Erweiterung portal-setup-wizard.properties} zu sehende Zeile hinzugef\"ugt werden. \cite{CMIS_Repo}
+
+\lstinputlisting[caption=Erweiterung in der Datei portal-setup-wizard.properties, label=Datei Erweiterung portal-setup-wizard.properties]{Code/portal-setup-wizard.properties}
+
+Zus\"atzlich muss in Alfresco unter \texttt{Admin \MVRightarrow Kontrollbereich \MVRightarrow Portaleinstellungen \MVRightarrow} \\
+\texttt{Authentifizierung} hier muss im Feld \texttt{Wie authentifizieren sich Nutzer?} "`Mit Benutzername"' angegeben werden.
+
+Nach einem neustart des Servers, muss sich ab sofort mit dem Benutzernamen angemeldet werden.
+
+\subsubsection{Alfresco als Repository im Liferay}\label{Alfresco als Repository im Liferay}
+Im Liferay kann auf der Seite "`Inhalte"' unter "`Dokumente und Medien"' ein neues Repository erzeugt werden. Es muss ein Name f\"ur das Repository gew\"ahlt werden, unter dem dieses sp\"ater zu finden ist. Als Repositorytyp muss ein \ac{CMIS}-Repository der art "`AtomPub"' gew\"ahlt werden.
+
+Die passende Repository-URL von Alfresco kann auf der Seite \url{http://127.0.0.1:8080/alfresco/} gefunden werden. Grunds\"atzlich ist es egal, ob die AtomPub version 1.0 oder 1.1 gew\"ahlt wird. Zus\"atzlich finden sich hier auch andere Links, wie zum Beispiel ein Link f\"ur den WebDav-Zufriff auf Alfresco.
+
+Ist die richtige URL im Feld "`AtomPub-URL"' eingetragen, muss noch die Berechtigung gew\"ahlt und anschlie\ss{}end gespeichert werden. Die Felder "`Beschreibung"' und "`Repository ID"' k\"onnen frei bleiben.
+
+Ist alles richtig konfiguriert, sind nun alle Dateien vom Alfresco in Liferay abrufbar. \cite{CMIS_Repo}
+
+Nachdem das Repository erstellt wurde, k\"onnen die Dateien aus Alfresco innerhalb von Liferay verwendet und dargestellt werden.
+
+Sehr schnell f\"allt auf, das Liferay nur Metadaten darstellt, welche in der Datei selbst vorhanden sind. Alle anderen Metadaten, welche in Alfreso vorhanden sind werden ignoriert. In folgenden Abbschnitt \ref{Untersuchungen zum Liferay-Repository} wird genauer untersucht, warum die Alfresco-Metadaten nicht dargestellt werden.
+
+\subsubsection{Untersuchungen zum Liferay-Repository}\label{Untersuchungen zum Liferay-Repository}
+Wie im Abschnitt \ref{Alfresco als Repository im Liferay} schon erkl\"art, ist Liferay nicht in der Lage, die Metadaten von Alfresco darzustellen. Im folgenden Kapitel soll nun herausgefunden werden, warum dies so ist.
+
+Als erstes muss nat\"urlich \"uberpr\"uft werden, ob Alfresco \"uberhaupt alle vorhandenen Metadaten an anderes Systeme \"ubergibt.
+
+\"Uber den Link im Listing \ref{Abfrage mit CMIS} k\"onnen alle Informationen zu einem Dokument (Node) abgefragt werden. Zu beachten ist, dass nat\"urlich die id bei der Verwendung ver\"andert werden muss. \cite{GetNodeInfo}
+
+\lstinputlisting[language=html, caption=Abfrage aller Properties eines Nodes mittels CMIS 1.1, label=Abfrage mit CMIS]{Code/getNodeInformation.html}
+
+Beim Aufrufen des Links, muss zuerst eine Authentifizierung f\"ur Alfresco angeben werden. War diese korrekt, so wird im Browser das entsprechende Element mit allen Metadaten in XML dargestellt. Dies ist zum einen die Best\"atigung, dass der CMIS dienst von Alfresco ohne Probleme l\"auft, aber zum anderen auch, dass Alfresco alle vorhandenen Metadaten \"ubermittelt.
+
+Somit liegt das Problem schon einmal nicht auf der Seite von Alfresco und es muss untersucht werden, ob die Daten im Liferay-Server richtig ankommen.
+
+Um zu verifizieren, ob Liferay die Metadaten von Alfresco gelesen hat, muss in die Datenbank von Liferay geschaut werden.
+
+Liferay nutzt zur internen Datenspeicherung eine HyperSQL-Datenbank, welche vollst\"anig in Java implementiert ist und unter BSD-Lizenz steht. Um die Datenbank auszulesen wird ein Tool ben\"otigt, welches jedoch mit dem Liferay-Paket mitgeliefert wird. Die jar-Datei befindet ist unter \texttt{LIFERAY\_HOME/tomcat-7.0.42/lib/ext/hsql.jar} zu finden.
+
+Nach dem Start muss als ULR \url{jdbc:hsqldb:<Pfad zum Liferay-Home>/LIFERAY\_HOME/data/hsql/lportal} angegeben werden um sich mit der Datenbank zu verbinden. Vorher muss jedoch der Liferay-Server heruntergefahren werden, da dieser ein Lock auf die Datenbank h\"alt und sie somit sperrt.
+
+Innerhalb der Datenbank ist in der Tabelle \texttt{PUBLIC.DDMCONTENT} hier sind nat\"urlich auch die Dateien abgelegt, welche \"uber das Repository eingef\"ugt wurden. In der Spalte \texttt{XML} alle Metadaten zu einem Dokument abgelegt. Hier f\"allt sofort auf, dass nicht alle Metadaten, welche Alfresco bietet angegeben sind. Lediglich standardisierte Metadaten welche aus der Datei ausgelesen wurden, sind hier zu finden. 
+
+Daher ist es nicht verwunderlich, dass Liferay keine weiteren Metadaten anzeigt, denn sie sind einfach nicht bekannt.
+
+Im folgenden muss nun gepr\"uft werden, wie die Metadaten in Liferay bekannt gemacht werden k\"onnen. Hierbei m\"ussen die Metadaten zum einen aus Alfresco ausgelesen, in Liferay gespeichert und angezeigt werden.
+
+\subsection{Alternativen zum Liferay-Repository}
+In den vorherigen Kapiteln wurde beschrieben, wie es m\"oglich ist Alfresco Daten in Liferay zu integrieren. Es wurde jedoch festgestellt, das Liferay standardm\"a\ss{}ig nicht in der lage ist die Metadaten von Alfresco-Dokumenten zu verarbeiten oder anzuzeigen. Daher wird im folgenden nun auf Alternativen eingegangen.
