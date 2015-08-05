@@ -4,7 +4,7 @@ img_extIsRegExp=false
 img_extensions=.eps .jpg .jpeg .png .pdf .ps .fig .gif
 kileprversion=2
 kileversion=2.1.3
-lastDocument=Frontend.tex
+lastDocument=Backend.tex
 masterDocument=
 name=Bachelorarbeit
 pkg_extIsRegExp=false
@@ -102,10 +102,10 @@ Mode=LaTeX
 
 [item:Abkuerzungen.tex]
 archive=true
-column=44
+column=12
 encoding=ISO-8859-1
 highlight=LaTeX
-line=2
+line=24
 mode=LaTeX
 open=true
 order=8
@@ -152,10 +152,10 @@ order=0
 
 [item:Backend.tex]
 archive=true
-column=148
+column=259
 encoding=ISO-8859-1
 highlight=LaTeX
-line=156
+line=144
 mode=LaTeX
 open=true
 order=6
@@ -168,7 +168,7 @@ highlight=LaTeX
 line=409
 mode=LaTeX
 open=true
-order=5
+order=4
 
 [item:Einleitung.tex]
 archive=true
@@ -182,17 +182,17 @@ order=1
 
 [item:Frontend.tex]
 archive=true
-column=147
+column=0
 encoding=ISO-8859-1
 highlight=LaTeX
-line=50
+line=13
 mode=LaTeX
 open=true
 order=7
 
 [item:Quellen.bib]
 archive=true
-column=98
+column=91
 encoding=UTF-8
 highlight=BibTeX
 line=231
@@ -212,17 +212,17 @@ order=3
 
 [item:Technologievergleich.tex]
 archive=true
-column=60
+column=39
 encoding=UTF-8
 highlight=LaTeX
-line=138
+line=153
 mode=LaTeX
 open=true
-order=4
+order=5
 
 [view-settings,view=0,item:Abkuerzungen.tex]
-CursorColumn=44
-CursorLine=2
+CursorColumn=12
+CursorLine=24
 JumpList=
 ViMarks=.,30,11,[,30,8,],30,11
 
@@ -251,10 +251,10 @@ JumpList=
 ViMarks=.,105,0,[,104,0,],105,22
 
 [view-settings,view=0,item:Backend.tex]
-CursorColumn=148
-CursorLine=156
+CursorColumn=259
+CursorLine=144
 JumpList=
-ViMarks=.,142,185,[,142,175,],142,185
+ViMarks=.,144,256,[,144,256,],144,258
 
 [view-settings,view=0,item:Datenkonzept.tex]
 CursorColumn=11
@@ -269,13 +269,13 @@ JumpList=
 ViMarks=.,11,168,[,11,168,],11,168
 
 [view-settings,view=0,item:Frontend.tex]
-CursorColumn=147
-CursorLine=50
+CursorColumn=0
+CursorLine=13
 JumpList=
-ViMarks=.,66,211,[,66,171,],66,211
+ViMarks=.,71,521,[,71,478,],71,521
 
 [view-settings,view=0,item:Quellen.bib]
-CursorColumn=98
+CursorColumn=91
 CursorLine=231
 JumpList=
 ViMarks=.,0,0,[,0,0,],-1,-1
@@ -287,7 +287,7 @@ JumpList=
 ViMarks=.,58,19,[,58,19,],58,19
 
 [view-settings,view=0,item:Technologievergleich.tex]
-CursorColumn=60
-CursorLine=138
+CursorColumn=39
+CursorLine=153
 JumpList=
-ViMarks=.,138,59,[,138,59,],138,59
+ViMarks=.,153,38,[,153,38,],153,38

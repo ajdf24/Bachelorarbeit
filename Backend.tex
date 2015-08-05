@@ -4,29 +4,29 @@ F\"ur das Backend eignet sich der Analyse aus Kapitel \ref{Technologievergleich}
 \subsection{Installation}
 Die Installation von Alfresco ist denkbar einfach und unter Windows, sowie unter Linux m\"oglich. F\"ur den Download der Community Edition muss man sich mit einer g\"ultigen E-Mail-Adresse bei Alfresco anmelden, um den Download beginnen zu k\"onnen\footnote{https://www.alfresco.com/de/products/community/download}. 
 
-Die Anmeldung hat den Vorteil, das der Nutzer zu Webinars und anderen neuen Dingen rund um Alfresco immer auf dem laufenden ist.
-Die kostenpflichtige Variante von Alfresco bietet zus\"atzlichen technische Unterst\"utzung und einige Enterprise Features, welche jedoch f\"ur die Arbeit nicht ben\"otigt werden. \cite{Wiki_Alfresco}
+Die Anmeldung hat den Vorteil, dass der Nutzer zu Webinars und anderen neuen Dingen rund um Alfresco immer auf dem Laufenden ist.
+Die kostenpflichtige Variante von Alfresco bietet zus\"atzliche technische Unterst\"utzung und einige Enterprise Features, welche jedoch f\"ur die Arbeit nicht ben\"otigt werden. \cite{Wiki_Alfresco}
 
-Nach dem Download f\"uhrt unter Linux ein Skript die Installation durch. Hierbei wird der Nutzer ausf\"uhrlich \"uber alle getanen Schritte informiert. Der Nutzer muss w\"ahrend der Installation ein Passwort f\"ur das Administrator-Konto "`admin"' angeben.\cite{Alfresco_und_Liferay}
+Nach dem Download f\"uhrt unter Linux ein Skript die Installation durch. Hierbei wird der Nutzer ausf\"uhrlich \"uber alle durgef\"uhrten Schritte informiert. Der Nutzer muss w\"ahrend der Installation ein Passwort f\"ur das Administrator-Konto "`admin"' angeben.\cite{Alfresco_und_Liferay}
 
-Ist die Installation abgeschlossen und der Server gestartet, kann Alfresco im Browser unter \url{http://127.0.0.1:8080/share/page/} aufgerufen werden. Hier gelangt man zur Anmeldung, wo das bei der Installation angegebene Passwort abgefragt wird.
+Ist die Installation abgeschlossen und der Server gestartet, kann Alfresco im Browser unter \url{http://127.0.0.1:8080/share/page/} aufgerufen werden. Hier gelangt der Nutzer zur Anmeldung, wo das bei der Installation angegebene Passwort abgefragt wird.
 
-War die Anmeldung erfolgreich, gelangt der Nutzer auf das "`Administrator Dashboard"', welches in Abbildung \ref{Alfresco Dashboard} im Abschnitten \ref{Alfresco} zu sehen ist.
+War die Anmeldung erfolgreich, gelangt der Nutzer auf das "`Administrator Dashboard"', welches in Abbildung \ref{Alfresco Dashboard} im Abschnitt \ref{Alfresco} zu sehen ist.
 
 \subsection{Metadatenmodell in Alfresco} \label{Metadatenmodell von Alfresco}
-Um ein Metadatenmodell in Alfresco einf\"ugen zu k\"onnen, muss es mittels XML beschrieben werden. Unter \texttt{ALFRESCO\_HOME} wird im folgenden das Home-Verzeichnis des Alfresco-Servers zu verstehen sein. 
+Um ein Metadatenmodell in Alfresco einf\"ugen zu k\"onnen, muss es mittels XML beschrieben werden. Unter \texttt{ALFRESCO\_HOME} wird im Folgenden das Home-Verzeichnis des Alfresco-Servers zu verstehen sein. 
 
-In Abbildung \ref{Alfresco Content-Modell} ist das Content-Modell von Alfresco einmal in UML dargestellt. In der oberen Mitte ist das Hauptelement, die Klasse (Class) zu finden. Eine Klasse beschreibt den Aufbau eines Content-Modells und enth\"alt Aspekte (Aspect) und Typen (Type) welche ganz oben im Diagramm zu sehen sind. \cite{Professional_Alfresco}
+In Abbildung \ref{Alfresco Content-Modell} ist das Content-Modell von Alfresco einmal in UML dargestellt. In der oberen Mitte ist das Hauptelement, die Klasse (Class), zu finden. Eine Klasse beschreibt den Aufbau eines Content-Modells und enth\"alt Aspekte (Aspect) und Typen (Type) welche ganz oben im Diagramm zu sehen sind. \cite{Professional_Alfresco}
 
-Klassen im Content-Modell k\"onnen ihre Eigenschaften, das hei\ss{}t ihre Aspekte und Typen an Unterklassen vererben. In Alfresco ist jedoch nur eine einfache und keien Mehrfachvererbung zul\"assig.
+Klassen im Content-Modell k\"onnen ihre Eigenschaften, das hei\ss{}t ihre Aspekte und Typen, an Unterklassen vererben. In Alfresco ist jedoch nur eine einfache und keie Mehrfachvererbung zul\"assig.
 
-Eine Klasse kann wie um Diagramm gut zu sehen ist entweder Assoziationen auf andere Klassen (Peer Association) oder aber Objekte (Property) enthalten. Eine Assoziationen auf eine andere Klasse ist unter Alfresco jedoch nur zul\"assig, wenn schon ein Kontent der jeweiligen Klasse existiert, andernfalls muss er vorher angelegt werden. Objekte oder auch Attribute k\"onnen aus einem Constraint oder einem einfachen Datentyp (Data Type) bestehen.
+Eine Klasse kann, wie um Diagramm gut zu sehen ist, entweder Assoziationen auf andere Klassen (Peer Association) oder aber Objekte (Property) enthalten. Eine Assoziation auf eine andere Klasse ist unter Alfresco jedoch nur zul\"assig, wenn schon ein Kontent der jeweiligen Klasse existiert, andernfalls muss er vorher angelegt werden. Objekte oder auch Attribute k\"onnen aus einem Constraint oder einem einfachen Datentyp (Data Type) bestehen.
 
-Um jedoch das Metadatenmodell wie in Kapitel \ref{Erstellung eines Datenkonzepts} beschrieben umsetzen zu k\"onnen m\"ussen Datentype auch wieder Klassen enthalten k\"onnen. Dies ist jedoch unter keinem \ac{ECM}-Tool m\"oglich. Jedoch bietet Alfresco den besten Ansatz, weshalb das Datenmodells nun nocheinmal f\"ur Alfresco angepasst werden muss. Wie genau das Metadatenmodell angepasst wurde, ist im Abschnitt \ref{Ver\"andertes Datenmodell f\"ur Alfresco} genauer erl\"autert.
+Um jedoch das Metadatenmodell, wie in Kapitel \ref{Erstellung eines Datenkonzepts} beschrieben, umsetzen zu k\"onnen, m\"ussen Datentypen auch wieder Klassen enthalten k\"onnen. Dies ist jedoch unter keinem \ac{ECM}-Tool m\"oglich. Jedoch bietet Alfresco den besten Ansatz, weshalb das Datenmodell nun nocheinmal f\"ur Alfresco angepasst werden muss. Wie genau das Metadatenmodell angepasst wurde, ist im Abschnitt \ref{Ver\"andertes Datenmodell f\"ur Alfresco} genauer erl\"autert.
 
-Unter Alfresco kann eine Klasse mehrere Typen enthalten, ein Typ kann zum Beispiel ein Bild, eine Gesetz oder \"ahnliches sein. Jeder Typ kann Attribute beinhalten, welche fest mit ihm verbunden sind. Wird eine PDF-Datei in Alfresco also zu einem "`Gesetz"' also zu ein Dokument mit dem Datentyp Gesetz umgewandelt enth\"alt es unweigerlich nach der \"Anderung alle Attribute, welche direkt im Typ beschrieben und verankert sind.
+Unter Alfresco kann eine Klasse mehrere Typen enthalten, ein Typ kann zum Beispiel ein Bild, ein Gesetz oder \"ahnliches sein. Jeder Typ kann Attribute beinhalten, welche fest mit ihm verbunden sind. Wird eine PDF-Datei in Alfresco also zu einem "`Gesetz"' also zu ein Dokument mit dem Datentyp \texttt{Gesetz} umgewandelt, enth\"alt es unweigerlich nach der \"Anderung alle Attribute, welche direkt im Typ beschrieben und verankert sind.
 
-Ein Aspekt kann frei definiert werden und besitzt die M\"oglichkeit sich unabh\"angig vom Typ hinzuf\"ugen zu lassen. M\"ochte ein Nutzer also die Attribute von \ac{INSPIRE} hinzuf\"ugen, so reicht es wenn er den entsprechenden Aspekt zum Dokument hinzuf\"ugt. Vorausgesetzt nat\"urlich, dass die jeweiligen Datentypen als Aspekt definiert sind.
+Ein Aspekt kann frei definiert werden und besitzt die M\"oglichkeit, sich unabh\"angig vom Typ hinzuf\"ugen zu lassen. M\"ochte ein Nutzer also die Attribute von \ac{INSPIRE} hinzuf\"ugen, so reicht es, wenn er den entsprechenden Aspekt zum Dokument hinzuf\"ugt. Voraussetzung ist nat\"urlich, dass die jeweiligen Datentypen als Aspekt definiert sind.
 
 \begin{figure}[!ht]
 \centering
@@ -37,14 +37,14 @@ Ein Aspekt kann frei definiert werden und besitzt die M\"oglichkeit sich unabh\"
 \end{figure}
 
 \subsection{Ver\"andertes Datenmodell f\"ur Alfresco}\label{Ver\"andertes Datenmodell f\"ur Alfresco}
-Wie im Abschnitt \ref{Metadatenmodell von Alfresco} schon ausf\"uhrlich beschrieben, ist es nicht m\"oglich die zuvor im Kapitel \ref{Erstellung eines Datenkonzepts} erstellte Metadatenstruktur Eins zu Eins umzusetzen. Daher wird nun beschrieben, wie das Datenmodell f\"ur Alfresco angepasst wurde.
+Wie im Abschnitt \ref{Metadatenmodell von Alfresco} schon ausf\"uhrlich beschrieben, ist es nicht m\"oglich, die zuvor im Kapitel \ref{Erstellung eines Datenkonzepts} erstellte Metadatenstruktur Eins-zu-Eins umzusetzen. Daher wird nun beschrieben, wie das Datenmodell f\"ur Alfresco angepasst wurde.
 
-Da Alfresco den "`Dublin Core"'-Standard schon implementiert hat entf\"allt dieser in der Implementierung. Auch die Datensammlung \texttt{Datei} entf\"allt, da die entsprechenden Daten automatisch bei jeder hochgeladenen Datei von Alfresco ausgelesen und erstellt werden. 
+Da Alfresco den "`Dublin Core"'-Standard schon implementiert hat, entf\"allt dieser in der Implementierung. Auch die Datensammlung \texttt{Datei} entf\"allt, da die entsprechenden Daten automatisch bei jeder hochgeladenen Datei von Alfresco ausgelesen und erstellt werden. 
 
 Die im Abschnitt \ref{FADO Metadaten} gezeigten Datensammlungen werden nun zu Datentypen oder Aspekten, welche das jeweilige Dokument beschreiben. Alle farbig hinterlegten Attribute stellen Aspekte dar, die von anderen Klassen aus Alfresco \"ubernommen wurden.
-Packages stellen in diesem Diagramm Klassen dar. Die UML-Klassen stellen Aspekte oder Typen dar. Worum es sich genau handelt steht jeweils auch an den Datensammlungen. 
+Packages stellen in diesem Diagramm Klassen dar. Die UML-Klassen stellen Aspekte oder Typen dar. Worum es sich genau handelt, steht jeweils auch an den Datensammlungen. 
 
-Alle in den folgenden Abschnitten nicht aufgef\"uhrten Datensammlungen sind direkt in den Aspekt  untergebracht, da Alfresco wie schon erw\"ahnt keine Klassen, oder Typen als Attribute zul\"asst.
+Alle in den folgenden Abschnitten nicht aufgef\"uhrten Datensammlungen sind direkt in den Aspekten untergebracht, da Alfresco, wie schon erw\"ahnt, keine Klassen oder Typen als Attribute zul\"asst.
 
 \subsubsection{Die Datentypen}\label{Die Datentypen}
 Die in den Abschnitten \ref{FADO Metadaten} bis \ref{ICT-ENSURE Metadaten} gezeigten Grunddatentypen bleiben im angepassten Modell weitestgehend identisch. Da unter Alfresco eine Datei nur von einem Datentyp sein kann, wurde die Datensammlung \texttt{FADO Metadaten} den anderen \ac{FADO}-Sammlungen \"ubergeordnet, wie in Abbildung \ref{Fado Datentypen f\"ur Alfresco} zu sehen ist. Der Typ \texttt{Fado Metadaten} findet sich nun in der Klasse \texttt{Fado}, welche wiederum die Oberklasse f\"ur die Typen \texttt{FADO Urteil}, \texttt{Forschungsvorhaben} und \texttt{Bibliografische Angaben} bildet.
@@ -57,8 +57,8 @@ Die in den Abschnitten \ref{FADO Metadaten} bis \ref{ICT-ENSURE Metadaten} gezei
 \centering
 \end{figure}
 
-Die Datentypen \texttt{DRS-Metadaten} und \texttt{Bildarchiv Metadaten} sind im Grunde gleich geblieben. Hier haben sich nur geringf\"ugige \"Anderungen ergeben, da die Datensammlungen wieder Zusammengefasst worden sind. Die beiden Datensammlungen \texttt{Artikel Metadaten} und \texttt{Konferenz} sind zusammengefasst worden und nun im Typ \texttt{Artikel Metadaten} zu finden.
-Die eben beschrieben \"Anderungen sind in den Abbildungen \ref{Bildarchiv und ICT-ENSURE Datentypen f\"ur Alfresco} und \ref{DRS Datentyp f\"ur Alfresco} zu sehen.
+Die Datentypen \texttt{DRS-Metadaten} und \texttt{Bildarchiv Metadaten} sind im Grunde gleich geblieben. Hier haben sich nur geringf\"ugige \"Anderungen ergeben, da die Datensammlungen wieder zusammengefasst worden sind. Die beiden Datensammlungen \texttt{Artikel Metadaten} und \texttt{Konferenz} sind zusammengefasst worden und nun im Typ \texttt{Artikel Metadaten} zu finden.
+Die eben beschriebenen \"Anderungen sind in den Abbildungen \ref{Bildarchiv und ICT-ENSURE Datentypen f\"ur Alfresco} und \ref{DRS Datentyp f\"ur Alfresco} zu sehen.
 
 \begin{figure}[!ht]
 \centering
@@ -80,11 +80,11 @@ Im Abschnitt \ref{Die Klasse Gerichtbarkeit} wird noch einmal genauer erw\"ahnt,
 
 \FloatBarrier
 \subsubsection{Die Klasse Gerichtbarkeit}\label{Die Klasse Gerichtbarkeit}
-Das Package Gerichtbarkeit, beschreibt eine Klasse, welche drei Aspekte beinhaltet. Diese Aspekte sind \texttt{Gesetz}, welcher die Datensammlungen \texttt{Fundstelle}, \texttt{Datum der Rechtsvorschriften} und \texttt{Ablage} zusammengefasst, \texttt{Urtei} und \texttt{Gericht}. 
+Das Package \texttt{Gerichtbarkeit} beschreibt eine Klasse, welche drei Aspekte beinhaltet. Diese Aspekte sind \texttt{Gesetz}, welcher die Datensammlungen \texttt{Fundstelle}, \texttt{Datum der Rechtsvorschriften} und \texttt{Ablage} zusammengefasst, \texttt{Urtei} und \texttt{Gericht}. 
 
-Die Datensammlung \texttt{Gericht} geht ohne Ver\"anderung einfach in einen Aspekt \"uber und wird im Typ \texttt{FADO Urteil} verwendet. Die Sammlungen \texttt{Urteil} musste etwas abge\"andert werden. Die Verweise auf das Vorgericht und das Nachgericht wurden aufgeschl\"usselt, da Alfresco bekanntlich keine Klassen als Attribute unterst\"utzt.
+Die Datensammlung \texttt{Gericht} geht ohne Ver\"anderung in einen Aspekt \"uber und wird im Typ \texttt{FADO Urteil} verwendet. Die Sammlung \texttt{Urteil} musste etwas abge\"andert werden. Die Verweise auf das Vorgericht und das Nachgericht wurden aufgeschl\"usselt, da Alfresco bekanntlich keine Klassen als Attribute unterst\"utzt.
 
-In Abbildung \ref{Klasse Gerichtbarkeit} ist die Klasse Gerichtbarkeit noch einmal dargestellt. Zu beachten ist, dass das Package hier f\"ur eine gesamte Klasse steht und die eigentlichen Klassen nur Aspekte darstellen.
+In Abbildung \ref{Klasse Gerichtbarkeit} ist die Klasse \texttt{Gerichtbarkeit} noch einmal dargestellt. Zu beachten ist, dass das Package hier f\"ur eine gesamte Klasse steht und die eigentlichen Klassen nur Aspekte darstellen.
 
 \begin{figure}[!ht]
 \centering
@@ -96,9 +96,9 @@ In Abbildung \ref{Klasse Gerichtbarkeit} ist die Klasse Gerichtbarkeit noch einm
 
 \FloatBarrier
 \subsubsection{Die Klasse Standard Aspekte}\label{Die Klasse Standard Aspekte}
-Das Package Standard Aspekte , ist wieder eine Alfresco Metadaten-Klasse, welche den Aspekt \texttt{Inspire} enth\"alt. Durch die \"Anderungen am Datenmodell, wurden die Attribute, welche sich in den verweisten Datensammlungen befunden haben, nun direkt in der Datensammlung \texttt{Inspire} untergebracht, welche nun ein Aspekt ist. 
+Das Package \texttt{Standard Aspekte}, ist wieder eine Metadaten-Klasse von Alfresco, welche den Aspekt \texttt{Inspire} enth\"alt. Durch die \"Anderungen am Datenmodell wurden die Attribute, welche sich in den verweisten Datensammlungen befunden haben, nun direkt in der Datensammlung \texttt{Inspire} untergebracht, welche nun ein Aspekt ist. 
 
-Die Abbildung \ref{Klasse Standard Aspekte} zeigt noch einmal den Aspekt \texttt{Inspire}, welcher sich in der Klasse (dem Package) Standard Aspekte befindet.
+Die Abbildung \ref{Klasse Standard Aspekte} zeigt noch einmal den Aspekt \texttt{Inspire}, welcher sich in der Klasse (dem Package) \texttt{Standard Aspekte} befindet.
 
 \begin{figure}[!ht]
 \centering
@@ -110,9 +110,9 @@ Die Abbildung \ref{Klasse Standard Aspekte} zeigt noch einmal den Aspekt \texttt
 
 \FloatBarrier
 \subsubsection{Die Klasse Bibliografische Aspekte} \label{Die Klasse Bibliografische Aspekte}
-In Abbildung \ref{Klasse Bibligrafische Aspekte} ist die Klasse Bibliografische Aspekte zu sehen, welche die beiden Aspekte \texttt{Dokumenten Information} und \texttt{Literatur Metadaten} enth\"alt.
+In Abbildung \ref{Klasse Bibligrafische Aspekte} ist die Klasse \texttt{Bibliografische Aspekte} zu sehen, welche die beiden Aspekte \texttt{Dokumenten Information} und \texttt{Literatur Metadaten} enth\"alt.
 
-Beim Aspekt \texttt{Dokumenten Information} ergaben sich keine \"Anderungen, au\ss{}er das das Attribut "`Stand"' nun eigenst\"andig ist und nicht mehr auf ein Datum verweist. Der Aspekt \texttt{Literatur Metadaten} enth\"alt nun die Attribute der Datensammlungen \texttt{Kapitel} und \texttt{Publikations ID}.
+Beim Aspekt \texttt{Dokumenten Information} ergaben sich keine \"Anderungen, au\ss{}er dass das Attribut "`Stand"' nun eigenst\"andig ist und nicht mehr auf ein Datum verweist. Der Aspekt \texttt{Literatur Metadaten} enth\"alt nun die Attribute der Datensammlungen \texttt{Kapitel} und \texttt{Publikations ID}.
 
 \begin{figure}[!ht]
 \centering
@@ -126,23 +126,23 @@ Beim Aspekt \texttt{Dokumenten Information} ergaben sich keine \"Anderungen, au\
 \subsection{Implementierung einer Datensammlung}
 Eine Datensammlung in Alfresco wird im Verzeichnis \texttt{ALFRESCO\_HOME/tomcat/shared/classes
 /alfresco/extensions} abgelegt.
-Wie ein Datenmodell in Alfresco Implementiert wird, ist anhand der Datensammlung \texttt{Bildarchiv Metadaten} gezeigt.
+Wie ein Datenmodell in Alfresco implementiert wird, ist anhand der Datensammlung \texttt{Bildarchiv Metadaten} gezeigt.
 
-Mit dem Tag "`model"' wird ein Datenmodell in Alfresco beschrieben, alle weiteren Einstellungen werden innerhalb dieses Tags vollzogen. Der Name des Modells, wird durch das Prefix und die Namespace-URI gebildet. Eine weitere beschreibung hierzu folgt.
+Mit dem Tag "`model"' wird ein Datenmodell in Alfresco beschrieben, alle weiteren Einstellungen werden innerhalb dieses Tags vollzogen. Der Name des Modells wird durch das Prefix und die Namespace-URI gebildet. Eine weitere Beschreibung hierzu folgt.
 
 Die Tags "`description"', "`author"' und "`version"' geben grundlegende Informationen \"uber das entsprechende Modell und wer daf\"ur verantwortlich ist.
 
-Innerhalb des Tags "`imports"' werden Datenmodelle importiert, welche in dem Modell entsprechend verwendet werden. Grunds\"atzlich werden die Modelle \texttt{http://www.alfresco.org/model/ dictionary/1.0} und \texttt{http://www.alfresco.org/model/content/1.0} immer importiert, da Sie den Grundstock eines jeden Modells bilden.
+Innerhalb des Tags "`imports"' werden Datenmodelle importiert, welche in dem Modell entsprechend verwendet werden. Grunds\"atzlich werden die Modelle \texttt{http://www.alfresco.org/model/ dictionary/1.0} und \texttt{http://www.alfresco.org/model/content/1.0} immer importiert, da sie den Grundstock eines jeden Modells bilden.
 
 Zus\"atzlich werden die beiden Modelle \texttt{Bibliografische-Aspekte} und \texttt{Standard-Metadaten} importiert (siehe Abschnitt \ref{Die Klasse Bibliografische Aspekte} und \ref{Die Klasse Standard Aspekte}), da ihre Aspekte innerhalb des Modells verwendet werden. Hierzu sp\"ater mehr.
 
-Der Tag "`namespaces"' definiert den Namensraum, in welchem das Datenmodell verwendet wird. Mit "`namespace"' wird der spezifische Namensraum zum einen durch eine URI und ein Prefix festgelegt. Das Prefix ist eine Abk\"urzung, um nicht immer die kommplette URI angeben zu m\"ussen. Die URI wiederum gibt an, wo das Datenmodell abgelegt wird, beziehungsweise ist.
+Der Tag "`namespaces"' definiert den Namensraum, in welchem das Datenmodell verwendet wird. Mit "`namespace"' wird der spezifische Namensraum zum einen durch eine URI, zum anderen durch ein ein Pr\"afix festgelegt. Das Pr\"afix ist eine Abk\"urzung, um nicht immer die komplette URI angeben zu m\"ussen. Die URI wiederum gibt an, wo das Datenmodell abgelegt wird, beziehungsweise zu finden ist.
 
-"`constraints"' ist ein Tag, welcher mehere Constraints beinhalten kann, wobei ein Constraint einen regul\"aren Ausdruck (Regex) enth\"alt und eine Zeichenfolge genauer beschreibt. Wird ein entsprechendes Constraint auf ein Textfeld angewendet, so wird beim Speichern des Dokuments von Alfresco \"uberpr\"uft, ob das jeweilige Attribut der Vorgabe des Constraints entspricht. Im Datenmodell \texttt{Bibliografische-Aspekte} gibt es keine Constraints, weshalb der einsprechende Tag leer ist.
+"`constraints"' ist ein Tag, welcher mehrere Constraints beinhalten kann, wobei ein Constraint einen regul\"aren Ausdruck (Regex) enth\"alt und eine Zeichenfolge genauer beschreibt. Wird ein entsprechendes Constraint auf ein Textfeld angewendet, so wird beim Speichern des Dokuments von Alfresco \"uberpr\"uft, ob das jeweilige Attribut der Vorgabe des Constraints entspricht. Im Datenmodell \texttt{Bibliografische-Aspekte} gibt es keine Constraints, weshalb der entsprechende Tag leer ist.
 
 Zus\"atzlich k\"onnen mit Constraints auch Auswahllisten realisiert werden. Hierbei werden im Constraint alle m\"oglichen Eintr\"age vorgegeben, welche sp\"ater zu Auswahl stehen sollen.
 
-Innerhalb des Tags "`types"' k\"onnen mehrere Dokumenten-Typen spezifiziert werden. Jeder einzelne Typ ist grunds\"atzlich so aufgebaut wie der im Beispielcode in Listing \ref{Bildarchiv-Metadaten Listing} unten. Der Typ hat einen Namen, welcher mit dem Prefix des jeweiligen Namensraums beginnt. 
+Innerhalb des Tags "`types"' k\"onnen mehrere Dokumenten-Typen spezifiziert werden. Jeder einzelne Typ ist grunds\"atzlich so aufgebaut wie der im Beispielcode in Listing \ref{Bildarchiv-Metadaten Listing} unten. Der Typ hat einen Namen, welcher mit dem Pr\"afix des jeweiligen Namensraums beginnt. 
 
 Im Tag "`title"' wird der Standardtitel angegeben, welcher angezeigt wird, sollte keine I18N-\"Ubersetzung vorliegen. Die \"Ubersetzung wird sp\"ater noch genauer erkl\"art.
 
