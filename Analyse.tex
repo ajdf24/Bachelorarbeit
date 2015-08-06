@@ -1,7 +1,7 @@
 \section{Analyse von Metadatenstandards} \label{Analyse Datenbestaende}
-Nach dem nun die Portale \ac{DRS}, Naturschutz-Bildarchiv und \ac{FADO}, der \ac{LUBW} und das Literaturarchiv der \ac{ICT-ENSURE} im Kapitel \ref{Stand der Technik} genauer betrachtet und die Verwaltungsstrukturen aufgezeigt wurden, betrachtet dieses Kapitel nun Standards f\"ur Metadaten. Hierbei wird unterschieden, ob es sich um fachliche oder technische Metadaten handelt.
+Nach dem nun die Portale \ac{DRS}, Naturschutz-Bildarchiv und \ac{FADO}, der \ac{LUBW} und das Literaturarchiv der \ac{ICT-ENSURE} im Kapitel \ref{Stand der Technik} vorgestellt und die Verwaltungsstrukturen aufgezeigt wurden, betrachtet dieses Kapitel nun Standards f\"ur Metadaten. Hierbei wird unterschieden, ob es sich um fachliche oder technische Metadaten handelt.
 
-\subsection{Fachlich}
+\subsection{Fachliche Metadaten}
 Fachliche Metadaten sind Daten, welche den Inhalt einer Datei oder eines Dokuments genauer beschreiben und dem Anwender dabei helfen f\"ur ihn relevante Dateien zu identifizieren. Solche Metadaten sind immer fachspezifisch und unabh\"angig von den technischen Eigenschaften einer Datei.
 \cite{Fachliche_Metadaten_Wissensportal_BI} \cite{Fachliche_Metadaten_msg} \cite{DHW_Wiki_Metadaten} \cite{Multimedia_retrieval}
 
@@ -18,7 +18,7 @@ Darwin Core beschreibt eine Zusammenfassung von Metadaten, welche f\"ur biologis
 Hierf\"ur verwendet Darwin Core bis zu 172 Tags, welche jedoch nicht zwingend verwendet werden m\"ussen. Zus\"atzlich enth\"alt der Standard auch die Tags von Dublin Core (siehe Abschnitt \ref{Dublin Core}) um das Dokument grundlegend zu beschreiben.
 \cite{Darwin_Core} \cite{Wiki_Darwin_Core}
 
-Ii Listing \ref{Darwin Core Beispiel in XML}\footnote{\url{http://rs.tdwg.org/dwc/terms/guides/xml/index.htm}} ist einmal ein Beispiel f\"ur den Darwin Core-Standard  mit XML dargestellt. Es ist zu sehen, das ein "`SimpleDarwinRecord"' verwendet wird, welcher nicht alle 172 Tags beinhaltet. 
+Im Listing \ref{Darwin Core Beispiel in XML}\footnote{\url{http://rs.tdwg.org/dwc/terms/guides/xml/index.htm}} ist einmal ein Beispiel f\"ur den Darwin Core-Standard  mit XML dargestellt. Es ist zu sehen, das ein "`SimpleDarwinRecord"' verwendet wird, welcher nicht alle 172 Tags beinhaltet. 
 
 Es ist auch zu erkennen, dass die Dublin Core-Tags inbegriffen sind (beginnend mit "`dcterms"'). Die eigentliche Tags des Darwin-Standards beginnen mit "`dwc"'.
 \lstinputlisting[caption=Darwin Core-Beispiel in XML, label=Darwin Core Beispiel in XML]{Code/Darwin_Core.xml}
@@ -30,7 +30,7 @@ Es ist auch zu erkennen, dass die Dublin Core-Tags inbegriffen sind (beginnend m
 Au\ss{}erdem enth\"alt der \ac{INSPIRE}-Standard die notwendigen Tags der DIN EN ISO 19115 (siehe Abschnitt \ref{ISO 19115}), wodurch dieser gleichzeitig nach dieser Norm ISO-konform wird. 
 \cite{INSPIRE_Richtlinie}
 
-Von den 25 Meta-Tags m\"ussen 12 Tags zwingend angegeben werden, um die Richtlinie zu erf\"ullen. Die Meta-Tags von \ac{INSPIRE} sind zum Teil untergliedert, was bedeutet, dass eine Vielzahl mehr an Information in diesen Standard enthalten sein k\"onnen.
+Von den 25 Meta-Tags m\"ussen 12 Tags zwingend angegeben werden, um die Richtlinie zu erf\"ullen. Die Meta-Tags von \ac{INSPIRE} sind zum Teil untergliedert, was bedeutet, dass mehr Information in diesen Standard enthalten sein k\"onnen.
 
 Aus \"Ubersichlichkeitsgr\"unden wird an dieser Stelle kein Beispiel Listing erfolgen, da das XML-Format von \ac{INSPIRE} sehr ausf\"uhrlich und gro\ss{} ist. Es wird jedoch an dieser Stelle auf den Editor f\"ur \ac{INSPIRE}-Metadaten der Europ\"aischen Kommission verwiesen, mit dessen Hilfe schnell und einfach XML-Dokumente mit \ac{INSPIRE}-Metadaten erzeugt werden k\"onnen\footnote{\url{http://inspire-geoportal.ec.europa.eu/editor/}}.
 \cite{INSPIRE_Geoportal} \cite{Wiki_Inspire} 
@@ -54,23 +54,21 @@ Nachteilig ist, dass das Format sehr viel auf Abk\"urzungen setzt, was eine Mens
 
 Ein kleines Beispiel zum \ac{ONIX}-Format ist im Listing \ref{ONIX Beispiel in XML} zu finden. Hier wird kurz beschrieben das es sich um einen Download handelt, welcher im Epub-Format vorhanden und lesbar ist. Ohne die Erkl\"arungen am Ende der Zeile w\"aren die Informationen nicht ohne weitere Hilfe lesbar. 
 
-\lstinputlisting[caption=ONIX-Beispiel in XML, label=ONIX Beispiel in XML]{Code/ONIX.xml} \cite{ONIX_Example}
+\lstinputlisting[caption=ONIX-Beispiel in XML \cite{ONIX_Example}, label=ONIX Beispiel in XML]{Code/ONIX.xml}
 
 
-\subsection{Technisch}
-Technische Metadaten sind Daten, die den internen Dateiaufbau und dessen Inhalt beschreiben. Sie betreffen den Anwender nur sekund\"ar und sind eher wichtig f\"ur die richtige Speicherung und f\"ur Administratoren. Technische Metadaten sind unabh\"angig von dem fachlichen Inhalt eines Dokuments und beschreiben zum Beispiel dessen Datenformat, das Erstellungsdatum oder die Nutzerrechte genauer.
+\subsection{Technische Metadaten}
+Technische Metadaten sind Daten, die den internen Dateiaufbau und dessen technische Aspekte beschreiben. Sie betreffen den Anwender nur sekund\"ar und sind eher wichtig f\"ur die richtige Speicherung und f\"ur die Auswahl von Viewern oder Parsern. Technische Metadaten sind unabh\"angig von dem fachlichen Inhalt eines Dokuments und beschreiben zum Beispiel dessen Datenformat, das Erstellungsdatum oder die Nutzerrechte genauer.
 \cite{Fachliche_Metadaten_Wissensportal_BI} \cite{Fachliche_Metadaten_msg} \cite{DHW_Wiki_Metadaten} \cite{Multimedia_retrieval}
 
 In den Systemen der \ac{LUBW} und der \ac{ICT-ENSURE} werden keine technischen Metadaten angezeigt, weshalb diese an der Stelle nicht betrachtet werden.
-Technische Metadaten sind vor allem bei physikalischen Daten wichtig. Da die Systeme nur intern mit diesen Daten arbeitenm werden sie dem Nutzer nicht angezeigt. In einem \ac{ECM}-System spielen sie jedoch eine wichtige Rolle und werden im sp\"ateren Verlauf der Arbeit genauer betrachtet. 
-
-Ref?????
+Technische Metadaten sind vor allem bei physikalischen Daten wichtig. Da die Systeme nur intern mit diesen Daten arbeiten werden sie dem Nutzer nicht angezeigt. In einem \ac{ECM}-System spielen sie jedoch eine wichtige Rolle und werden im sp\"ateren Verlauf der Arbeit genauer betrachtet (siehe Kapitel \ref{Erstellung eines Datenkonzepts}
 
 \subsection{Technische Metadaten-Standards}
-Wie schon bei den fachlichen Metadaten (siehe Abschnitt \ref{Fachliche Metadaten-Standards}) gibt es auch f\"ur technische Metadaten Standards, welche versuchen, die Beschreibung von Dokumenten zu vereinheitlichen. In den folgenden Abschnitten werden nun einige Standards f\"ur technische Metadaten vorgestellt und genauer beschrieben.
+Wie schon bei den fachlichen Metadaten (siehe Abschnitt \ref{Fachliche Metadaten-Standards}) gibt es auch f\"ur technische Metadaten Standards, welche versuchen, die Beschreibung von Dokumenten zu vereinheitlichen. In den folgenden Abschnitten werden einige Standards f\"ur technische Metadaten vorgestellt und genauer beschrieben.
 
 \subsubsection{Dublin Core} \label{Dublin Core}
-Dublin Core ist ein Standard, welcher ein Dokument grundlegend beschreibt. Von der \ac{DCMI}, welche den Standard beschlossen, hat werden 15 Kernfelder zur Verwendung, die so genannten "`core elements"', empfohlen. Es gibt jedoch weitere Felder, welche zus\"atzliche Informationen enthalten k\"onnen.
+Dublin Core ist ein Standard, welcher ein Dokument grundlegend beschreibt. Von der \ac{DCMI}, welche den Standard beschlossen hat, werden 15 Kernfelder zur Verwendung, die so genannten "`core elements"', empfohlen. Es gibt jedoch weitere Felder, welche zus\"atzliche Informationen enthalten k\"onnen.
 \cite{Wiki_Dublin_Core} \cite{Dublin_Core} \cite{Multimedia_retrieval}
 
 Der Standard sollte heute Bestandteil jeder Website sein, da viele Suchmaschinen wie zum Beispiel Google nach Dublin Core-Metadaten suchen und Ergebnisse zum Beispiel anhand dieser Filtern. Ist also eine \ac{SEO} angedacht beziehungsweise wie in \ac{FADO} umgesetzt, sollten diese Metadaten vorhanden sein.
@@ -89,34 +87,12 @@ Mit \"uber 50 Tags kann ein Bild mit Hilfe von \ac{Exif} sehr detailiert beschri
 
 Eine genaue Auflistung aller Tags und deren Inhalt ist in der Spezifikation "`Exchangeable Image File Format for digital still cameras"'\footnote{\url{http://www.jeita.or.jp/japanese/standard/book/CP-3451C_E/\#page=1}} zum Format zu finden.
 
-\subsubsection{RDF} \label{Rdf}
+\subsubsection{Andere Standards} \label{Rdf}
 Das \ac{RDF} ist im eigentlichen Sinn keine Beschreibung von standardisierten Metadaten. Vielmehr ist es ein \"ubergeordneter Standard, der beschreibt, wie Metadaten beschrieben werden k\"onnen.
 \cite{Wiki_RDF}
 
-Hierf\"ur wird eine Satzstruktur verwendet, welche jeweils aus Subjekt, Pr\"adikat und Objekt besteht. Am folgenden Beispiel in Abbildung \ref{RDF Struktur} wird verdeutlicht, was genau mit einer Satzstruktur gemeint ist. \cite{Multimedia_retrieval}
+Hierf\"ur wird eine Satzstruktur verwendet, welche jeweils aus Subjekt, Pr\"adikat und Objekt besteht. \cite{Multimedia_retrieval}
 
-\begin{figure}[!ht]
-\centering
-\includegraphics[width=8cm]{Bilder/RDF.png}
-\caption{Struktur von \ac{RDF}}
-\label{RDF Struktur}
-\centering
-\end{figure}
-
-Mit Hilfe von \ac{RDF} kann also ausgesagt werden, dass eine Website "`www.beispiel.com"' ein Erstellungsdatum am 15.06.2015 hat.
-Somit ergibt sich die Aufteilung:
-\begin{itemize}
- \item Subjekt: www.beispiel.com
- \item Pr\"adikat: hat Erstellungsdatum
- \item Objekt: 15.06.2015
-\end{itemize}
-
-In XML w\"urde dieses Beispiel wie im Listing \ref{RDF in XML} aussehen.
-\cite{Multimedia_retrieval}
-
-\lstinputlisting[caption=RDF-Beispiel in XML, label=RDF in XML]{Code/RDF.xml}
-
-\subsubsection{ANSI/NISO Z39.87-2006 (R2011)} \label{R2011}
 Das ANSI/NISO Z39.87-2006 ist ein amerikanisches nationales Format, welches Bilddateien beschreibt. Es ist \"ahnlich aufgebaut wie \ac{Exif} und enth\"alt grundlegend die selben M\"oglichkeiten wie das im Abschnitt \ref{Exif} vorgestellte \ac{Exif}. \cite{NISO_Standard}
 
-Da sich die Arbeit jedoch mit europ\"aischen Projekten und Organisationen besch\"aftigt, wird auf dieses Format hier nicht weiter eingegangen.
+Da diese Formate im weiteren Verlauf der Arbeit keine Rolle mehr spielen, wird auf sie nicht weiter eingegangen.

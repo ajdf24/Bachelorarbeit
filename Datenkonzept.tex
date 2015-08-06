@@ -1,6 +1,8 @@
 \section{Erstellung eines Datenkonzepts} \label{Erstellung eines Datenkonzepts}
 Im nun folgenden Kapitel werden die zuvor in den Kapiteln \ref{Stand der Technik} und \ref{Analyse Datenbestaende} beschriebenen Metadaten der einzelnen Systeme zu einen umfassenden Datenkonzept zusammengefasst. Dieses Konzept bildet die Grundlage zur Speicherung in einem \ac{DMS}.
 
+Zuerst wird das Metadatenmodell m\"oglichst weit "`normalisiert"' und aufgebrochen. Dies ist wichtig um Gemeinsamkeiten bei dem Metadaten zu erkennen und diese zu extrahieren. Im sp\"ateren Verlauf muss dieses hoch modulare Modell wieder vereinfacht und an ein \ac{ECM}-Tool angepasst werden (siehe Abschnitt \ref{Ver\"andertes Datenmodell f\"ur Alfresco}. 
+
 F\"ur die grafische Darstellung des Metadatenmodells wurde eine Darstellung nach UML gew\"ahlt, wobei eine Klasse eine Datensammlung darstellt. 
 
 Es wird explizit darauf hingewiesen, dass die Darstellung kein Klassendiagramm nach UML im eigentlichen Sinn ist und somit von der  vorgeschriebenen Darstellungsform abgewichen wurde.
@@ -18,7 +20,7 @@ Die Metadaten sind in vier Datensammlungen zusammengefasst, wobei die wichtigste
 
 Die drei Datensammlungen \texttt{FADO Urteil}, \texttt{Forschungsvorhaben} und \texttt{Bibliographische Angaben} sind die jeweiligen Hauptdatensammlungen der betrachteten Dokumente \texttt{Urteile}, \texttt{Forschungsvorhaben} und \texttt{Berichte}.
 
-Attribute, welche farblich hinterlegt sind, stellen, wie schon erw\"ahnt, Verweise zu anderen Datensammlungen dar. Im vollst\"andigen Diagramm werden diese Verweise zus\"atzlich durch Pfeile realisiert, welche die entsprechenden Kardinalit\"aten anzeigen.
+Attribute, welche farblich hinterlegt sind, stellen Verweise zu anderen Datensammlungen dar. Im vollst\"andigen Diagramm werden diese Verweise zus\"atzlich durch Pfeile realisiert, welche die entsprechenden Kardinalit\"aten anzeigen.
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=16cm]{Bilder/Datenmodell/FADO-Metadaten.jpg}
@@ -29,7 +31,7 @@ Attribute, welche farblich hinterlegt sind, stellen, wie schon erw\"ahnt, Verwei
 
 \FloatBarrier
 \subsection{DRS Metadaten / Bildarchiv Metadaten}\label{DRS Bildarchiv Metadaten}
-Die Abbildung \ref{DRS und Bildarchiv Modell} zeigt die Datensammlungen des \ac{DRS} und des Bildarchives. Hier sind wie schon in \ref{Fado Modell} Abbildung die obersten Datensammlungen zu sehen, welche zum einen eigene Attribute enthalten und zum anderen wieder auf untergeordnete Datensammlungen verweisen. 
+Die Abbildung \ref{DRS und Bildarchiv Modell} zeigt die Datensammlungen des \ac{DRS} und des Bildarchives. Hier sind die obersten Datensammlungen zu sehen, welche zum einen eigene Attribute enthalten und zum anderen wieder auf untergeordnete Datensammlungen verweisen. 
 
 Das Mapping zu den Metadaten ist im Abschnitt \ref{Metadatenmapping} zu finden.
 \begin{figure}[!ht]
@@ -64,9 +66,9 @@ Die Datensammlungen \texttt{Gericht} und \texttt{Urteil} werden wie in Abbildung
 
 Die Datensammlung \texttt{Gericht} stellt, wie der Name schon sagt, ein Gericht dar. Hierbei enth\"alt sie die Attribute \texttt{Standort} und \texttt{Art}. Im Attribut \texttt{Standort}, wird der Standort des Gerichts und im Attribut \texttt{Art} die Art des Gerichts, wie zum Beispiel "`Oberlandesgericht"' festgelegt. So ergibt sich f\"ur ein Gericht der Datensatz aus Standort und Art mit dessen Hilfe ein Datum nach der Art "`Oberlandesgericht Karlsruhe"' gebildet werden kann.
 
-Der Datensatz \texttt{Urteil} enth\"alt die schon analysierten Attribute, welche das \ac{FADO}-System verwendet. Die Attribute \texttt{Vorgericht} und \texttt{Nachgericht} verweisen wiederum auf ein Gericht, wie es eben beschrieben wurde. Das Erscheinungsdatum enth\"alt eine Datensammlung des Typs \texttt{Datum}, welche im Abschnitt \ref{Grundlegenden Daten} genauer beschrieben ist.
+Der Datensatz \texttt{Urteil} enth\"alt die schon analysierten Attribute, welche das \ac{FADO}-System verwendet. Die Attribute \texttt{Vorgericht} und \texttt{Nachgericht} verweisen wiederum auf ein Gericht. Das Erscheinungsdatum enth\"alt eine Datensammlung des Typs \texttt{Datum}, welche im Abschnitt \ref{Grundlegenden Daten} genauer beschrieben ist.
 
-\texttt{Fundstelle}, \texttt{Datum Rechtsvorschriften} und \texttt{Ablage} sind Datensammlungen, welche in der Sammlung \texttt{DRS Metadaten} vorkommen. Sie enthalten weitere Attribute zur Gerichtbarkeit, welche im \ac{DRS} ben\"otigt und verwendet werden. (siehe Abschnitt \ref{DRS Bildarchiv Metadaten})
+\texttt{Fundstelle}, \texttt{Datum Rechtsvorschriften} und \texttt{Ablage} sind Datensammlungen, welche in der Sammlung \texttt{DRS Metadaten} vorkommen. Sie enthalten weitere Attribute zur Gerichtbarkeit, welche im \ac{DRS} ben\"otigt werden. (siehe Abschnitt \ref{DRS Bildarchiv Metadaten})
 
 Eine Fundstelle hat die Attribute \texttt{Name}, \texttt{Jahr} und \texttt{Seite}, welche eine Fundstelle, wie sie im \ac{DRS} wiedergegeben wird, genauer beschreiben. 
 
@@ -86,7 +88,7 @@ Das Mapping zu den gegebenen \"Anderungen in den Namen, der Attribute, ist im Ab
 \subsubsection{Bibliographie Metadaten}
 Das Package \texttt{Bibliographie Metadaten}, welches in Abbildung \ref{Package Bibliographie} zu sehen ist, enth\"alt zwei Datensammlungen, welche sich mit der Beschreibung von Literatur befassen. 
 
-Die Datensammlung \texttt{Literatur Metadaten} ist die eigentlich wichtige Sammlung und wird von den Datensammlungen \texttt{Bibliographische Angaben} (Abbildung \ref{Fado Modell}) und \texttt{Artikel Metadaten} (Abbildung \ref{ICT-ENSURE Modell}) verwendet.
+Die wichtigsten Angaben stehen dabei in \texttt{Literatur Metadaten}, welche die Datensammlungen \texttt{Bibliographische Angaben} (Abbildung \ref{Fado Modell}) und \texttt{Artikel Metadaten} (Abbildung \ref{ICT-ENSURE Modell}) verwendet.
 
 Die Attribute \texttt{Seitenanzahl}, \texttt{Abstract}, \texttt{Reihe}, \texttt{Bandnummer}, \texttt{Beginn Seite} und \texttt{End Seite} sind selbsterkl\"arend und werden deshalb nicht genauer beschrieben. Das Attribut \texttt{Kapitel} verweist auf die gleichnamige Datensammlung und enth\"alt wiederum Angaben zum Kapitel.
 
@@ -102,13 +104,13 @@ Die Attribute \texttt{PublikationsID} und \texttt{Dokumenten Information} verwei
 \subsubsection{Abstrakte Metadaten}\label{Abstrakte Metadaten}
 \texttt{Abstrakte Metadaten} ist ein Package, welches Datensammlungen zu verschiedenen Themenbereichen enth\"alt und ist in Abbildung \ref{Package Abstrakte Metadaten} zu sehen. 
 
-Die Datensammlung \texttt{Dokumenten Information} enth\"alt verschiedenste Attribute, welche Dokumente beschreiben. \texttt{Kommentar}, \texttt{Kurztitel}, \texttt{Kurzbeschreibung}, \texttt{Untertitel}, \texttt{Kurzname}, \texttt{Bemerkung} und \texttt{Version} sind selbsterkl\"arend. Das Attribut \texttt{Stand} verweist wieder auf ein \texttt{Datum}, welches im Abschnitt \ref{Grundlegenden Daten} beschrieben ist.
+Die Datensammlung \texttt{Dokumenten Information} enth\"alt Attribute, welche Dokumente beschreiben. \texttt{Kommentar}, \texttt{Kurztitel}, \texttt{Kurzbeschreibung}, \texttt{Untertitel}, \texttt{Kurzname}, \texttt{Bemerkung} und \texttt{Version} sind selbsterkl\"arend. Das Attribut \texttt{Stand} verweist wieder auf ein \texttt{Datum}, welches im Abschnitt \ref{Grundlegenden Daten} beschrieben ist.
 
 \texttt{Datei} ist eine Datensammlung, welche verschiedene Attribute f\"ur eine "`reale"' Datei bereith\"alt. Die Attribute \texttt{Gr\"o\ss{}e} und \texttt{Verf\"ugbar} ben\"otigen daher keiner weiteren Beschreibung, die beiden Verweise \texttt{URL} und \texttt{Technische Daten} schon. 
 
 Der Verweis \texttt{URL} beschreibt, wie der Name schon sagt, eine URL, unter der die beschriebene Datei zu finden ist (siehe Abschnitt \ref{Grundlegenden Daten}). \texttt{Technische Daten} ist ein Verweis, welcher die Datei noch einmal genauer beschreibt (siehe Abschnitt \ref{Abstrakte Standard Metadaten}).
 
-\texttt{PublikationsID} beschreibt eine ID, wobei hier das Format und die genaue Art der ID dem Benutzer \"uberlassen wird. Mit dem Attribut \texttt{Art} wird festgelegt, um welche standardisierte Form von ID es sich handelt. \texttt{Nummer} enth\"alt dann die eigentliche ID, welche das Dokument besitzt. Hier k\"onnen somit verschiedenste Systeme vom Benutzer frei verwendet werden, es w\"are zum Beispiel eine "`ISBN"' oder eine "`ISSN"' denkbar.
+\texttt{PublikationsID} beschreibt eine ID, wobei hier das Format und die genaue Art der ID dem Benutzer \"uberlassen wird. Mit dem Attribut \texttt{Art} wird festgelegt, um welche standardisierte Form von ID es sich handelt. \texttt{Nummer} enth\"alt dann die eigentliche ID, welche das Dokument besitzt. Hier k\"onnen somit verschiedenste Systeme vom Benutzer frei verwendet werden.
 
 Im Abschnitt \ref{Darwin Core} wurde der "`Darwin Core"'-Standard genauer untersucht. Es zeigte sich nun jedoch, dass der Einsatz von "`Darwin Core"' zu umfangreich w\"are, da nur ein Bruchteil der zur Verf\"ugung stehenden Attribute \"uberhaupt von der \ac{LUBW} im Bildarchiv verwendet werden.
 
@@ -131,6 +133,8 @@ Das Package \texttt{Standard Metadaten} enth\"alt Datensammlungen f\"ur standard
 
 Die Datensammlungen im Package enthalten keine eigenen Attribute, sondern verweisen lediglich auf die in ihnen enthaltenen Datensammlungen, welche im Abschnitt \ref{Abstrakte Standard Metadaten} genauer beschrieben werden. Ausnahme hierbei ist das Datum, welches \texttt{Inspire} inne hat und einen Verweis in das Package \texttt{Grundlegende Metadaten} darstellt. (siehe Abschnitt \ref{Grundlegenden Daten})
 
+Im Anhang \ref{Bilder des Datenmodells} ist die Abbildung \ref{Package Abstrakte Metadaten} noch einmal vergr\"o\ss{}ert zu finden.
+
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=16cm]{Bilder/Datenmodell/Package-Standard-Metadaten.jpg}
@@ -138,6 +142,8 @@ Die Datensammlungen im Package enthalten keine eigenen Attribute, sondern verwei
 \label{Package Standard Metadaten}
 \centering
 \end{figure}
+
+
 
 \subsubsection{Abstrakte Standard Metadaten}\label{Abstrakte Standard Metadaten}
 \texttt{Abstrakte Standard Metadaten} ist das Package, in welchem alle Datensammlungen zu finden sind, die in den Sammlungen im Package \texttt{Standard Metadaten} verwendet werden.
@@ -156,7 +162,7 @@ Schl\"usselw\"orter sind in \ac{INSPIRE} fest vorgegeben und k\"onnen ebenfalls 
 
 Zus\"atzlich zu den vorgegeben Schl\"usselw\"ortern bietet \ac{INSPIRE} auch die M\"oglichkeit, eigene, frei w\"ahlbare Schl\"usselw\"orter, zu erstellen. Im Metadatenmodell ist dies in der Datensammlung \texttt{Free  Keyword} umgesetzt. Diese enth\"alt zum einen den Wert des Schl\"ussels und zum anderen einen Verweis \texttt{Herkunft des Vokabulars}, welcher im Abschnitt \ref{Grundlegenden Daten} genauer beschrieben wird.
 
-Die Datensammlung \texttt{Geografischer Standort} beinhaltet Attribute f\"ur die vier Koordinaten, welche bei der Navigation auf der Erde n\"otig sind und zwar \texttt{N Breitengrad}, \texttt{E L\"angengrad}, \texttt{S Breitengrad} und \texttt{W L\"angengrad}. Hierbei werden logischerweise zur Standortbeschreibung immer nur zwei ben\"oigt, was davon abh\"angig ist, auf welcher Erdseite der Punkt sich befindet. Zus\"atzlich gibt ein Attribut das Land beziehungsweise die L\"ander (\texttt{Countries}) und den Ort (\texttt{Bezeichnung}) an.
+Die Datensammlung \texttt{Geografischer Standort} beinhaltet Attribute f\"ur die vier Koordinaten, welche bei der Navigation auf der Erde n\"otig sind und zwar \texttt{N Breitengrad}, \texttt{E L\"angengrad}, \texttt{S Breitengrad} und \texttt{W L\"angengrad}. Hierbei werden zur Standortbeschreibung immer nur zwei ben\"otigt, was davon abh\"angig ist, auf welcher Erdseite der Punkt sich befindet. Zus\"atzlich gibt ein Attribut das Land beziehungsweise die L\"ander (\texttt{Countries}) und den Ort (\texttt{Bezeichnung}) an.
 
 \texttt{Qualit\"at und G\"ultigkeit} enth\"alt wiederum das Freitext-Attribut \texttt{Herkunft} und den Verweis \texttt{R\"aumliche Aufl\"osung}, welches im Abschnitt \ref{Grundlegenden Daten} genauer beschrieben wird.
 
@@ -164,6 +170,8 @@ Die Datensammlung \texttt{Geografischer Standort} beinhaltet Attribute f\"ur die
 Es werden somit alle Bestimmungen f\"ur einen Zugang und Nutzung der Datei genauer erkl\"art.
 
 \texttt{\"Ubereinstimmung} ist eine Datensammlung f\"ur die Quellenangabe. Hierbei wird die Quelle im Attribut \texttt{Specifications} angegeben. Zus\"atzlich dazu ist ein Attribut \texttt{Grad} angegeben, welches beinhaltet ob die Quelle konform ist oder nicht. \"Uber den Verweis \texttt{Datum mit Typ} wird angegeben, von wann die Quelle ist. (siehe Abschnitt \ref{Grundlegenden Daten})
+
+Im Anhang \ref{Bilder des Datenmodells} ist die Abbildung \ref{Package Abstrakte Standard Metadaten Teil 1} noch einmal vergr\"o\ss{}ert zu finden.
 
 \begin{figure}[!ht]
 \centering
@@ -173,11 +181,13 @@ Es werden somit alle Bestimmungen f\"ur einen Zugang und Nutzung der Datei genau
 \centering
 \end{figure}
 
+
+
 In Abbildung \ref{Package Abstrakte Standard Metadaten Teil 2} sind die Datensammlungen aufgezeigt, welche "`Dublin Core"' verwendet. Diese befinden sich ebenfalls im Package \texttt{Abstrakte Standard Metadaten}. "`Dublin Core"' wurde im Abschnitt \ref{Dublin Core} schon analysiert und nun im Modell verwendet.
 
 Alle nun folgenden Attribute stammen aus der Norm und wurden im Inhaltsumfang gegebenenfalls noch weiter eingeschr\"ankt und spezifiziert.
 
-\texttt{ID} gibt mit dem Attribut \texttt{Identifier} eine eindeutige ID des Dokuments an, welche im System einmalig vergeben wird. \"Uber diese ID sollen sp\"ater Verweise m\"oglich sein.
+\texttt{ID} gibt mit dem Attribut \texttt{Identifier} eine eindeutige ID des Dokuments an, welche im System einmalig vergeben wird. \"Uber diese ID sollen sp\"ater eindeutige Verweise m\"oglich sein.
 
 Die Sammlung \texttt{Technische Daten} beinhaltet die Attribute \texttt{Format} und \texttt{Typ}. Zus\"atzlich wird ein Verweis auf eine \texttt{Sprache} gemacht (siehe Abschnitt \ref{Grundlegenden Daten}). \"Uber diese Felder wird eine "`reale"' Datei genauer beschrieben.
 
@@ -305,7 +315,7 @@ Ausblenden & Ausblenden & FADO-Metadaten \\ \hline
 \end{table}
 
 \FloatBarrier
-Die Attribute \texttt{HTML-Datei}, \texttt{PDF-Datei}, \texttt{Weitere Datei} und \texttt{Format dieser Datei} sind am interssantesten, da sie komplett durch die Datensammlung \texttt{Datei} ersetzt werden, wie in der Tabelle \ref{Fado Mapping Berichte} zu sehen ist.
+Die Attribute \texttt{HTML-Datei}, \texttt{PDF-Datei}, \texttt{Weitere Datei} und \texttt{Format dieser Datei} werden komplett durch die Datensammlung \texttt{Datei} ersetzt, wie in der Tabelle \ref{Fado Mapping Berichte} zu sehen ist.
 
 Da w\"ahrend der Bearbeitung der Metadaten eine neue Version des \ac{FADO}-Systems verabschiedet wurde, ergaben sich einige \"Anderungen in den Metadaten. Hierdurch entfallen die Attribute \texttt{Seiten (von-bis)}, \texttt{Shoprelevant}, \texttt{Shoplink} und \texttt{Preis} ersatzlos.
 

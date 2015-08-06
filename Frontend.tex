@@ -71,6 +71,11 @@ In den vorherigen Kapiteln wurde beschrieben, wie es m\"oglich ist Alfresco Date
 
 Grund\"atzlich gibt es zwei m\"ogliche Alternativen zum grundlegenden Liferay-Repository. Zum einen besteht die M\"oglichkeit ein eigenes Portlet f\"ur Liferay zu entwickeln, zum anderen ist es m\"oglich in den Quellcode von Liferay einzugreifen. Die M\"oglichkeit eines eingriffs in den Quellcode ist m\"oglich, da es sich, wie schon erw\"ahnt, bei Liferay um Open Source handelt. Es w\"are somit m\"oglich, die CMIS Schnittstelle von Liferay zu erweitern, so dass sie die von Alfresco gegebenen Metadaten verwalten kann.
 
-\subsubsection{Entwicklung eines neuen Liferay-Portlets}
+\subsubsection{Entwicklung eines neuen Liferay-Hooks}
+Eine M\"oglichkeit die fehlenden Metadaten auf Alfresco zu laden, w\"are \"uber einen Hook. Dieser sogenannte Hook ist ein Hintergrundprozess, welcher ohne grafische Schnittstelle auskommt. 
 
+Um eine \"uberhaupt eine Erweiterung f\"ur Liferay schreiben zu k\"onnen, wird das Liferay IDE\footnote{\url{http://sourceforge.net/projects/lportal/files/Liferay\%20IDE/}} ben\"otigt. Hierbei handelt es sich um eine modifizierte Eclipse-Plattform, welche einen Nutzer in die Lage versetzt f\"ur Liferay zu entwickeln.
+Aus Zeitgr\"unden kann auf die genaue Verwendung der IDE nicht eingegangen werden. 
+
+Um einen Hook zu entwickeln, muss ein neues Hook-Projekt angelegt werden. 
 \subsubsection{Eingriff in den Liferay Quellcode}
