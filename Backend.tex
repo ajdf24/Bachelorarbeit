@@ -243,6 +243,8 @@ Es lassen sich zus\"atzlich zum Beispiel auch Stapelgr\"o\ss{}e und eine Threada
 Um nun auch Metadaten automatisiert einzulesen und zu speichern, m\"ussen diese in XML-Dateien abgelegt sein. Die beschreibenden XML-Dateien m\"ussen folgenden Namen tragen: \texttt{<Name der Realdatei>.<Dateiendung der Realdatei>.metadata.properties.xml}
 
 Wird nun ein Bulk-Import gestartet, so werden aus den beschreibenden XML-Dateien die Attributwerte abgelesen.
+
+\subsection{Dokumentensuche Anhand von Metadaten}
  
 \subsection{Erfahrungen aus der Alfresco-Konfiguration}
 Im Internet finden sich viele Hilfestellungen und Tutorials zu Alfresco, leider nicht zu allen relevanten Themen der arbeit mit Alfresco. Deshalb sollen einige Fehlerquellen und Probleme aufgezeigt werden und wie diese gel\"ost wurden.
@@ -263,3 +265,5 @@ In ihr werden die einzelnen Teile der \texttt{share-config-custom.xml} mit ihren
 Basieren die einzelnen Modellklassen aufeinander, kann es zu Fehlern kommen, wenn die einzelnen Java-Beans nicht in der richtigen Reihenfolge geladen werden. 
 
 Importiert eine Modellklasse eine andere, so muss das in der Bean-Beschreibung auch als Abh\"angigkeit angegeben werden. Dies wurde im Abschnitt \ref{Das Modell in Alfresco einbinden} und speziell im Listing \ref{Bildarchiv-Metadaten-context Listing} schon einmal erl\"autert.
+
+\subsection{Fehlende Funktionalit\"at im Backend}\label{Fehlende Funktionalit\"at im Backend}

@@ -12,7 +12,7 @@ In der Arbeit soll untersucht werden, ob sich Liferay als Frontend f\"ur Alfresc
 
 Liferay bietet die M\"oglichkeit, alle Dateien innerhalb der Anwendung zu verwalten und diese bei bedarf sortiert oder gefiltert auszugeben oder anzuzeigen. Zus\"atzlich, k\"onnen auch Dateien aus anderen Systemen als Repository zu Liferay hinzugef\"ugt werden. 
 
-Das hinzuf\"ugen einen Repositorys ist im grunde ganz einfach, w\"are da nicht die Benutzerverwaltung.
+Das hinzuf\"ugen einen Repositorys ist im grunde ganz einfach, w\"are da nicht die Benutzerverwaltung. 
 
 \subsubsection{Benutzerverwaltung f\"ur eine Repositoryzugriff konfigurieren}
 Da das im Abschnitt \ref{Alfresco als Repository im Liferay} verwendete CMIS-Repository funktioniert nur, wenn zuvor eine Authentifizierung des Nutzers stattgefunden hat. Normalerweise wird so eine Benutzerverwaltung von einem LDAP-Server oder \"uber SSO vorgenommen. 
@@ -26,12 +26,12 @@ Ist der selbe Nutzer in beiden Systemen erstellt, muss in die Liferay-Datei \tex
 Zus\"atzlich muss in Alfresco unter \texttt{Admin \MVRightarrow Kontrollbereich \MVRightarrow Portaleinstellungen \MVRightarrow} \\
 \texttt{Authentifizierung} hier muss im Feld \texttt{Wie authentifizieren sich Nutzer?} "`Mit Benutzername"' angegeben werden.
 
-Nach einem neustart des Servers, muss sich ab sofort mit dem Benutzernamen angemeldet werden.
+Nach einem neustart des Servers, muss sich ab sofort mit dem Benutzernamen angemeldet werden. \cite{CMIS_Config}
 
 \subsubsection{Alfresco als Repository im Liferay}\label{Alfresco als Repository im Liferay}
-Im Liferay kann auf der Seite "`Inhalte"' unter "`Dokumente und Medien"' ein neues Repository erzeugt werden. Es muss ein Name f\"ur das Repository gew\"ahlt werden, unter dem dieses sp\"ater zu finden ist. Als Repositorytyp muss ein \ac{CMIS}-Repository der art "`AtomPub"' gew\"ahlt werden.
+Im Liferay kann auf der Seite "`Inhalte"' unter "`Dokumente und Medien"' ein neues Repository erzeugt werden. Es muss ein Name f\"ur das Repository gew\"ahlt werden, unter dem dieses sp\"ater zu finden ist. Als Repositorytyp muss ein \ac{CMIS}-Repository der art "`AtomPub"' gew\"ahlt werden. 
 
-Die passende Repository-URL von Alfresco kann auf der Seite \url{http://127.0.0.1:8080/alfresco/} gefunden werden. Grunds\"atzlich ist es egal, ob die AtomPub version 1.0 oder 1.1 gew\"ahlt wird. Zus\"atzlich finden sich hier auch andere Links, wie zum Beispiel ein Link f\"ur den WebDav-Zufriff auf Alfresco.
+Die passende Repository-URL von Alfresco kann auf der Seite \url{http://127.0.0.1:8080/alfresco/} gefunden werden. Grunds\"atzlich ist es egal, ob die AtomPub Version 1.0 oder 1.1 gew\"ahlt wird. Zus\"atzlich finden sich hier auch andere Links, wie zum Beispiel ein Link f\"ur den WebDav-Zufriff auf Alfresco.
 
 Ist die richtige URL im Feld "`AtomPub-URL"' eingetragen, muss noch die Berechtigung gew\"ahlt und anschlie\ss{}end gespeichert werden. Die Felder "`Beschreibung"' und "`Repository ID"' k\"onnen frei bleiben.
 
@@ -39,7 +39,7 @@ Ist alles richtig konfiguriert, sind nun alle Dateien vom Alfresco in Liferay ab
 
 Nachdem das Repository erstellt wurde, k\"onnen die Dateien aus Alfresco innerhalb von Liferay verwendet und dargestellt werden.
 
-Sehr schnell f\"allt auf, das Liferay nur Metadaten darstellt, welche in der Datei selbst vorhanden sind. Alle anderen Metadaten, welche in Alfreso vorhanden sind werden ignoriert. In folgenden Abbschnitt \ref{Untersuchungen zum Liferay-Repository} wird genauer untersucht, warum die Alfresco-Metadaten nicht dargestellt werden.
+Sehr schnell f\"allt auf, das Liferay nur Metadaten darstellt, welche in der Datei selbst vorhanden sind. Alle anderen Metadaten, welche in Alfresco vorhanden sind werden ignoriert. In folgenden Abbschnitt \ref{Untersuchungen zum Liferay-Repository} wird genauer untersucht, warum die Alfresco-Metadaten nicht dargestellt werden. \cite{Intregrate_as_Repo}
 
 \subsubsection{Untersuchungen zum Liferay-Repository}\label{Untersuchungen zum Liferay-Repository}
 Wie im Abschnitt \ref{Alfresco als Repository im Liferay} schon erkl\"art, ist Liferay nicht in der Lage, die Metadaten von Alfresco darzustellen. Im folgenden Kapitel soll nun herausgefunden werden, warum dies so ist.
@@ -48,7 +48,7 @@ Als erstes muss nat\"urlich \"uberpr\"uft werden, ob Alfresco \"uberhaupt alle v
 
 \"Uber den Link im Listing \ref{Abfrage mit CMIS} k\"onnen alle Informationen zu einem Dokument (Node) abgefragt werden. Zu beachten ist, dass nat\"urlich die id bei der Verwendung ver\"andert werden muss. \cite{GetNodeInfo}
 
-\lstinputlisting[language=html, caption=Abfrage aller Properties eines Nodes mittels CMIS 1.1, label=Abfrage mit CMIS]{Code/getNodeInformation.html}
+\lstinputlisting[language=html, caption=Abfrage aller Propertys eines Nodes mittels CMIS 1.1, label=Abfrage mit CMIS]{Code/getNodeInformation.html}
 
 Beim Aufrufen des Links, muss zuerst eine Authentifizierung f\"ur Alfresco angeben werden. War diese korrekt, so wird im Browser das entsprechende Element mit allen Metadaten in XML dargestellt. Dies ist zum einen die Best\"atigung, dass der CMIS dienst von Alfresco ohne Probleme l\"auft, aber zum anderen auch, dass Alfresco alle vorhandenen Metadaten \"ubermittelt.
 
@@ -71,11 +71,57 @@ In den vorherigen Kapiteln wurde beschrieben, wie es m\"oglich ist Alfresco Date
 
 Grund\"atzlich gibt es zwei m\"ogliche Alternativen zum grundlegenden Liferay-Repository. Zum einen besteht die M\"oglichkeit ein eigenes Portlet f\"ur Liferay zu entwickeln, zum anderen ist es m\"oglich in den Quellcode von Liferay einzugreifen. Die M\"oglichkeit eines eingriffs in den Quellcode ist m\"oglich, da es sich, wie schon erw\"ahnt, bei Liferay um Open Source handelt. Es w\"are somit m\"oglich, die CMIS Schnittstelle von Liferay zu erweitern, so dass sie die von Alfresco gegebenen Metadaten verwalten kann.
 
-\subsubsection{Entwicklung eines neuen Liferay-Hooks}
-Eine M\"oglichkeit die fehlenden Metadaten auf Alfresco zu laden, w\"are \"uber einen Hook. Dieser sogenannte Hook ist ein Hintergrundprozess, welcher ohne grafische Schnittstelle auskommt. 
+\subsubsection{Entwicklung eines neuen Liferay-Hooks}\label{Liferay Hook}
+Eine M\"oglichkeit die fehlenden Metadaten aus Alfresco zu laden, w\"are \"uber einen Hook. Dieser sogenannte Hook ist ein Hintergrundprozess, welcher ohne grafische Schnittstelle auskommt. \cite{Liferay_in_Action}
 
 Um eine \"uberhaupt eine Erweiterung f\"ur Liferay schreiben zu k\"onnen, wird das Liferay IDE\footnote{\url{http://sourceforge.net/projects/lportal/files/Liferay\%20IDE/}} ben\"otigt. Hierbei handelt es sich um eine modifizierte Eclipse-Plattform, welche einen Nutzer in die Lage versetzt f\"ur Liferay zu entwickeln.
 Aus Zeitgr\"unden kann auf die genaue Verwendung der IDE nicht eingegangen werden. 
 
-Um einen Hook zu entwickeln, muss ein neues Hook-Projekt angelegt werden. 
-\subsubsection{Eingriff in den Liferay Quellcode}
+Die Klasse des Hooks implementiert das Interface \texttt{ModelListener} welcher auf eine \"Anderung der Klasse \texttt{RepositoryEntry} achtet.
+In der Implementierten Methode \texttt{onAfterCreate()} werden dann die Metadaten von Alfresco \"uber die \ac{CMIS}-Schnittstelle abgeholt und in die Liferay-Datenbank gespeichert. Die Methode wird aufgerufen, wenn ein Element aus dem Repository gelesen und in der Liferay-Datenbank angelegt wird.
+
+F\"ur das Abrufen der Alfresco-\ac{CMIS}-Schnittstelle wurde die Apache Bibliotheke "`Chemistry"'\footnote{\url{https://chemistry.apache.org/}} verwendet, welche es erm\"oglicht \ac{CMIS}-Schnittstellen anzusprechen.
+
+Die genaue Implementierung ist im Listing \ref{CMIS mit Chemistry} zu sehen. Es wird zuerst eine Session mit den ben\"otigten Parametern wie Username, Password und AtomPub-URL erzeugt. Dies geschieht in der selbst erstellen Methode \texttt{createCmisSession()}, welche im Anhang \ref{Methode createCmisSession} zu sehen ist.
+
+Anschlie\ss{}end wird f\"ur das gerade erstellte Element die ID geholt und mit ihrer Hilfe das \texttt{CmisObjekt} erstellt.
+Handelt es sich um einen Ordner wird nichts weiter unternommen. Ist das Element jedoch ein Dokument, so werden alle Propertys geholt.
+
+\"Uber einen Iterator wird durch alle Propertys durchgegangen und diese mit Hilfe der \texttt{ExpandoBridge} in die Liferay-Datenbank eingebracht.
+
+\lstinputlisting[language=java, caption=Prototypische-Implementierung einer \ac{CMIS}-Schnittstelle mit Apache Chemistry, label=CMIS mit Chemistry]{Code/Chemistry.java}
+
+Dieser kleine Ausflug beweist, dass es m\"oglich ist die vom Alfresco ankommenden Metadaten in Liferay zu integrieren. Somit steht auch dem anzeigen der Metadaten auf der Oberfl\"ache nichts mehr im Wege. \cite{Chemistry_examples}
+
+Der Aufwand eine komplette Portierung der Metadaten umzus\"atzen ist relativ gering, zumal der im Prototyp vorhandene Code ohne gr\"o\ss{}ere \"Anderungen \"ubernommen werden kann. Es muss lediglich noch ein Filer eingebaut werden, um nur die gew\"unschten Metadaten in der Datenbank zu speichern.
+
+Die Umsetzung der Anzeige und einer Suchfunktion in dem der "`Asset Publisher"' erweitert wird sollte bei Vorhandenen Daten ohne Probleme m\"oglich sein.
+\subsubsection{Entwicklung von Widgets}\label{Liferay Widget}
+Innerhalb der Projketgruppe werden oft kleine Java-Script-Widgets verwendet, die gewisse Sachen Darstellen und auch Abfragen k\"onnen. 
+Diese Java-Script-Widgets lassen sich beliebig in jede Webseite und auch in Liferay integrieren und k\"onnen dort Verwendung finden.
+
+Es m\"usste also ein Widget geschrieben werden, welches die \ac{CMIS}-Daten von Alfresco auslie\ss{}t und diese anzeigt. Zus\"atzlich muss es auch eine Suchfunktion bieten, welche es erlaubt die Dokumente nach bestimmten Metadaten zu filtern.
+
+F\"ur die Anbindung an Alfresco kann direkt die Alfresco-Java-Script-\ac{API} verwendet werden. Jedoch ist hier der Programmieraufwand vermutlich am gr\"o\ss{}en. Da eine Anzeige- und Suchfunktion komplett selbst geschrieben werden muss. Es kann nicht auf bestehende Komponenten zur\"uchgegriffen werden.
+
+\subsubsection{Liferay Enterprise Edition}
+Innerhalb der Arbeit wurde auch getestet ob die Enterprise Edition von Liferay in der Lage ist alle \ac{CMIS}-Daten abzufragen und zu speichern. Hierf\"ur wie Testversion genutzt, welche zwar den vollen Funktionsumfang bietet, jedoch auf 30 Tage limitiert ist.
+
+Es wurde kein Unterschied zum Verhalten mit der Community Edition festzustellen. Auch bietet der Store von Liferay in der Enterprise Edition keine anderen Plugins an, als inder Community Edition an. Somit kann f\"ur die Vorliegende Aufgabe getrost auf die Enterprise Edition verzichtet werden, wenn der erweiterte Support der Enterprise Edition nicht ben\"otigt wird.
+
+\subsubsection{Verwendung von Liferay 7}
+In Liferay 7, welches sich zur Zeit noch in der Entwicklung befindet, werden zum Einen das Dokumentmanagemet von Liferay umgebaut und zum Anderen wird die \ac{CMIS}-Schnittstelle erweitert. \cite{liferay7}
+
+Es ist somit gut m\"oglich, dass Liferay sehr bald schon eigenst\"anig in der Lage ist alle Metadaten von Alfresco anzuzeigen und zu verwalten.
+Im Verlauf der Arbeit wurde eine "`Mile-Stone"'-Version installiert, um die Behauptung genauer zu pr\"ufen.
+
+Es konnte in der Vorabversion von Liferay zwar ein Repository angelegt werden, jedoch war die Version nicht in der Lage Dokumente zu laden. Die Logausgabe von Liferay legt nahe, dass momentan die Datenbank-Querys noch fehlerhaft sind. Daher k\"onnte die Fuktionalit\"at der neuen \ac{CMIS}-Schnittstelle nicht \"uberpr\"uft werden.
+
+Es kann jedoch gesagt werden, dass sich in der Dateiverwaltung von Liferay eingiges \"andert. Wie umfangreich diese \"Anderungen ausfallen, kann doch noch nicht genau gesagt werden.
+
+\subsection{Auswertung der M\"oglichkeiten}
+Es ist nicht ohne weiteres m\"oglich die Metadaten aus Alfresco in Liferay anzuzeigen. Es wurde aber im Abschnitt \ref{Liferay Hook} gezeigt, das eine nachtr\"agliche Implementierung dieser Funktionalt\"at grundlegend m\"oglich ist. Aus zeitlich Gr\"unden ist es aber nicht machbar gewesen ein Vollst\"aniges Beispiel zu Implementieren.
+
+Andere Alternativen, wie die Entwicklung eines Widgets sind Grunds\"atzlich m\"oglich, ist die Implementierung um einiges aufwendiger. Weshalb dieser Ansatz nur theoretisch im Abschnitt \ref{Liferay Widget} beschrieben wurde.
+
+Bisher ist die beste das erweitern von Liferay \"uber einen Hook, da es hierf\"ur keine fertigen Plugins gibt. Eine andere M\"oglichkeit besteht darin abzuwarten was Liferay in der Version 7 bietet.

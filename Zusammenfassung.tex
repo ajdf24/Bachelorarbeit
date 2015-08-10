@@ -20,4 +20,21 @@ Nachdem nun ein Backendserver ausgew\"ahlt ware, musse das zuvor erstellte allge
 Als das Metadatenmodell angepasst war, wurde es in Alfresco implementiert. Hierf\"ur mussten, wie in der Arbeit im Kapitel \ref{Implementierung Backend} erl\"autert einige XML-Dateien angelegt und bearbeitet werden. Zum einen werden Dateien ben\"otigt, welche das Datenmodell grundlegend beschreiben, zum anderen werden auch Dateien ben\"otigt, die eine korrekte Darstellung der Metadaten innerhalb von Alfresco erm\"oglichen. 
 Das Metadatenmodell wird dann beim Start des Tomcat-Servers als Java-Beans geladen und kann verwendet werden.
 
+Eine \"Ubesetzung des Metadatenmodells wurde aus Zeitgr\"unden nur prototypisch umgesetzt um die Funktionalit\"at zu demonstrieren. 
+
+Die Integration der Alfresco-Daten in den Portalserver Liferay konnte nicht umgesetzt werden, da es keine fertige Implementierung f\"ur diesen Use-Case gibt. Liferay ist weder standardm\"a\ss{}ig noch \"uber ein Plugin in der Lage die Metadaten von Alfresco abzufragen und zu speichern.
+
+Im Kapitel \ref{Implementierung Frontend} wurden M\"oglichkeiten vorgestellt, wie eine nachtr\"agliche Bereitstellung der gew\"unschten Funktionalit\"at m\"ochlich ist. Die beste M\"oglichkeit ist die Implementierung eines Hooks, welcher es erlaubt die Metadaten aus Alfresco auszulesen und sie in der Liferay Datenbank zu speichern. Dies wurde prototypisch Implementiert, um die Machbarkeit zu demonstrieren. Eine Anzeige- und Suchfunkion wurde nicht realisert, ist aber nach dem die Daten in der Liferay-Datenbank nun vorhanden sind nicht mehr abw\"agig und sollte relativ leicht zu Implementieren sein.
+
+\subsection{Umsetzung des Lastenhefts}
+Ziel der Arbeit war es wie im Lastenheft beschrieben ein Backend f\"ur die Verwaltung von Dokumenten der \ac{LUBW} zu erstellen. Dies konnte auch erfolgreich umgesetzt werden. Das Frontend, welches auf Liferay bassieren sollte, war kritischer, da Liferay nicht in der Lage ist Metadaten von Alfresco zu verarbeiten. Es wurde zwar eine prototypische Erweiterung f\"ur Liferay erstellt, den vollen Funktionsumfang bietet sie jedoch nicht.
+
+Es konnten somit bis auf die Produktfunktionen "`LF40"' und "`LF60"' alle Anforderungen erf\"ullt werden. Die Metadatensuche in Liferay konnte aus Zeitgr\"unden nicht umgesetzt werden. Da ein anzeigen der Metadaten auch aus Zeitgr\"unden nicht m\"oglich war, konnte der Prototyp nicht mit den alten \ac{LUBW}-Systemen verglichen werden.
+
+Die im Lastenheft festgelegten Produktdaten (siehe Abschnitt \ref{Produktdaten}) beziehen sich alle auf das Backend und konnten komplett umgesetzt werden. Im Verlauf der Arbeit wurde ein modulares Metadaten-Modell entwickelt, welches den Anforderungen des Lastenhefts fast gen\"ugt. Alfresco erlaubt es nicht, Metadaten zu erstellen, welchen keine physische Datei zu grunde liegt. Somit muss eine Autor wie in "`LD30"' beschrieben als Attribut gespeichert werden und kann nicht als Entit\"at existieren.
+
+Exsistierende Standards wurden im Verlauf der Arbeit betrachtet und auch Implementiert. Hier war Vorteilhaft, dass Alfresco schon machen Standards implementiert hat, so zum Beispiel den "`Dublin Core"'- oder den "`\ac{Exif}"'-Standard.
+
+Die beschiebenen Produktleistungen konnten zwar f\"ur das Backend umgesetzt werde, jedoch aus den schon beschriebenen Gr\"unden nicht f\"ur das Frontend. Somit konnte der Punkt "`LL30"' nur zum Teil umgesetzt werden. Alle anderen Punkte konnte jedoch gen\"uge getan werden.
+
 
