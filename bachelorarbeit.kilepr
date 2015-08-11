@@ -107,6 +107,13 @@ Highlighting=LaTeX
 Indentation Mode=normal
 Mode=LaTeX
 
+[document-settings,item:Vergleich.tex]
+Bookmarks=
+Encoding=ISO-8859-1
+Highlighting=LaTeX
+Indentation Mode=normal
+Mode=LaTeX
+
 [document-settings,item:Zusammenfassung.tex]
 Bookmarks=
 Encoding=ISO-8859-1
@@ -122,7 +129,7 @@ highlight=LaTeX
 line=10
 mode=LaTeX
 open=true
-order=13
+order=14
 
 [item:Analyse.tex]
 archive=true
@@ -146,10 +153,10 @@ order=2
 
 [item:Anhang.tex]
 archive=true
-column=58
+column=71
 encoding=ISO-8859-1
 highlight=LaTeX
-line=252
+line=271
 mode=LaTeX
 open=true
 order=12
@@ -169,17 +176,17 @@ archive=true
 column=0
 encoding=ISO-8859-1
 highlight=LaTeX
-line=213
+line=208
 mode=LaTeX
 open=true
 order=0
 
 [item:Backend.tex]
 archive=true
-column=218
+column=55
 encoding=ISO-8859-1
 highlight=LaTeX
-line=18
+line=248
 mode=LaTeX
 open=true
 order=7
@@ -206,23 +213,23 @@ order=1
 
 [item:Frontend.tex]
 archive=true
-column=74
+column=367
 encoding=ISO-8859-1
 highlight=LaTeX
-line=79
+line=109
 mode=LaTeX
 open=true
 order=8
 
 [item:Quellen.bib]
 archive=true
-column=91
+column=0
 encoding=UTF-8
 highlight=BibTeX
-line=231
+line=427
 mode=BibTeX
 open=true
-order=9
+order=13
 
 [item:Stand_der_Technik.tex]
 archive=true
@@ -244,12 +251,22 @@ mode=LaTeX
 open=true
 order=6
 
-[item:Zusammenfassung.tex]
+[item:Vergleich.tex]
 archive=true
-column=0
+column=478
 encoding=ISO-8859-1
 highlight=LaTeX
-line=6
+line=3
+mode=LaTeX
+open=true
+order=9
+
+[item:Zusammenfassung.tex]
+archive=true
+column=234
+encoding=ISO-8859-1
+highlight=LaTeX
+line=35
 mode=LaTeX
 open=true
 order=10
@@ -273,10 +290,10 @@ JumpList=
 ViMarks=.,14,0,[,14,0,],14,0
 
 [view-settings,view=0,item:Anhang.tex]
-CursorColumn=58
-CursorLine=252
+CursorColumn=71
+CursorLine=271
 JumpList=
-ViMarks=.,252,57,[,252,50,],252,57
+ViMarks=.,271,71,[,271,71,],271,71
 
 [view-settings,view=0,item:Ausblick.tex]
 CursorColumn=18
@@ -286,15 +303,15 @@ ViMarks=
 
 [view-settings,view=0,item:Bachelorarbeit.tex]
 CursorColumn=0
-CursorLine=213
+CursorLine=208
 JumpList=
-ViMarks=.,25,12,[,25,12,],25,14
+ViMarks=.,208,0,[,208,0,],208,0
 
 [view-settings,view=0,item:Backend.tex]
-CursorColumn=218
-CursorLine=18
+CursorColumn=55
+CursorLine=248
 JumpList=
-ViMarks=.,20,134,[,20,134,],20,134
+ViMarks=.,268,56,[,268,56,],268,91
 
 [view-settings,view=0,item:Datenkonzept.tex]
 CursorColumn=60
@@ -309,14 +326,14 @@ JumpList=
 ViMarks=.,3,32,[,3,32,],3,32
 
 [view-settings,view=0,item:Frontend.tex]
-CursorColumn=74
-CursorLine=79
+CursorColumn=367
+CursorLine=109
 JumpList=
-ViMarks=.,79,73,[,79,46,],79,73
+ViMarks=.,109,366,[,109,356,],109,366
 
 [view-settings,view=0,item:Quellen.bib]
-CursorColumn=91
-CursorLine=231
+CursorColumn=0
+CursorLine=427
 JumpList=
 ViMarks=.,0,0,[,0,0,],-1,-1
 
@@ -332,8 +349,14 @@ CursorLine=11
 JumpList=
 ViMarks=.,11,163,[,11,161,],11,163
 
-[view-settings,view=0,item:Zusammenfassung.tex]
-CursorColumn=0
-CursorLine=6
+[view-settings,view=0,item:Vergleich.tex]
+CursorColumn=478
+CursorLine=3
 JumpList=
-ViMarks=.,21,0,[,22,0,],-1,-1
+ViMarks=.,3,478,[,3,478,],3,478
+
+[view-settings,view=0,item:Zusammenfassung.tex]
+CursorColumn=234
+CursorLine=35
+JumpList=
+ViMarks=.,35,221,[,35,219,],35,221

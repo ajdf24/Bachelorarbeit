@@ -244,7 +244,30 @@ Um nun auch Metadaten automatisiert einzulesen und zu speichern, m\"ussen diese 
 
 Wird nun ein Bulk-Import gestartet, so werden aus den beschreibenden XML-Dateien die Attributwerte abgelesen.
 
-\subsection{Dokumentensuche Anhand von Metadaten}
+\subsection{Verwendung von langen Textfeldern}
+Bei der Implementierung des Datenmodells wurde festgestellt, dass ein Textfeld in Alfresco standardm\"a\ss{}ig nur 1.024 Zeichen lang sein kann. Problematisch wird dies vor allem bei \ac{FADO}-Dokumenten des Typs \texttt{Urteil}, denn hier k\"onnen vor allem die beiden Attribte \texttt{Tatbestand} und \texttt{Gr\"unde} die l\"ange sehr leicht \"uberschreiten. So gar L\"angen mit \"uber 27.000 Zeichen sind im aktuellen Datenbestand der \ac{LUBW} m\"oglich. Aus diesen dem genannten Grund, wurde hier etwas mehr Entwicklungsaufwand get\"atig. 
+
+Zum Einen sollte ein so langer Text nicht als einzeiliges Textfeld dargestellt werden. Zum Anderen, muss es m\"oglich gemacht werden Texte einzugeben, welche die l\"ange von 1.024 Zeichen \"uberschreiten. Daher wurde die \texttt{share-config-custom.xml} noch einmal erweitert.
+
+Das entsprechende Feld (im Beispiel das Attribute \texttt{Gr\"unde}) muss in seiner "`appearance"' angepasst werden, wie es im Listing \ref{appearance anpassung} zu sehen ist. Um ein mehrzeiliges Textfeld zu erzeigen, muss das "`Control-Template"' \texttt{textarea.ftl} verwendet werden. Das Template muss wie angegeben mit einer vollen Pfadangabe versehen werden, denn an dieser Stelle k\"onnten auch eigene Templates eingebunden werden.
+
+\"Uber den Tag "`control-param"' wird mit \texttt{maxLength} die maximale L\"ange des Feldes angegeben. Im Beispiel sind es 40.000 Zeichen, was f\"ur die aktuellen \ac{FADO}-Urteile ausreicht. Wird keine maximale L\"ange angegeben, so wird das Feld standardm\"a\ss{}ig auf 1.024 Zeichen begrenzt.
+
+Durch die Verwendung der "`Textarea"' ist es einem Nutzer m\"oglich, die Gr\"o\ss{}e des Feldes auf seine Bed\"urfnisse zu skallieren, was er mittels des Schaltf\"ache am unteren rechten Textfeldrand machen kann. \cite{Alf_Wiki_Forms}
+
+Es w\"are auch m\"oglich, die Zeilenl\"ange fest vorzugeben, was jedoch als unpraktikabel empfunden wurde.
+
+\lstinputlisting[caption=Appearance Anpassungen in der \texttt{share-config-custom.xml}, label=appearance anpassung]{Code/share-config_appearance.xml}
+
+In Abbildung \ref{Textfeld Gr\"unde} ist das Textfeld nach der Bearbeitung der \texttt{share-config-custom.xml} zu sehen. Zu beobachten ist die lange Scrollleiste am rechten Rand, welche auf einen gr\"o\ss{}en Inhalt hindeutet.
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=16cm]{Bilder/Textfeld-Gruende.jpg}
+\caption{Das Textfeld Gr\"unde nach der Bearbeitung}
+\label{Textfeld Gr\"unde}
+\centering
+\end{figure}
  
 \subsection{Erfahrungen aus der Alfresco-Konfiguration}
 Im Internet finden sich viele Hilfestellungen und Tutorials zu Alfresco, leider nicht zu allen relevanten Themen der arbeit mit Alfresco. Deshalb sollen einige Fehlerquellen und Probleme aufgezeigt werden und wie diese gel\"ost wurden.
@@ -267,3 +290,10 @@ Basieren die einzelnen Modellklassen aufeinander, kann es zu Fehlern kommen, wen
 Importiert eine Modellklasse eine andere, so muss das in der Bean-Beschreibung auch als Abh\"angigkeit angegeben werden. Dies wurde im Abschnitt \ref{Das Modell in Alfresco einbinden} und speziell im Listing \ref{Bildarchiv-Metadaten-context Listing} schon einmal erl\"autert.
 
 \subsection{Fehlende Funktionalit\"at im Backend}\label{Fehlende Funktionalit\"at im Backend}
+Das Lastenheft im Kapitel \ref{Lastenheft} forderte eigentlich, Autoren wie Entit\"aten abzubilden, um zum Beispiel alle Werke eines Autors zu finden, ohne jedes Dokument abfragen zu m\"ussen. Leider ist dieses Vorgehen unter Alfresco nicht m\"oglich.
+
+Alfresco ist ein \ac{ECM}-System, und verlangt f\"ur das Anlegen von Metadaten oder eines Datensatzes immer explizit ein physisches Dokument, welches entweder hochgeladenen oder direkt mit Alfresco erstellt werden muss. 
+
+Schwierig gestaltet sich das Problem auch, da ein \ac{FADO}-Urteil keine physische Datei besitzt. Ein Urteil ist im alten System einfach als Datenbankeintrag abgebildet, ohne dass jemals eine physische Datei besteht. Bisher wurde dies im neuen System damit gel\"o\ss{}t, dass einfach eine leere Textdatei angelegt wurde, welcher dann die entsprechenden Metadaten \"ubergeben werden k\"onnen.
+
+Die einzelnen Verweise, auf andere Fachsysteme k\"onnen durch Verweise auf Ordner (welche alle Dateien zu einem System beinhalten) nachgebildet werden. 

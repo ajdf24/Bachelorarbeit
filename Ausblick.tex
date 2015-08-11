@@ -1,1 +1,13 @@
 \section{Ausblick}
+Im Laufe der Arbeit wurde ein Backend f\"ur ein \"ubergreifendes Dokumentenmanagement f\"ur die \ac{LUBW} prototypisch entwickelt. 
+Es wurde anhand der \ac{FADO}-Datentypen Berichte, Urteile und Forschungsvorhaben analysiert, wie sich die Metadaten zu einem \"ubergreifenden Modell anordnen lassen. Zus\"atzlich wurden Dokumente der \ac{ICT-ENSURE}, des Naturschutz-Bildarchivs und des \ac{DRS}-Systems analysiert.
+
+Da innerhalb der Arbeit, weder das gesamte \ac{FADO}-System noch andere Systeme der \ac{LUBW} analysiert und in das Modell einbezogen wurden, m\"ussen alle noch fehlenden Dokumentenklassen mit ihren Metadaten zum Modell hinzugef\"ugt werden. Ist der Schritt der Analyse getan, muss daraufhin das Datenmodell von Alfresco erweitert werden.
+
+Das Alfresco-Formular zur Eingabe der Metadaten ist momentan, nach den einzelnen Aspekten und Typen gegliedert. Es werden ausnahmslos alle Metadaten angezeigt, egal ob sie f\"ur den entsprechenden Metadatensatz relevant sind oder nicht. Hier sollte in naher Zukunft in absprache mit der \ac{LUBW} Ordnung entstehen. Das hei\ss{}t, es m\"ussen Metadaten ausgeblendet werden, die nicht ben\"otigt werden und die Gliederung der nach diesem Schritt verbleibenden Attribute sollte auf die Bed\"urfnisse der Mitarbeiter der \ac{LUBW} angepasst werden.
+
+Die prototypische Implementierung des Backends ist bis auf die genannten Erweiterungen vollst\"angig und muss nur im Falle von gew\"unschten \"Anderungen angepasst werden.
+
+Der gr\"o\ss{}ere Arbeitsaufwand wird bei der Erstellung eines Frontends entstehen. Wie in der Arbeit im Kapitel \ref{Implementierung Frontend} erw\"ahnt, war es nicht m\"oglich auf eine vorhandene Schnittstelle zwischen Alfresco und Liferay zur\"uckzugreifen. Zum einen k\"onnen die Metadaten mit Liefray direkt nicht abgefragt und angezeigt werden. Auch gibt es zur Zeit kein Plugin auf dem Markt, welches diese Arbeit \"ubernehmen k\"onnte. Daher muss hier eine Eigenl\"osung entwickelt werden.
+
+In der Arbeit wurde prototypisch gezeigt wie es m\"oglich ist die Metadaten von Alfresco nach Liferay zu portieren. Dieser Ansatz muss in Zukunft weiter verfolgt werden, damit sp\"ater alle Metadaten aus Alfresco in Liferay angezeigt werden k\"onnen. Als Grundlage, k\"onnen die gewonnenen Erkentnisse und der entstandene Quellecode dieser Arbeit dienen.
