@@ -1,5 +1,5 @@
 \section{Implementierung des Backends auf Basis von Alfresco} \label{Implementierung Backend}
-F\"ur das Backend eignet sich der Analyse aus Kapitel \ref{Technologievergleich} folgend am besten Alfresco. In den nun folgenden Abschnitten geht es um die Implementierung des Metadatenmodells aus Kapitel \ref{Erstellung eines Datenkonzepts} in Alfresco. Hierf\"ur wird zum Einen die Installation und die Arbeitsweise erl\"autert und zum Anderen wird im Hauptteil auf die Implementierung des Datenmodells in Alfresco eingegangen.
+F\"ur das Backend eignet sich der Analyse aus Kapitel \ref{Technologievergleich} folgend am besten Alfresco. In den nun folgenden Abschnitten geht es um die Implementierung des Metadatenmodells aus Kapitel \ref{Erstellung eines Datenkonzepts} in Alfresco. Hierf\"ur wird zum einen die Installation und die Arbeitsweise erl\"autert und zum anderen wird im Hauptteil auf die Implementierung des Datenmodells in Alfresco eingegangen.
 
 \subsection{Installation}
 Die Installation von Alfresco ist denkbar einfach und unter Windows, sowie unter Linux m\"oglich. F\"ur den Download der Community Edition muss man sich mit einer g\"ultigen E-Mail-Adresse bei Alfresco anmelden\footnote{https://www.alfresco.com/de/products/community/download}. 
@@ -160,13 +160,13 @@ Unter dem Tag "`properties"' sind alle Attribute zu finden, welche der jeweilige
 Um das Datenmodell nun in Alfresco bekannt zu machen, muss eine Context-Datei erstellt werden, welche das Java-Bean beschreibt. Die Context-Datei endet auf "`-context.xml"' und muss im Ordner \texttt{ALFRESCO\_HOME/tomcat/shared/classes/alfresco/extensions} abgelegt werden.
 
 Im Listing \ref{Bildarchiv-Metadaten-context Listing} ist die Context-Datei zu sehen, welche beschreibt wo genau die Klasse zu finden ist.
-Das "`bean"' hat zum Einen eine \texttt{id} und ein \texttt{parent}. Zum Anderen ein Attribut, auf welchen Beans es bassiert, was im Attribut \texttt{depends-on} beschrieben ist. Im Beispiel sind das die beiden verwendeten Klassen welche auch importiert werden (siehe Listing \ref{Bildarchiv-Metadaten Listing}).
+Das "`bean"' hat zum einen eine \texttt{id} und ein \texttt{parent}, zum anderen ein Attribut, auf welchen Beans es bassiert, was im Attribut \texttt{depends-on} beschrieben ist. Im Beispiel sind das die beiden verwendeten Klassen welche auch importiert werden (siehe Listing \ref{Bildarchiv-Metadaten Listing}).
 
 Unter dem Tag "`property"' wird der Speicherort unserer Modell-Datei angeben.
 
 \lstinputlisting[language=xml, caption=Inhalt der Datei Bildarchiv-Metadaten-context.xml, label=Bildarchiv-Metadaten-context Listing]{Code/Bildarchiv-Metadaten-context.xml}
 
-Sind beide Dateien korrekt und an der richtigen Stelle muss Alfresco neu gestartet werden um das Modell aufzunehmen.
+Sind beide Dateien korrekt und an der richtigen Stelle muss Alfresco neu gestartet oder die Web-Skripte m\"ussen neu geladen werden um das Modell aufzunehmen. Um die Web-Skripte von Alfresco neu zu laden, muss der Button "`Refresh Web Scripts"' unter unter \url{http://localhost:8080/share/service/index} bet\"atigt werden.
 
 \subsubsection{\"Ubersetzungen in Alfresco}
 Um Mehrsprachigkeit in Alfresco zu realisieren verwendet das System Property-Dateien, in welchen die verschiedenen \"Ubersetzungen zu finden sind. Die Property-Dateien m\"ussen unter \texttt{ALFRESCO\_HOME/tomcat/shared/classes/alfresco/messages} abgelegt werden.
@@ -247,7 +247,7 @@ Wird nun ein Bulk-Import gestartet, so werden aus den beschreibenden XML-Dateien
 \subsection{Verwendung von langen Textfeldern}
 Bei der Implementierung des Datenmodells wurde festgestellt, dass ein Textfeld in Alfresco standardm\"a\ss{}ig nur 1.024 Zeichen lang sein kann. Problematisch wird dies vor allem bei \ac{FADO}-Dokumenten des Typs \texttt{Urteil}, denn hier k\"onnen vor allem die beiden Attribte \texttt{Tatbestand} und \texttt{Gr\"unde} die l\"ange sehr leicht \"uberschreiten. So gar L\"angen mit \"uber 27.000 Zeichen sind im aktuellen Datenbestand der \ac{LUBW} m\"oglich. Aus diesen dem genannten Grund, wurde hier etwas mehr Entwicklungsaufwand get\"atig. 
 
-Zum Einen sollte ein so langer Text nicht als einzeiliges Textfeld dargestellt werden. Zum Anderen, muss es m\"oglich gemacht werden Texte einzugeben, welche die l\"ange von 1.024 Zeichen \"uberschreiten. Daher wurde die \texttt{share-config-custom.xml} noch einmal erweitert.
+Zum einen sollte ein so langer Text nicht als einzeiliges Textfeld dargestellt werden, zum anderen, muss es m\"oglich gemacht werden Texte einzugeben, welche die l\"ange von 1.024 Zeichen \"uberschreiten. Daher wurde die \texttt{share-config-custom.xml} noch einmal erweitert.
 
 Das entsprechende Feld (im Beispiel das Attribute \texttt{Gr\"unde}) muss in seiner "`appearance"' angepasst werden, wie es im Listing \ref{appearance anpassung} zu sehen ist. Um ein mehrzeiliges Textfeld zu erzeigen, muss das "`Control-Template"' \texttt{textarea.ftl} verwendet werden. Das Template muss wie angegeben mit einer vollen Pfadangabe versehen werden, denn an dieser Stelle k\"onnten auch eigene Templates eingebunden werden.
 
