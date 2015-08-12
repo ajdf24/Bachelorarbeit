@@ -1,0 +1,12 @@
+\section{Abstract}
+Die vorliegende Arbeit besch\"aftigt mit der Erstellung eines \"ubergreifenden Metadatenmodells f\"ur die \ac{LUBW}. Hierbei werden verschiede historisch von einander unabh\"angig gewachsene Webportale untersucht und analysiert, wie die enthaltenen Metadaten von verschiedensten Dokumenten zusammengefasst werden k\"onnen.
+
+Ziel ist es zu kl\"aren, ob die verschiedenen Backend-Systeme zu einem \"ubergreifenden System vereint werden k\"onnen. F\"ur die Verschmelzung der Systeme wird nach einer Analyse verschiedener \ac{ECM}-Systeme eines ausgew\"aht und das entstandene Metadatenmodell auf dieses abgebildet.
+
+Es wird beschrieben wie Metadatenmodelle in Alfresco, einem der am h\"aufigsten verwendeten {ECM}-Systeme, implementiert und genutzt werden k\"onnen. Hierf\"ur wird das erstellte Metadatenmodell prototypisch implementiert, um zu evaluieren, ob die unterschiedlichen Systeme vereinbar sind.
+
+Nach der Entwicklung des Backends, wird versucht das entstandene Backend in einem Liferay-Portalserver, welcher das Frontend darstellen soll, abzubilden. Es wird festgestellt, dass es keine bestehende L\"osung gibt alle Metadaten mittels \ac{CMIS} in Liferay abzubilden.
+
+Im Verlauf der Arbeit wird daher auf M\"oglichkeiten eingegangen, wie es m\"oglich ist die im Alfresco enthaltenen Metadaten in Liferay anzuzeigen, beziehungsweise zu speichern. Hierf\"ur wird prototypisch gezeigt, dass es \"uber einen Liferay-Hintergrundservice, einen Hook, m\"oglich ist die Metadaten aus Alfresco auszulesen und diese in der Liferay-Datenbank abzulegen.
+
+Am Ende wird versucht den neuen Prototyp mit den alten Systemen zu vergleichen, was nur zum Teil m\"oglich ist, da Liferay standardm\"a\ss{}ig nicht in der Lage ist die Metadaten von Fremdsystemen anzuzeigen.
