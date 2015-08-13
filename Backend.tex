@@ -150,7 +150,7 @@ Sollte "`parent"' keine eigene Klasse sein, so steht hier standardm\"a\ss{}ig \t
 
 Unter dem Tag "`properties"' sind alle Attribute zu finden, welche der jeweilige Typ enth\"alt. Innerhalb einer "`property"' wird wiederum der Name des Attributs angegeben. Im Tag "`title"' findet sich der Standardtitel. "`type"' gibt an, von welchem Typ das Attribut ist. Eine genaue Auflistung alles Datentypen von Alfresco ist in der Dokumentation\footnote{\url{http://docs.alfresco.com/4.0/concepts/metadata-model-props.html}} zu finden. Im Tag "`constraints"' k\"onnen Verweise zu einzelnen Constraints des Datenmodells oder aber zu Constraints anderer Datenmodelle angegeben werden. 
 
-\"Uber den Tag "`mandatory-aspects"' k\"onnen Aspekte angegeben werden, welche der Dokumententyp zwingend beinhalten muss. Im Beispiel w\"aren das die Aspekte \texttt{Inspire} und \texttt{Dokumenten-Information}. Beide Aspekte sind auch im Datenmodell in Abbildung \ref{Bildarchiv und ICT-ENSURE Datentypen f\"ur Alfresco} zu sehen.
+\"Uber den Tag "`mandatory-aspects"' k\"onnen Aspekte angegeben werden, welche der Dokumententyp zwingend beinhalten muss. Im Beispiel w\"aren das die Aspekte \texttt{Inspire} und \texttt{Dokumenten- Information}. Beide Aspekte sind auch im Datenmodell in Abbildung \ref{Bildarchiv und ICT-ENSURE Datentypen f\"ur Alfresco} zu sehen.
 
 "`aspects"' kann mehrere Aspekte der jeweiligen Klasse enthalten. Diese Aspekte k\"onnen dann innerhalb der Klasse, sowie klassen\"ubergreifend eingesetzt werden. Grunds\"atzlich sind die Beschreibungen von Aspekten genau wie die von Typen aufgebaut und beinhalten die selben Tags. Einzige Ausnahme ist der Tag "`parent"', da ein Aspekt keinen \"ubergeordneten Datentyp beinhaltet. Im Beispiel sind keine Aspekte vorhanden, da das Datenmodell dies f\"ur die Klasse \texttt{Bildarchiv Metadaten} nicht vorsieht. 
 
@@ -171,12 +171,12 @@ Sind beide Dateien korrekt und an der richtigen Stelle muss Alfresco neu gestart
 \subsubsection{\"Ubersetzungen in Alfresco}
 Um Mehrsprachigkeit in Alfresco zu realisieren verwendet das System Property-Dateien, in welchen die verschiedenen \"Ubersetzungen zu finden sind. Die Property-Dateien m\"ussen unter \texttt{ALFRESCO\_HOME/tomcat/shared/classes/alfresco/messages} abgelegt werden.
 
-Die Dateien k\"onnen beliebig benannt werden, m\"ussen jedoch das ISO-Sprachk\"urzel am Namensende enthalten. Eine deutsche \"Ubersetzung w\"urde dann zum Beispiel in der Datei \texttt{I18N\_de\_DE.properties} und eine US-Amerikanische unter \texttt{I18N\_en\_US.properties} zu finden sein. Alfresco nutzt die Übersetzungen dann automatisch anhand der eingestellten Systemsprache.
+Die Dateien k\"onnen beliebig benannt werden, m\"ussen jedoch das ISO-Sprachk\"urzel am Namensende enthalten. Eine deutsche \"Ubersetzung w\"urde dann zum Beispiel in der Datei \\\texttt{I18N\_de\_DE.properties} und eine US-Amerikanische unter \texttt{I18N\_en\_US.properties} zu finden sein. Alfresco nutzt die Übersetzungen dann automatisch anhand der eingestellten Systemsprache.
 
 Die Datei beinhalten pro Zeile ein Schl\"ussel-Wert-Paar, welches eine \"Ubersetzung f\"ur genau einen String darstellt.
 Im Listing \ref{I18NDatei Listing} ist nur ein Ausschnitt der Datei \texttt{I18N\_de\_DE.properties} zu sehen, um das System zu verdeutlichen.
 
-In den Property-Dateien werden Strings f\"ur Typen mit einem Schl\"ussel \texttt{type.<Namespace>\_<Typname>} bezeichnent. Aspekte werden \"ahnlich wie auch Typen bezeichnent und zwar mit \texttt{aspect.<Namespace>\_<Aspektname>}. Andere Keys, wie zum Beispiel die Keys f\"ur Hilfetexte, k\"onnen frei gew\"ahlt werden.
+In den Property-Dateien werden Strings f\"ur Typen mit einem Schl\"ussel \\\texttt{type.<Namespace>\_<Typname>} bezeichnent. Aspekte werden \"ahnlich wie auch Typen bezeichnent und zwar mit \texttt{aspect.<Namespace>\_<Aspektname>}. Andere Keys, wie zum Beispiel die Keys f\"ur Hilfetexte, k\"onnen frei gew\"ahlt werden.
 
 \lstinputlisting[caption=Ausschnitt des Inhalts der \"Ubersetzungsdatei I18N\_de\_DE.properties, label=I18NDatei Listing]{Code/I18N_de_DE.properties}
 
@@ -184,7 +184,7 @@ In den Property-Dateien werden Strings f\"ur Typen mit einem Schl\"ussel \texttt
 Nach dem in den vorherigen Abschnitten gezeigt wurde, wie eine Datenmodell f\"ur Alfresco erstellt und eingebunden wird, muss nun noch gekl\"art werden, wie sich \"Ubersetzungen und Datenmodell in Alfresco anzeigen lassen.
 
 \subsubsection{Das Datenmodell anzeigen}\label{Das Datenmodell anzeigen}
-Um ein Datenmodell in Alfresco mit all seinen Metadaten in der Pr\"asentation und in den Formularen anzuzeigen, reicht es nicht aus, nur das Bean zu erstellen. Zus\"atzlich muss auch angegeben werden, welche Attribute Alfresco wie darstellen soll. Die Darstellung wird in der Datei \texttt{share-config-custom.xml} beschrieben, welche sich im Verzeichnis \texttt{ALFRESCO\_HOME/tomcat/shared/classes/alfresco/web-extensions} befindet.
+Um ein Datenmodell in Alfresco mit all seinen Metadaten in der Pr\"asentation und in den Formularen anzuzeigen, reicht es nicht aus, nur das Bean zu erstellen. Zus\"atzlich muss auch angegeben werden, welche Attribute Alfresco wie darstellen soll. Die Darstellung wird in der Datei \texttt{share-config-custom.xml} beschrieben, welche sich im Verzeichnis \texttt{ALFRESCO\_HOME/tomcat/ shared/classes/alfresco/web-extensions} befindet.
 
 Da diese Config-Datei sehr lang werden kann, werden im Folgenden immer nur Ausschnitte gezeigt.
 
@@ -195,14 +195,14 @@ Die einzelnen Attribute werden, wenn sie nicht anders gegliedert sind in der Rei
 Unter Tag "`field-visibility"' ist der Tag "`appearance"' zu sehen. Dieser gibt an, wie die einzelnen Attribte angezeigt werden. Als erstes werden mit dem "`set"'-Tag gruppen erzeugt, welche im Beispiel als "`bordered-panel"' angezeigt werden sollen.
 
 Als n\"achstes werden die einzelnen Attribute mit dem Tag "`field"' noch einmal aufgelistet. Hier wird nun aufgef\"hrt, zu welcher Gruppe das Attribut geh\"ort und welchen Hilfetext es haben soll. Nat\"urlich gibt es noch weitere Einstellungsm\"oglichkeiten\footnote{\url{https://wiki.alfresco.com/wiki/Forms\_Examples\#Changing\_Set\_Appearance}}, welche im Beispiel jedoch nicht verwendet werden.
-
+\newpage
 \lstinputlisting[caption=Beschreibung einer Klasse des Datemodells in der \texttt{share-config-custom.xml}, label=Config Datenmodell]{Code/Config-Datenmodell.xml}
 
 Wie sich das setzen der Gruppierung in Alfresco auswirkt und wie es in der Dokumenten\"ubersicht genau aussieht, ist im Anhang \ref{Metadaten in der Alfrescooberfl\"ache} zu finden.
 
 \subsubsection{Aspekte anzeigen}
-Um die im Datenmodell erstellten Aspekte anzuzeigen, m\"ussen diese ebenfalls in der \texttt{share-config-custom.xml} angegeben werden.
-Dies geschieht im schon vorhandenen Tag \texttt{<config evaluator="'string-compare"' condition="'DocumentLibrary"' replace="'true"'>} wie im Listing \ref{Config Aspekte} zu sehen ist. Innerhalb des Tags "`visible"' m\"ussen alle zuzuzeigenden Aspekte des Datemodells angegeben werden.
+Um die im Datenmodell erstellten Aspekte anzuzeigen, m\"ussen diese ebenfalls in der \\\texttt{share-config-custom.xml} angegeben werden.
+Dies geschieht im schon vorhandenen Tag \\\texttt{<config evaluator="'string-compare"' condition="'DocumentLibrary"' replace="'true"'>} wie im Listing \ref{Config Aspekte} zu sehen ist. Innerhalb des Tags "`visible"' m\"ussen alle zuzuzeigenden Aspekte des Datemodells angegeben werden.
 
 Ist diese Einstellung richtig vorgenommen wurden, k\"onnen die eigenen Aspekte nun auch zum Datentyp hinzugef\"ugt werden.
 
@@ -236,7 +236,7 @@ Aus diesem Grund sollte bei der Weiterf\"uhrung des Projekts dar\"uber nachgedac
 \subsection{Bulk-Import von Dateien}
 Alfresco bietet die M\"oglichkeit Dateien und ihre Metadaten auch automatisiert einzulesen, dies ist vor allem hilfreich, wenn ein schon bestehendes System auf Alfresco migriert werden soll.
 
-Der Bulk-Import geschieht \"uber die URL: \url{http://localhost:8080/alfresco/service/bulkfsimport}. Hier muss der Ordner angegeben werden, von dem die Daten eingelesen werden sollen. Zus\"atzlich muss ein Ordner innerhalb von Alfresco angegeben werden, in dem die eingelesenen Daten gespeichert werden soll. 
+Der Bulk-Import geschieht \"uber \url{http://localhost:8080/alfresco/service/bulkfsimport}. Hier muss der Ordner angegeben werden, von dem die Daten eingelesen werden sollen. Zus\"atzlich muss ein Ordner innerhalb von Alfresco angegeben werden, in dem die eingelesenen Daten gespeichert werden soll. 
 
 Es lassen sich zus\"atzlich zum Beispiel auch Stapelgr\"o\ss{}e und eine Threadanzahl einstellen, mit denen importiert wird.
 
@@ -273,7 +273,7 @@ In Abbildung \ref{Textfeld Gr\"unde} ist das Textfeld nach der Bearbeitung der \
 Im Internet finden sich viele Hilfestellungen und Tutorials zu Alfresco, leider nicht zu allen relevanten Themen der arbeit mit Alfresco. Deshalb sollen einige Fehlerquellen und Probleme aufgezeigt werden und wie diese gel\"ost wurden.
 
 \subsubsection{Aufspaltung der share-config-custom.xml}
-Da alle Klassen des Content-Modells mit ihren anzuzeigenden Attributen, in der \texttt{share-config-custom.xml} angegeben werden m\"ussen, w\"achst die Datei schnell an und wurde entsprechend un\"ubersichtlich.
+Da alle Klassen des Content-Modells mit ihren anzuzeigenden Attributen, in der \\\texttt{share-config-custom.xml} angegeben werden m\"ussen, w\"achst die Datei schnell an und wurde entsprechend un\"ubersichtlich.
 
 Daher wurde die Datei aufgrspaltet und die einzelnen Bestandteile in separaten Dateien untergebracht.
 Hierzu m\"ussen die neuen Dateien als Bean angegeben werden, damit Alfresco diese ber\"ucksichtigt.

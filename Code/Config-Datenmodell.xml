@@ -22,8 +22,6 @@
                     <show id="cm:subject"/>
 
                     <!-- Weitere Attribute stehen hier -->
-
-
                 </field-visibility>
                 <appearance>
                     <set id="cm:content" appearance="bordered-panel" label="Content" />
@@ -51,7 +49,6 @@
                     <field id="cm:subject" set="cm:dublincore"   />
 
                     <!-- Weitere Beschreibungen stehen hier -->
-
                 </appearance>
             </form>
         </forms>

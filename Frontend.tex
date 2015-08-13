@@ -18,7 +18,7 @@ Das im Abschnitt \ref{Alfresco als Repository im Liferay} verwendete CMIS-Reposi
 
 Es reicht f\"ur die prototypische Implementierung in dieser Arbeit aber vollkommen aus, den gleichen Benutzer in beiden Systemen zu erstellen. Hierbei m\"ussen die Passw\"orter und die Benutzernamen in beiden Systemen \"ubereinstimmen.
 
-Ist der selbe Nutzer in beiden Systemen erstellt, muss in die Liferay-Datei \texttt{portal-setup-wizard.properties} welche im Order \texttt{LIFERAY\_HOME} liegt, noch die im Listing \ref{Datei Erweiterung portal-setup-wizard.properties} zu sehende Zeile hinzugef\"ugt werden. \cite{CMIS_Repo}
+Ist der selbe Nutzer in beiden Systemen erstellt, muss in die Liferay-Datei \\\texttt{portal-setup-wizard.properties} welche im Order \texttt{LIFERAY\_HOME} liegt, noch die im Listing \ref{Datei Erweiterung portal-setup-wizard.properties} zu sehende Zeile hinzugef\"ugt werden. \cite{CMIS_Repo}
 
 \lstinputlisting[caption=Erweiterung in der Datei portal-setup-wizard.properties, label=Datei Erweiterung portal-setup-wizard.properties]{Code/portal-setup-wizard.properties}
 
@@ -30,7 +30,7 @@ Nach einem Neustart des Servers muss sich ab sofort mit dem Benutzernamen angeme
 \subsubsection{Alfresco als Repository im Liferay}\label{Alfresco als Repository im Liferay}
 Im Liferay kann auf der Seite "`Inhalte"' unter "`Dokumente und Medien"' ein neues Repository erzeugt werden. Es muss ein Name f\"ur das Repository gew\"ahlt werden, unter dem dieses sp\"ater zu finden ist. Als Repositorytyp muss ein \ac{CMIS}-Repository des Typs "`AtomPub"' gew\"ahlt werden. 
 
-Die passende Repository-URL von Alfresco kann auf der Seite \url{http://127.0.0.1:8080/alfresco/} gefunden werden. Grunds\"atzlich ist es egal, ob die AtomPub Version 1.0 oder 1.1 gew\"ahlt wird. Zus\"atzlich finden sich hier auch andere Links, wie zum Beispiel ein Link f\"ur den WebDav-Zugriff auf Alfresco.
+Die passende URL von Alfresco kann auf der Seite \url{http://127.0.0.1:8080/alfresco/} gefunden werden. Grunds\"atzlich ist es egal, ob die AtomPub Version 1.0 oder 1.1 gew\"ahlt wird. Zus\"atzlich finden sich hier auch andere Links, wie zum Beispiel ein Link f\"ur den WebDav-Zugriff auf Alfresco.
 
 Ist die richtige URL im Feld "`AtomPub-URL"' eingetragen, muss noch die Berechtigung gew\"ahlt und anschlie\ss{}end gespeichert werden. Die Felder "`Beschreibung"' und "`Repository ID"' k\"onnen frei bleiben.
 
@@ -88,8 +88,8 @@ Die genaue Implementierung ist im Listing \ref{CMIS mit Chemistry} zu sehen. Es 
 Anschlie\ss{}end wird f\"ur das gerade erstellte Element die ID geholt und mit ihrer Hilfe das \texttt{CmisObjekt} erstellt.
 Handelt es sich um einen Ordner, wird nichts weiter unternommen. Ist das Element jedoch ein Dokument, so werden alle Propertys geholt.
 
-\"Uber einen Iterator wird durch alle Propertys durchgegangen und diese mit Hilfe der \texttt{ExpandoBridge} in die Liferay-Datenbank eingebracht.
-
+\"Uber einen Iterator wird durch alle Propertys durchgegangen und diese mit Hilfe der \\\texttt{ExpandoBridge} in die Liferay-Datenbank eingebracht.
+\newpage
 \lstinputlisting[language=java, caption=Prototypische-Implementierung einer \ac{CMIS}-Schnittstelle mit Apache Chemistry, label=CMIS mit Chemistry]{Code/Chemistry.java}
 
 Dieser kleine Ausflug beweist, dass es m\"oglich ist, die von Alfresco ankommenden Metadaten in Liferay zu integrieren. Somit steht auch dem Anzeigen der Metadaten auf der Oberfl\"ache nichts mehr im Wege. \cite{Chemistry_examples}
