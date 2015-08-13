@@ -59,6 +59,8 @@ Liferay nutzt zur internen Datenspeicherung standardm\"a\ss{}ig eine HyperSQL-Da
 
 Nach dem Start muss als URL \url{jdbc:hsqldb:<Pfad zum Liferay-Home>/LIFERAY\_HOME/data/hsql/lportal} angegeben werden um sich mit der Datenbank zu verbinden. Vorher muss jedoch der Liferay-Server heruntergefahren werden, da dieser ein Lock auf die Datenbank h\"alt und sie somit sperrt.
 
+Liferay kann beim einrichten des Servers aber auch mit einer anderen Datenbank wie zum Beispiel MySQL eingerichtet werden. Voraussetzung hierf\"ur ist, dass der Datendank-Server dann auf dem System vorhanden ist.
+
 Innerhalb der Datenbank sind in der Tabelle \texttt{PUBLIC.DDMCONTENT} auch die Metadaten der Dateien abgelegt, welche \"uber das Repository eingef\"ugt wurden. In der Spalte \texttt{XML} alle Metadaten zu einem Dokument abgelegt. Hier f\"allt sofort auf, dass nicht alle Metadaten, welche Alfresco bietet, angegeben sind. Lediglich standardisierte Metadaten welche aus der Datei ausgelesen wurden, sind hier zu finden. 
 
 Daher ist es nicht verwunderlich, dass Liferay keine weiteren Metadaten anzeigt, denn sie sind einfach nicht bekannt.

@@ -1,12 +1,14 @@
 \section{Abstract}
-Die vorliegende Arbeit besch\"aftigt mit der Erstellung eines \"ubergreifenden Metadatenmodells f\"ur die \ac{LUBW}. Hierbei werden verschiede historisch von einander unabh\"angig gewachsene Webportale untersucht und analysiert, wie die enthaltenen Metadaten von verschiedensten Dokumenten zusammengefasst werden k\"onnen.
+In this paper a comprehensive metadatamodel for systems of the \ac{LUBW} is created. The \ac{LUBW} has different Web portals, which are grown independently for historical reasons. This portals will be studied and analyzed how the contained metadata of documents can be summerized.
 
-Ziel ist es zu kl\"aren, ob die verschiedenen Backend-Systeme zu einem \"ubergreifenden System vereint werden k\"onnen. F\"ur die Verschmelzung der Systeme wird nach einer Analyse verschiedener \ac{ECM}-Systeme eines ausgew\"aht und das entstandene Metadatenmodell auf dieses abgebildet.
+The aim of this paper is to clarify if these different backend services can be combined to a single comprehensive system. For this fusion of the systems, different \ac{ECM} systems need to be analyzed and one of them must be selected in which the metadatamodel will be mapped.
 
-Es wird beschrieben wie Metadatenmodelle in Alfresco, einem der am h\"aufigsten verwendeten {ECM}-Systeme, implementiert und genutzt werden k\"onnen. Hierf\"ur wird das erstellte Metadatenmodell prototypisch implementiert, um zu evaluieren, ob die unterschiedlichen Systeme vereinbar sind.
+It is described how a metadatamodel in Alfresco, one of the most popular \ac{ECM} systems, can be implemented. 
 
-Nach der Entwicklung des Backends, wird versucht das entstandene Backend in einem Liferay-Portalserver, welcher das Frontend darstellen soll, abzubilden. Es wird festgestellt, dass es keine bestehende L\"osung gibt alle Metadaten mittels \ac{CMIS} in Liferay abzubilden.
+After the development of the backend, it will be attempt to integrate the backend to a Liferay portal server, which should be used as frontend server. It is determined that Liferay doesn't support the metadata from Alfresco by using \ac{CMIS}.
 
-Im Verlauf der Arbeit wird daher auf M\"oglichkeiten eingegangen, wie es m\"oglich ist die im Alfresco enthaltenen Metadaten in Liferay anzuzeigen, beziehungsweise zu speichern. Hierf\"ur wird prototypisch gezeigt, dass es \"uber einen Liferay-Hintergrundservice, einen Hook, m\"oglich ist die Metadaten aus Alfresco auszulesen und diese in der Liferay-Datenbank abzulegen.
+Therefore the paper will focus on ways, which allows Liferay to display or to save the metadata in the Liferay database. A hook, which is a Liferay background process, was prototypically implemented which allows to save the metadata from Alfresco in the Liferay database. The hook uses a \ac{CMIS} connection which is used to load the metadata from Alfresco. 
 
-Am Ende wird versucht den neuen Prototyp mit den alten Systemen zu vergleichen, was nur zum Teil m\"oglich ist, da Liferay standardm\"a\ss{}ig nicht in der Lage ist die Metadaten von Fremdsystemen anzuzeigen.
+Other ways how a connection can be realized are described in this paper. A widget or a portlet of Liferay are only a few ways which are specified.
+
+At the end both backends and frontends will be compared with each other, which is partly possible. The reason is that Liferay does not support metadata from other systems by default.
