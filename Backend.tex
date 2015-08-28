@@ -80,7 +80,7 @@ Im Abschnitt \ref{Die Klasse Gerichtbarkeit} wird noch einmal genauer erw\"ahnt,
 
 \FloatBarrier
 \subsubsection{Die Klasse Gerichtbarkeit}\label{Die Klasse Gerichtbarkeit}
-Das Package \texttt{Gerichtbarkeit} beschreibt eine Klasse, welche drei Aspekte beinhaltet. Diese Aspekte sind \texttt{Gesetz}, welcher die Datensammlungen \texttt{Fundstelle}, \texttt{Datum der Rechtsvorschriften} und \texttt{Ablage} zusammengefasst, \texttt{Urtei} und \texttt{Gericht}. 
+Das Package \texttt{Gerichtbarkeit} beschreibt eine Klasse, welche drei Aspekte beinhaltet. Diese Aspekte sind \texttt{Gesetz}, welcher die Datensammlungen \texttt{Fundstelle}, \\\texttt{Datum der Rechtsvorschriften} und \texttt{Ablage} zusammengefasst, \texttt{Urtei} und \texttt{Gericht}. 
 
 Die Datensammlung \texttt{Gericht} geht ohne Ver\"anderung in einen Aspekt \"uber und wird im Typ \texttt{FADO Urteil} verwendet. Die Sammlung \texttt{Urteil} musste etwas abge\"andert werden. Die Verweise auf das Vorgericht und das Nachgericht wurden aufgeschl\"usselt, da Alfresco bekanntlich keine Klassen als Attribute unterst\"utzt.
 
@@ -95,10 +95,10 @@ In Abbildung \ref{Klasse Gerichtbarkeit} ist die Klasse \texttt{Gerichtbarkeit} 
 \end{figure}
 
 \FloatBarrier
-\subsubsection{Die Klasse Standard Aspekte}\label{Die Klasse Standard Aspekte}
-Das Package \texttt{Standard Aspekte}, ist wieder eine Metadaten-Klasse von Alfresco, welche den Aspekt \texttt{Inspire} enth\"alt. Durch die \"Anderungen am Datenmodell wurden die Attribute, welche sich in den verweisten Datensammlungen befunden haben, nun direkt in der Datensammlung \texttt{Inspire} untergebracht, welche nun ein Aspekt ist. 
+\subsubsection{Die Klasse Standard-Aspekte}\label{Die Klasse Standard Aspekte}
+Das Package \texttt{Standard-Aspekte}, ist wieder eine Metadaten-Klasse von Alfresco, welche den Aspekt \texttt{Inspire} enth\"alt. Durch die \"Anderungen am Datenmodell wurden die Attribute, welche sich in den verweisten Datensammlungen befunden haben, nun direkt in der Datensammlung \texttt{Inspire} untergebracht, welche nun ein Aspekt ist. 
 
-Die Abbildung \ref{Klasse Standard Aspekte} zeigt noch einmal den Aspekt \texttt{Inspire}, welcher sich in der Klasse (dem Package) \texttt{Standard Aspekte} befindet.
+Die Abbildung \ref{Klasse Standard Aspekte} zeigt noch einmal den Aspekt \texttt{Inspire}, welcher sich in der Klasse (dem Package) \texttt{Standard-Aspekte} befindet.
 
 \begin{figure}[!ht]
 \centering
@@ -110,9 +110,9 @@ Die Abbildung \ref{Klasse Standard Aspekte} zeigt noch einmal den Aspekt \texttt
 
 \FloatBarrier
 \subsubsection{Die Klasse Bibliografische Aspekte} \label{Die Klasse Bibliografische Aspekte}
-In Abbildung \ref{Klasse Bibligrafische Aspekte} ist die Klasse \texttt{Bibliografische Aspekte} zu sehen, welche die beiden Aspekte \texttt{Dokumenten Information} und \texttt{Literatur Metadaten} enth\"alt.
+In Abbildung \ref{Klasse Bibligrafische Aspekte} ist die Klasse \texttt{Bibliografische-Aspekte} zu sehen, welche die beiden Aspekte \texttt{Dokumenten-Information} und \texttt{Literatur-Metadaten} enth\"alt.
 
-Beim Aspekt \texttt{Dokumenten Information} ergaben sich keine \"Anderungen, au\ss{}er dass das Attribut "`Stand"' nun eigenst\"andig ist und nicht mehr auf ein Datum verweist. Der Aspekt \texttt{Literatur Metadaten} enth\"alt nun die Attribute der Datensammlungen \texttt{Kapitel} und \texttt{Publikations ID}.
+Beim Aspekt \texttt{Dokumenten-Information} ergaben sich keine \"Anderungen, au\ss{}er dass das Attribut "`Stand"' nun eigenst\"andig ist und nicht mehr auf ein Datum verweist. Der Aspekt \\\texttt{Literatur-Metadaten} enth\"alt nun die Attribute der Datensammlungen \texttt{Kapitel} und \\\texttt{Publikations ID}.
 
 \begin{figure}[!ht]
 \centering
@@ -154,6 +154,7 @@ Unter dem Tag "`properties"' sind alle Attribute zu finden, welche der jeweilige
 
 "`aspects"' kann mehrere Aspekte der jeweiligen Klasse enthalten. Diese Aspekte k\"onnen dann innerhalb der Klasse, sowie klassen\"ubergreifend eingesetzt werden. Grunds\"atzlich sind die Beschreibungen von Aspekten genau wie die von Typen aufgebaut und beinhalten die selben Tags. Einzige Ausnahme ist der Tag "`parent"', da ein Aspekt keinen \"ubergeordneten Datentyp beinhaltet. Im Beispiel sind keine Aspekte vorhanden, da das Datenmodell dies f\"ur die Klasse \texttt{Bildarchiv Metadaten} nicht vorsieht. 
 
+\newpage
 \lstinputlisting[language=xml, caption=Inhalt der Datei Bildarchiv-Metadaten.xml, label=Bildarchiv-Metadaten Listing]{Code/Bildarchiv-Metadaten.xml}
 
 \subsubsection{Das Modell in Alfresco einbinden} \label{Das Modell in Alfresco einbinden}
@@ -194,7 +195,8 @@ Die einzelnen Attribute werden, wenn sie nicht anders gegliedert sind in der Rei
 
 Unter Tag "`field-visibility"' ist der Tag "`appearance"' zu sehen. Dieser gibt an, wie die einzelnen Attribte angezeigt werden. Als erstes werden mit dem "`set"'-Tag gruppen erzeugt, welche im Beispiel als "`bordered-panel"' angezeigt werden sollen.
 
-Als n\"achstes werden die einzelnen Attribute mit dem Tag "`field"' noch einmal aufgelistet. Hier wird nun aufgef\"hrt, zu welcher Gruppe das Attribut geh\"ort und welchen Hilfetext es haben soll. Nat\"urlich gibt es noch weitere Einstellungsm\"oglichkeiten\footnote{\url{https://wiki.alfresco.com/wiki/Forms\_Examples\#Changing\_Set\_Appearance}}, welche im Beispiel jedoch nicht verwendet werden.
+Als n\"achstes werden die einzelnen Attribute mit dem Tag "`field"' noch einmal aufgelistet. Hier wird nun aufgef\"uhrt, zu welcher Gruppe das Attribut geh\"ort und welchen Hilfetext es haben soll. Nat\"urlich gibt es noch weitere Einstellungsm\"oglichkeiten\footnote{\url{https://wiki.alfresco.com/wiki/Forms\_Examples\#Changing\_Set\_Appearance}}, welche im Beispiel jedoch nicht verwendet werden.
+
 \newpage
 \lstinputlisting[caption=Beschreibung einer Klasse des Datemodells in der \texttt{share-config-custom.xml}, label=Config Datenmodell]{Code/Config-Datenmodell.xml}
 
@@ -215,21 +217,23 @@ Damit die eigenen Datentypen verwendet werden k\"onnen, m\"ussen die Dokumente e
 
 Damit die Typen in der Oberfl\"ache von Alfresco ge\"andert werden k\"onnen, muss dies auch in der \texttt{share-config-custom.xml} beschrieben werden. Hierf\"ur muss wie im Listing \ref{Config Typumwandlung} ein neuer "`config"'-Tag angelegt werden. Im Tag "`types"' wiederum werden die einzelnen Typen definiert, von welchen aus in andere umgewandelt werden soll. So kann im Beispiel der Typ "`cm:content"' in vier andere Typen umgewandelt werden. Dies ist m\"oglich, da diese vier Typen von "`cm:content"' erben.
 
+Umgekehrt, ist eine R\"uck-Umwandlung nicht m\"oglich, da hier m\"oglicherweise Daten verloren gehen k\"onnen.
+
 Die unteren drei Datentypen erben von "`lupo-FADO:Fado-Metadaten"' und k\"onnen daher nicht direkt aus "`cm:content"' erstellt werden.
 
 \lstinputlisting[caption=Beschreibung der Typumwandlung in der \texttt{share-config-custom.xml}, label=Config Typumwandlung]{Code/Config-Umwandlung.xml}
 
 \subsubsection{\"Ubersetzungen einbinden}
-Alfresco k\"onnen mehrere Dateien mit \"Ubersetzungen bereitgestellt werden, welche Davon verwendet wird entscheidet Alfresco automatisch Anhand der eingestellten Systemsprache. Sollte f\"ur die eingestellte Sprache keine spezielle \"Ubersetzung vorliegen so wird die Standard-Properties-Datei verwendet, welche keine Sprachk\"urzel enth\"alt in dem Falle w\"are das die Datei \texttt{I18N.properties}. 
+Alfresco k\"onnen mehrere Dateien mit \"Ubersetzungen bereitgestellt werden, welche Davon verwendet wird entscheidet Alfresco automatisch Anhand der eingestellten Systemsprache. Sollte f\"ur die eingestellte Sprache keine spezielle \"Ubersetzung vorliegen, so wird die Standard-Properties-Datei verwendet, welche keine Sprachk\"urzel enth\"alt, in diesem Fall w\"are das die Datei \texttt{I18N.properties}. 
 
-Es muss nat\"urlich auch noch angegeben werden, wo sich die Sprachdateien befinden. Hierf\"ur muss ein Eintrag in der \texttt{custom-slingshot-application-context.xml} welche sich im Verzeichnis \texttt{ALFRESCO\_HOME/tomcat/shared/classes/alfresco/web-extensions} befindet.
+Es muss angegenen werden, wo sich die Sprachdateien befinden. Hierf\"ur muss ein Eintrag in der \texttt{custom-slingshot-application-context.xml} welche sich im Verzeichnis \texttt{ALFRESCO\_HOME/ tomcat/shared/classes/alfresco/web-extensions} befindet angelegt werden.
 
 Innerhalb des Tags "`list"', muss ein neuer "`value"'-Tag erstellt werden, wie es im Listing \ref{Slingshot I18N} zu sehen ist, welcher den Pfad zur Standard\"ubersetzungsdatei angibt.
 
-\lstinputlisting[caption=Beschreibung der \texttt{custom-slingshot-application-context.xml}, label=Slingshot I18N]{Code/Slingshot-I18N.xml}
+\lstinputlisting[language=html, caption=Beschreibung der \texttt{custom-slingshot-application-context.xml}, label=Slingshot I18N]{Code/Slingshot-I18N.xml}
 
 \subsection{Metadatenmodell Editor}
-Eine der Anforderungen an \ac{FADO} ist, dass das Metadatenmodell einfach und ohne Programmierkenntnisse ver\"andert werden kann. Leider konnte nach einiger Recherche kein Editor gefunden werden der unter der aktuellen Version 5.0 lauff\"ahig ist. 
+Eine der Anforderungen an \ac{FADO} ist, dass das Metadatenmodell einfach und m\"oglichst ohne Programmierkenntnisse ver\"andert werden kann. Leider konnte nach einiger Recherche kein Editor gefunden werden der unter der aktuellen Version 5.0 lauff\"ahig ist. 
 
 Aus diesem Grund sollte bei der Weiterf\"uhrung des Projekts dar\"uber nachgedacht werden eine eigene L\"osung als eigenst\"andiges Programm, oder als Alfresco-Plugin zu implementieren.
 
@@ -244,22 +248,24 @@ Um nun auch Metadaten automatisiert einzulesen und zu speichern, m\"ussen diese 
 
 Wird nun ein Bulk-Import gestartet, so werden aus den beschreibenden XML-Dateien die Attributwerte abgelesen.
 
-\subsection{Verwendung von langen Textfeldern}
-Bei der Implementierung des Datenmodells wurde festgestellt, dass ein Textfeld in Alfresco standardm\"a\ss{}ig nur 1.024 Zeichen lang sein kann. Problematisch wird dies vor allem bei \ac{FADO}-Dokumenten des Typs \texttt{Urteil}, denn hier k\"onnen vor allem die beiden Attribte \texttt{Tatbestand} und \texttt{Gr\"unde} die l\"ange sehr leicht \"uberschreiten. So gar L\"angen mit \"uber 27.000 Zeichen sind im aktuellen Datenbestand der \ac{LUBW} m\"oglich. Aus diesen dem genannten Grund, wurde hier etwas mehr Entwicklungsaufwand get\"atig. 
+Im Anhang \ref{Darstellung einer Bulk-Import XML-Datei} ist eine XML-Datei zu sehen, welche es erm\"oglicht, Urteile in Alfresco zu integrieren. Es wurde bewusst auf den Inhalt, zugunsten der Lesbarkeit, verzichtet.
 
-Zum einen sollte ein so langer Text nicht als einzeiliges Textfeld dargestellt werden, zum anderen, muss es m\"oglich gemacht werden Texte einzugeben, welche die l\"ange von 1.024 Zeichen \"uberschreiten. Daher wurde die \texttt{share-config-custom.xml} noch einmal erweitert.
+\subsection{Verwendung von langen Textfeldern}
+Bei der Implementierung des Datenmodells wurde festgestellt, dass ein Textfeld in Alfresco standardm\"a\ss{}ig 1.024 Zeichen lang sein kann. Problematisch wird dies vor allem bei \ac{FADO}-Dokumenten des Typs \texttt{Urteil}, denn hier k\"onnen vor allem die beiden Attribte \texttt{Tatbestand} und \texttt{Gr\"unde} die l\"ange sehr leicht \"uberschreiten. Sogar L\"angen mit \"uber 27.000 Zeichen sind im aktuellen Datenbestand der \ac{LUBW} m\"oglich. Aus diesem genannten Grund, wurde hier etwas mehr Entwicklungsaufwand get\"atig. 
+
+Zum einen sollte ein so langer Text nicht als einzeiliges Textfeld dargestellt werden, zum anderen muss es m\"oglich gemacht werden, Texte einzugeben, welche die L\"ange von 1.024 Zeichen \"uberschreiten. Daher wurde die \texttt{share-config-custom.xml} noch einmal erweitert.
 
 Das entsprechende Feld (im Beispiel das Attribute \texttt{Gr\"unde}) muss in seiner "`appearance"' angepasst werden, wie es im Listing \ref{appearance anpassung} zu sehen ist. Um ein mehrzeiliges Textfeld zu erzeigen, muss das "`Control-Template"' \texttt{textarea.ftl} verwendet werden. Das Template muss wie angegeben mit einer vollen Pfadangabe versehen werden, denn an dieser Stelle k\"onnten auch eigene Templates eingebunden werden.
 
 \"Uber den Tag "`control-param"' wird mit \texttt{maxLength} die maximale L\"ange des Feldes angegeben. Im Beispiel sind es 40.000 Zeichen, was f\"ur die aktuellen \ac{FADO}-Urteile ausreicht. Wird keine maximale L\"ange angegeben, so wird das Feld standardm\"a\ss{}ig auf 1.024 Zeichen begrenzt.
 
-Durch die Verwendung der "`Textarea"' ist es einem Nutzer m\"oglich, die Gr\"o\ss{}e des Feldes auf seine Bed\"urfnisse zu skallieren, was er mittels des Schaltf\"ache am unteren rechten Textfeldrand machen kann. \cite{Alf_Wiki_Forms}
+Durch die Verwendung der "`Textarea"' ist es einem Nutzer m\"oglich, die Gr\"o\ss{}e des Feldes auf seine Bed\"urfnisse zu skallieren, was er mittels der Schaltf\"ache am unteren rechten Textfeldrand machen kann. \cite{Alf_Wiki_Forms}
 
 Es w\"are auch m\"oglich, die Zeilenl\"ange fest vorzugeben, was jedoch als unpraktikabel empfunden wurde.
 
 \lstinputlisting[caption=Appearance Anpassungen in der \texttt{share-config-custom.xml}, label=appearance anpassung]{Code/share-config_appearance.xml}
 
-In Abbildung \ref{Textfeld Gr\"unde} ist das Textfeld nach der Bearbeitung der \texttt{share-config-custom.xml} zu sehen. Zu beobachten ist die lange Scrollleiste am rechten Rand, welche auf einen gr\"o\ss{}en Inhalt hindeutet.
+In Abbildung \ref{Textfeld Gr\"unde} ist das Textfeld nach der Bearbeitung der \texttt{share-config-custom.xml} zu sehen. Zu beobachten ist die lange Scrollleiste am rechten Rand, welche auf einen gr\"o\ss{}eren Inhalt hindeutet.
 
 \begin{figure}[!ht]
 \centering
@@ -290,10 +296,10 @@ Basieren die einzelnen Modellklassen aufeinander, kann es zu Fehlern kommen, wen
 Importiert eine Modellklasse eine andere, so muss das in der Bean-Beschreibung auch als Abh\"angigkeit angegeben werden. Dies wurde im Abschnitt \ref{Das Modell in Alfresco einbinden} und speziell im Listing \ref{Bildarchiv-Metadaten-context Listing} schon einmal erl\"autert.
 
 \subsection{Fehlende Funktionalit\"at im Backend}\label{Fehlende Funktionalit\"at im Backend}
-Das Lastenheft im Kapitel \ref{Lastenheft} forderte eigentlich, Autoren wie Entit\"aten abzubilden, um zum Beispiel alle Werke eines Autors zu finden, ohne jedes Dokument abfragen zu m\"ussen. Leider ist dieses Vorgehen unter Alfresco nicht m\"oglich.
+Das Lastenheft im Kapitel \ref{Lastenheft} forderte eigentlich, Autoren wie Entit\"aten abzubilden, um zum Beispiel alle Werke eines Autors zu finden, ohne dabei jedes Dokument abfragen zu m\"ussen. Leider ist dieses Vorgehen unter Alfresco nicht m\"oglich.
 
-Alfresco ist ein \ac{ECM}-System, und verlangt f\"ur das Anlegen von Metadaten oder eines Datensatzes immer explizit ein physisches Dokument, welches entweder hochgeladenen oder direkt mit Alfresco erstellt werden muss. 
+Alfresco ist ein \ac{ECM}-System, und verlangt f\"ur das Anlegen von Metadaten oder eines Datensatzes immer explizit ein physisches Dokument, welches entweder hochgeladenen oder direkt mit Alfresco erstellt werden muss. Es ist dagegen nicht möglich eigenständige Datensätze zum Beispiel Autoren ohne ein solches Dokument anzulegen.
 
-Schwierig gestaltet sich das Problem auch, da ein \ac{FADO}-Urteil keine physische Datei besitzt. Ein Urteil ist im alten System einfach als Datenbankeintrag abgebildet, ohne dass jemals eine physische Datei besteht. Bisher wurde dies im neuen System damit gel\"o\ss{}t, dass einfach eine leere Textdatei angelegt wurde, welcher dann die entsprechenden Metadaten \"ubergeben werden k\"onnen.
+Dieses Problem \"au\ss{}ert sich auch, da ein \ac{FADO}-Urteil keine physische Datei besitzt. Ein Urteil ist im alten System einfach als Datenbankeintrag abgebildet, ohne dass jemals eine physische Datei besteht. Bisher wurde dies im neuen System damit gel\"o\ss{}t, dass einfach eine leere Textdatei angelegt wurde, welcher dann die entsprechenden Metadaten zugeordnet werden k\"onnen. Ein Änderung dieses Mechanismus würde einen tieferen Eingriff in Alfresco notwendig machen, der im Rahmen dieser Arbeit jedoch nicht angegangen wird.
 
-Die einzelnen Verweise, auf andere Fachsysteme k\"onnen durch Verweise auf Ordner (welche alle Dateien zu einem System beinhalten) nachgebildet werden. 
+Verweise auf andere Fachsysteme k\"onnen durch Verweise auf Ordner (welche alle Dateien zu einem System beinhalten) nachgebildet werden. 

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+      <entry key="type">lupo-FM:FADO-Urteil</entry>
+      <entry key="aspects">cm:versionable,cm:dublincore,lupo-SA:Inspire,lupo-BA:Dokumenten-Information,lupo-GB:Gericht,lupo-GB:Urteil</entry>
+      <entry key="cm:name"></entry>
+      <entry key="cm:title"></entry>
+      <entry key="lupo-GB:Tenor"></entry>
+      <entry key="lupo-BA:Kommentar"></entry>
+      <entry key="lupo-GB:Orientierungssatz"></entry>
+      <entry key="lupo-FM:Norm"></entry>
+      <entry key="lupo-GB:Leitsatz"></entry>
+      <entry key="lupo-GB:Standort Vorgericht"></entry>
+      <entry key="lupo-GB:Art Vorgericht"></entry>
+      <entry key="lupo-GB:Standort Nachgericht"></entry>
+      <entry key="lupo-GB:Art Nachgericht"></entry>
+      <entry key="lupo-GB:Gerichtsstandort"></entry>
+      <entry key="lupo-GB:Gerichtsart"></entry>
+      <entry key="lupo-GB:Sachverhalt"></entry>
+      <entry key="lupo-GB:Gründe"></entry>
+      <entry key="lupo-FADO:Unsichtbar"></entry>
+      <entry key="lupo-FADO:Ausblenden"></entry>
+      <entry key="lupo-FM:enthalten in Fachsystem"></entry>
+      <entry key="lupo-FM:wird referenziert von-Urteil"></entry>
+      <entry key="lupo-FM:hat Schlagwort"></entry>
+      <entry key="lupo-FM:Thema"></entry>
+      <entry key="lupo-FM:Entscheidungsform"></entry>
+      <entry key="lupo-GB:Entscheidungsdatum"></entry>
+      <entry key="lupo-GB:Aktenzeichen"></entry>
+</properties>

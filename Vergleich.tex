@@ -1,20 +1,22 @@
 \section{Vergleich zwischen Altsystem und dem neuen Prototyp}
-Ein direkter Vergleich der Funktionalit\"at, wie im Lastenheft gefordert, kann leider nicht umgesetzt werden. Dies ist nicht m\"oglich, da die Implementierung des Frontends grunds\"atzlich gescheitert ist. 
+Ein direkter Vergleich der Funktionalit\"at, zwischen Altsystem basierend auf WebGenesis und Alfresco mit dem neuen, vereinigten Metadatenmodel wie im Lastenheft gefordert, kann leider nicht umgesetzt werden. Dies ist nicht m\"oglich, da die Implementierung des Frontends grunds\"atzlich gescheitert ist. 
 
-Auf einen visuellen Vergleich wird an dieser Stelle verzichtet, da er im Frontend-Bereich nicht m\"oglich ist ein Ergebnis zu pr\"asentieren. Im Backend w\"are der Vergleich zwar m\"oglich, jedoch nicht sinnvoll, da die verwendeten Technologien zu unterschiedlich sind. So setzt Alfresco auf eine moderne Datenbank und bietet ein Frontend welches auf "`Bootstrap"' basiert. Das alte Backend basiert auf dem in die Jahre gekommenen "`Web-Genesis"'\footnote{\url{http://www.iosb.fraunhofer.de/servlet/is/18052/}}. 
+Auf einen visuellen Vergleich (der Benutzeroberflächen) muss an dieser Stelle verzichtet werden, da es im Frontend-Bereich nicht m\"oglich ist, ein Ergebnis zu pr\"asentieren. Im Backend w\"are der Vergleich zwar m\"oglich, jedoch nicht sinnvoll, da die verwendeten Technologien zu unterschiedlich sind. So setzt Alfresco auf eine moderne Datenbank und bietet ein Frontend welches auf "`Bootstrap"' basiert. Das alte Front- und Backend basiert auf dem technisch veralteten "`WebGenesis"'\footnote{\url{http://www.iosb.fraunhofer.de/servlet/is/18052/}}. 
 
 \subsection{Vergleich des Frontends}
 Es war, wie im Kapitel \ref{Implementierung Frontend} beschrieben, nicht m\"oglich die Metadaten von Alfresco einfach in Liferay anzuzeigen. Liferay bietet, zumindest zur Zeit, keine Implementierung, um alle \ac{CMIS}-Daten, welche von Alfresco zur Verf\"ugung gestellt werden, zu verarbeiten.
 Des Weiteren gibt es auch kein Plugin, welches diese Funktionalit\"at bietet.
 
-Durch die Entwicklung eines Hooks, f\"ur Liferay, konnte zumindest gezeigt werden, dass Metadaten von Alfresco in Liferay importiert werden k\"onnen. Eine Implementierung einer Anzeige- und Suchfunktion konnte aus Zeitgr\"unden leider nicht umgesetzt werden, ist aber grunds\"atzlich m\"oglich nachdem die Daten nun in der Liferay-Datenbank vorhanden sind. 
+Durch die Entwicklung eines Hooks f\"ur Liferay konnte zumindest gezeigt werden, dass Metadaten von Alfresco in Liferay importiert werden k\"onnen. Eine Implementierung einer Anzeige- und Suchfunktion konnte aus Zeitgr\"unden nicht umgesetzt werden, ist aber grunds\"atzlich m\"oglich, nachdem die Daten in der Liferay-Datenbank vorhanden sind. 
 
-In den Abschnitten \ref{Liferay Hook} bis \ref{Liferay 7} wurden verschiedene M\"oglichkeiten zur Verwendung eines Hooks aufgezeigt. Aus Zeitgrunden konnte jedoch nicht jede M\"oglichkeit prototypisch evaluiert werden.
+In den Abschnitten \ref{Liferay Hook} bis \ref{Liferay 7} wurden verschiedene M\"oglichkeiten zur Verwendung eines Hooks und weitere Alternativen aufgezeigt.
 
 \subsection{Vergleich des Backends}
 Das Backend ist prototypisch implementiert und kann genutzt werden. Es ist m\"oglich, Dateien mit allen Metadaten zu versehen, wie es auch im alten System m\"oglich ist. Zus\"atzlich k\"onnen weitere Aspekte an Metadaten hinzugef\"ugt oder entfernt werden, wodurch das neue System um einiges flexibler ist als das alte.
 
-Ein weiterer Vorteil ist es, dass neue Attribute, Aspekte oder Typen relativ leicht und ohne viel Aufwand eingef\"ugt oder entfernt werden k\"onnen. Hierf\"ur muss lediglich das Content-Modelll welches, in XML-Dateien beschrieben ist (siehe Kapitel \ref{Implementierung Backend}), ge\"andert werden. Es sollte hierf\"ur sp\"ater noch eine Modellierungssoftware geschrieben werden, welche es Erm\"oglicht das Modell \"uber eine GUI anzupassen. Hierdurch ist es noch einmal um einiges leichter das Datenmodell zu ver\"andern, wie es auch vom Lastenheft verlangt wird.
+Ein weiterer Vorteil ist es, dass neue Attribute, Aspekte oder Typen relativ leicht und ohne viel Aufwand eingef\"ugt oder entfernt werden k\"onnen. Hierf\"ur muss lediglich das Content-Modell welches, in XML-Dateien beschrieben ist (siehe Kapitel \ref{Implementierung Backend}), ge\"andert werden. Der zentrale Punkt, dass Aspekte und somit teile dem Modells wiederverwendet werden k\"onnen, wurde umgesetzt. Es sollte sp\"ater noch eine Modellierungssoftware geschrieben werden, welche es erm\"oglicht, das Modell \"uber eine GUI anzupassen. Hierdurch ist es noch einmal um einiges leichter, das Datenmodell zu ver\"andern, wie es im Lastenheft verlangt wird. 
+
+Das offene \ac{DMS}-System Alfresco bietet neben einer webbasierten Autoren-Redakteurs-Schnitt-stelle viele weiere Schnittstellen, wie zum Beispiel \ac{CMIS} oder Web-DAV und glieder sich somit sehr gut in die serviceorientierte System-Landschaft der \ac{LUBW} ein.
 
 Alfresco und somit auch das Backend ist in der Lage, alle Metadaten anzuzeigen und nach ihnen zu suchen. Ob dies sp\"ater einmal von Vorteil sein wird ist fraglich, jedoch ist es kein Nachteil.
 

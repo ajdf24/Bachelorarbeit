@@ -1,14 +1,9 @@
 \section{Abstract}
-In this paper a comprehensive metadatamodel for systems of the \ac{LUBW} is created. The \ac{LUBW} has different Web portals, which are grown independently for historical reasons. This portals will be studied and analyzed how the contained metadata of documents can be summerized.
+In this paper a comprehensive metadata model for document management systems of the \emph{Landesanstalt f\"ur Umwelt, Messungen und Naturschutz Baden-W\"urttemberg} (LUBW) is created. The LUBW runs different Web portals, which have grown independently for historical reasons and therefore use different metadata models. This portals will be studied and analyzed how the metadata models can be unified.
 
-The aim of this paper is to clarify if these different backend services can be combined to a single comprehensive system. For this fusion of the systems, different \ac{ECM} systems need to be analyzed and one of them must be selected in which the metadatamodel will be mapped.
+The aim of this paper is to clarify if each of the respective metadata models can be represented by a combination of reusable and standardized metadata components. For the implemtation of a prototype system und as a proof of concept, different \emph{Enterprise Content Management} (ECM) systems need to be analyzed and a suitable system will be selected to build the prototype upon.
 
-It is described how a metadatamodel in Alfresco, one of the most popular \ac{ECM} systems, can be implemented. 
+It is described how the unified metadata model can be implemented using Alfresco, one of the most popular ECM systems. 
 
-After the development of the backend, it will be attempt to integrate the backend to a Liferay portal server, which should be used as frontend server. It is determined that Liferay doesn't support the metadata from Alfresco by using \ac{CMIS}.
+After the development of the backend, different options for building a user frontend based on a Liferay portal server, in particular, an implementation based on \emph{Content Management Interoperability Services} (CMIS).
 
-Therefore the paper will focus on ways, which allows Liferay to display or to save the metadata in the Liferay database. A hook, which is a Liferay background process, was prototypically implemented which allows to save the metadata from Alfresco in the Liferay database. The hook uses a \ac{CMIS} connection which is used to load the metadata from Alfresco. 
-
-Other ways how a connection can be realized are described in this paper. A widget or a portlet of Liferay are only a few ways which are specified.
-
-At the end both backends and frontends will be compared with each other, which is partly possible. The reason is that Liferay does not support metadata from other systems by default.
